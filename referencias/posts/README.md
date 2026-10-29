@@ -1,4 +1,4 @@
-# Referências
+# Referências · posts
 
 Cada referência: arquivo `AAAA-MM-DD-tema.jpg` (quando houver imagem) e uma entrada aqui com o que vale copiar.
 

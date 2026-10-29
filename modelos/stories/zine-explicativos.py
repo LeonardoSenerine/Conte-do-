@@ -1,6 +1,6 @@
 """Versões explicativas (sem figurinha) dos stories 02, 03 e 04 da série zine. 1080x1920."""
 import re
-base = open("stories-figurinhas.py").read()
+base = open("zine-figurinhas.py").read()
 CSS = re.search(r"CSS = r'''(.*?)'''", base, re.S).group(1)
 CSS += '''
 .tx { font-family:"JetBrains Mono",monospace; font-size:30px; line-height:1.5; letter-spacing:-.01em; }

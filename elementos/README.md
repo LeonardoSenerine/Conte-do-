@@ -23,3 +23,10 @@ Para converter um original novo, adicione uma linha em `modelos/zine/tinta.py` (
 | porsche | Porsche de corrida de frente (assinatura RRM) | caro e barato, "caro pra quem só quer ter" | luxo, desempenho |
 | mao | mão gigante e homem caindo (em `tinta/` como mao-mao e mao-homem) | caro e barato, "cliente chega e vai embora" | perder cliente, quase |
 | leo / leonardo-ponto | o Leonardo (tinta e no ponto azul) | chamadas finais, foto de perfil | CTA, apresentação |
+
+## senerine/
+Capturas reais do senerine.dev (celular @3x, 390 px de largura) e a foto do Leonardo, para a linguagem Senerine:
+`m-hero.png` (início no celular), `m-contato2.png`, `m-404.png`, `og.png` (capa de link), `d-hero.png` (computador), `icon.svg`, `leo-cut.png` (recorte), `leonardo-ponto.webp` (foto no ponto azul).
+
+## terceiros/ (fora do repositório)
+Memes e músicas usados nos reels ficam em `elementos/terceiros/`, que o `.gitignore` não envia (direitos de terceiros). Peça os arquivos de novo ao Leonardo se precisar.

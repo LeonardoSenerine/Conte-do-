@@ -1,5 +1,7 @@
 # HTML e imagens geradas pelos modelos (rode o .py para recriar)
 modelos/**/*.html
+!modelos/reels/*.html
 saida/
 *.log
 .DS_Store
+elementos/terceiros/

@@ -1,0 +1,45 @@
+# Post no feed (carrossel e post único)
+
+## Padrão quando ele só diz "faz um post sobre X"
+- **Carrossel de 7 a 9 slides**, linguagem **zine**, **1080x1440 (3:4)**.
+- Slide 1: gancho que cria curiosidade ou toca na dor. Slides do meio: um ponto por slide. Penúltimo: a nuance (ser justo). Último: chamada (direct ou link da bio) com o Leonardo no ponto azul.
+- Entregar junto: a legenda (ver `legenda.md`) se ele pedir.
+
+## Especificações
+- Tamanho: **1080x1440**. A grade do perfil mostra 3:4; 4:5 (1080x1350) é cortado nas laterais. Se usar 1080x1350, título da capa dentro dos 1012 px centrais.
+- Margem lateral 64 a 72 px. Cabeçalho (rótulo + fólio "01 / 07") e rodapé (senerine.dev + "vira a página →") fixos em todos os slides.
+- Texto mínimo legível no celular: 24 px (mono), 27 px (corpo). Manchete de 120 a 180 px.
+
+## Estruturas que já funcionaram
+| Estrutura | Como é | Exemplo | Modelo |
+|---|---|---|---|
+| Zine com imagens | manchete Anton + imagem em tinta sobre ponto azul + papelzinho com o texto | Link na bio (zine) | `modelos/posts/zine.py` |
+| Linha contínua | uma frase curta por slide, uma linha azul atravessa os slides e encosta no texto, que alterna esquerda/direita; termina no ponto | Caro e barato | `modelos/posts/linha-continua.py` (panorama) |
+| Fio + mockups | um fio azul que vira a linha do rodapé e anda como progresso | Link na bio (Senerine) | `modelos/posts/fio-mockups.py` (panorama) |
+| Capturas reais em grade | cartão com captura do site, faixa "passa batido", título com ponto | 5 detalhes | `modelos/posts/senerine-capturas.py` |
+
+Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `panorama` quando a linha atravessa slides).
+
+## Funciona
+- **Zine**: foi o "FICOU INCRÍVEL". Imagens fortes em tinta, um só azul, tipografia que mistura Anton, serifa e mono.
+- **Elemento que atravessa os slides** (linha, fio): convida a arrastar.
+- **Paradoxo como gancho** ("caro e barato ao mesmo tempo") e contraste de público ("caro pra quem... / barato pra quem...").
+- **Imagem como metáfora** de cada slide (menino correndo = cliente chegando; batida = o barato que sai caro).
+- **Um slide sendo justo** ("Linktree não é vilão"): dá credibilidade.
+- **Capturas reais** do site no lugar de ilustração.
+- Grade rígida: tudo alinhado na mesma margem e nas mesmas alturas.
+
+## Não funciona
+- Copiar a base de outro designer sem adaptar (as versões "Pixel" e "Nexora" foram "bem ruim" e "ruizinho").
+- **Cara de IA**: elementos desalinhados, cartões com ícone, enfeite sem função.
+- Slide que não acrescenta (o slide da "aba" foi cortado).
+- Cores fortes demais.
+- Texto pequeno cortado no limite do cartão; imagem cobrindo rosto ou logo importante.
+- Preço ou número inventado para imitar uma referência.
+
+## Checklist antes de mandar
+- [ ] 3:4, texto da capa inteiro na grade
+- [ ] Nada sobreposto sem querer, nenhum acento cortado
+- [ ] Sem travessão, sem número inventado, sem cidade
+- [ ] Último slide com chamada
+- [ ] Imagens de terceiros anotadas para crédito na legenda
