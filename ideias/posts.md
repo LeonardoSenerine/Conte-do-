@@ -10,3 +10,4 @@ Status: `ideia` · `em produção` · `pronto` · `postado`
 | postado | 5 detalhes que passam batido | "Seu site ficou pronto. E os detalhes?" | Senerine, capturas reais |
 | ideia | O barato que sai caro, em detalhe | o que acontece quando o site trava, some do Google, precisa ser refeito | zine + "batida" |
 | ideia | Antes e depois de um card de WhatsApp | a prévia do link que ninguém configura | capturas reais (só de clientes com permissão) |
+| em produção | Ninguém lê o seu site | "Ninguém lê o seu site. Todo mundo olha." | zine nº 02, 9 slides, colagens (`modelos/posts/ninguem-le.py`) |

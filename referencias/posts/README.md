@@ -11,3 +11,11 @@ Cada referência: arquivo `AAAA-MM-DD-tema.jpg` (quando houver imagem) e uma ent
 ## Estética zine (Pinterest, várias)
 - Fotos em alto contraste, preto puro sobre papel com grão, colagem, figuras recortadas em movimento.
 - **Virou:** a linguagem zine (carrossel link na bio, stories, destaque Processo).
+
+## 2026-10-29 · lote do Pinterest (nanquim, gravura e colagem)
+Os arquivos estão em `elementos/originais/` (nomes no `elementos/README.md`).
+- **Faixa vertical** (`peonias-faixa`, `tigre-faixa`, `andorinhas-faixa`, `lirios-faixa`, `gansos-faixa`): muito branco à esquerda, uma coluna de papel ou textura e a figura saindo da faixa. Vale como recurso de layout (a faixa pode atravessar slides, como a linha do "caro e barato").
+- **Uma cor só dentro da silhueta** (`cabeca-azul`, `leitor`): tudo preto e papel, uma única área de cor chapada. É exatamente o azul do ponto na risografia; no `leitor` o vermelho foi trocado pelo azul.
+- **Tipografia editorial cortada** (`libelula`): palavra grande em serifa cortada pela borda, texto miúdo justificado ao lado da imagem.
+- **Nanquim oriental** (cobras, tigre, peônias): o carimbo vermelho da pintura é a assinatura; no nosso caso o ponto azul faz esse papel. Pode virar uma linguagem nova ("nanquim"), mais calma que o zine.
+- **Virou:** carrossel "ninguém lê o seu site" (zine nº 02), com as colagens da segunda leva.
