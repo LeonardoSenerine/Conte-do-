@@ -7,7 +7,7 @@
 
 ## Especificações
 - Tamanho: **1080x1440**. A grade do perfil mostra 3:4; 4:5 (1080x1350) é cortado nas laterais. Se usar 1080x1350, título da capa dentro dos 1012 px centrais.
-- Margem lateral 64 a 72 px. Cabeçalho (rótulo + fólio "01 / 07") e rodapé (senerine.dev + "vira a página →") fixos em todos os slides.
+- Margem lateral 64 a 72 px. **Zine sem cabeçalho e sem rodapé**: o slide é só manchete, imagem e nota.
 - Texto mínimo legível no celular: 24 px (mono), 27 px (corpo). Manchete de 120 a 180 px.
 
 ## Estruturas que já funcionaram
@@ -24,7 +24,7 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - **Zine**: foi o "FICOU INCRÍVEL". Imagens fortes em tinta, um só azul, tipografia que mistura Anton, serifa e mono.
 - **Elemento que atravessa os slides** (linha, fio): convida a arrastar.
 - **Colagem de fotos P&B recortadas com uma cor só** (as do "ninguém lê": megafone, botas, homem lâmpada, leitor da folha azul, cabeça aberta, multidão, cabeça azul): "gostei da seleção". Preferidas a estampas, texturas e nanquim, que ficaram sem graça no "modelo pronto".
-- **Imagem dele como fundo do slide inteiro** (flores no "modelo pronto é estampa"): texto na área clara, halo cor de papel na nota e etiqueta de papel no cabeçalho e no rodapé.
+- **Imagem dele como fundo do slide inteiro** (flores no "modelo pronto é estampa"): texto na área clara, halo cor de papel na nota.
 - **Nota com linha** no lugar do papelzinho: texto solto no fio, linha fina até o detalhe da imagem.
 - **Paradoxo como gancho** ("caro e barato ao mesmo tempo") e contraste de público ("caro pra quem... / barato pra quem...").
 - **Imagem como metáfora** de cada slide (menino correndo = cliente chegando; batida = o barato que sai caro).
@@ -44,6 +44,7 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - **Rosto do Leonardo grande em tinta** na chamada final: "estranho". Tirar.
 - **Papelzinho com fita em todo slide**: "sem graça". O texto corrido agora é uma **nota**: solto no papel sobre um fio, com uma linha fina até o detalhe da imagem, que ganha um ponto azul (`nota()` em `ninguem-le.py` e `modelo-pronto.py`). Menos enfeite, mais minimalista.
 - Imagem pequena esticada no slide (borda serrilhada): converter em 2x (`DOBRO` no `tinta.py`).
+- **Cabeçalho e rodapé fixos no zine** (rótulo "senerine.dev · zine nº 03", fólio "01 / 08", régua, "vira a página →"): "tem cara de IA". Tirados do modelo pronto; não usar em posts novos.
 - **Recolorir a cor original de uma ilustração** para o azul do ponto: a cabeça azul do "ninguém lê" ficou "bem ruim" no azul da marca. Imagem que já vem com cor própria fica com a cor dela; o azul do ponto só entra onde a cor sumiria (ou no lugar do vermelho).
 - Acento da Anton embaixo de outra letra (É, Ã, Ê no começo ou no meio da 2ª linha): mesmo com `line-height:1.08` encosta. Quebrar a linha de modo que o acento fique na 1ª linha ou embaixo de espaço vazio.
 

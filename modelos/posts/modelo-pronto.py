@@ -1,6 +1,6 @@
 """Carrossel "por que site de modelo pronto passa batido", versão zine (nº 03) com as mesmas
 colagens do "ninguém lê" (a seleção que ele aprovou), notas com linha e o ponto azul.
-8 slides 1080x1440. Gerar: python3 modelo-pronto.py && node ../render.mjs modelo-pronto.html saida 1080 1440 8"""
+8 slides 1080x1440, sem cabeçalho nem rodapé (ele achou "cara de IA"). Gerar: python3 modelo-pronto.py && node ../render.mjs modelo-pronto.html saida 1080 1440 8"""
 
 CSS = r'''
 :root { --paper:#e8e6e0; --ink:#121112; --blue:#0a63b2; --off:#f2efea; }
@@ -45,9 +45,7 @@ T = "../../elementos/tinta/"
 
 def slide(n, inner, nxt="vira a página →", cls=""):
     return f'''<section class="s {cls}" id="s{n}">
-  <div class="mono top"><span>senerine.dev · zine nº 03 · modelo pronto</span><span>{n:02d} / 08</span></div>
   {inner}
-  <div class="mono bot"><span><b>senerine.dev</b></span><span>{nxt}</span></div>
   <div class="grain"></div>
 </section>'''
 
