@@ -1,9 +1,9 @@
 """Carrossel "por que site de modelo pronto passa batido", versão zine (nº 03) com as mesmas
 colagens do "ninguém lê" (a seleção que ele aprovou), notas com linha e o ponto azul.
-8 slides 1080x1440. Gerar: python3 modelo-pronto.py && node ../render.mjs modelo-pronto.html saida 1080 1440 8"""
+9 slides 1080x1440. Gerar: python3 modelo-pronto.py && node ../render.mjs modelo-pronto.html saida 1080 1440 9"""
 
 CSS = r'''
-:root { --paper:#e8e6e0; --ink:#121112; --blue:#0a63b2; }
+:root { --paper:#e8e6e0; --ink:#121112; --blue:#0a63b2; --off:#f2efea; }
 * { box-sizing:border-box; margin:0; padding:0; }
 body { width:1080px; background:#000; }
 .s { position:relative; width:1080px; height:1440px; overflow:hidden; background:var(--paper); color:var(--ink); font-family:"Inter Tight",sans-serif; }
@@ -35,15 +35,19 @@ s::after { content:""; position:absolute; left:-4%; right:-4%; top:52%; height:.
 .list .t small { display:block; font-family:"JetBrains Mono",monospace; font-style:normal; font-weight:400; font-size:24px; letter-spacing:0; margin-top:8px; }
 .crop { overflow:hidden; mix-blend-mode:multiply; z-index:2; }
 .crop img { position:absolute; }
+.s.azul { background:var(--blue); color:var(--off); }
+.s.azul .top, .s.azul .bot { border-color:var(--off); }
+.s.azul .grain { opacity:.3; }
+.follow { width:560px; height:124px; border-radius:62px; background:var(--off); color:var(--blue); font-family:"Anton",sans-serif; font-size:72px; text-transform:uppercase; line-height:124px; text-align:center; z-index:4; box-shadow:0 18px 40px -16px rgba(0,0,0,.45); }
 .list.c .t { font-size:44px; }
 '''
 
 T = "../../elementos/tinta/"
 
 
-def slide(n, inner, nxt="vira a página →"):
-    return f'''<section class="s" id="s{n}">
-  <div class="mono top"><span>senerine.dev · zine nº 03 · modelo pronto</span><span>{n:02d} / 08</span></div>
+def slide(n, inner, nxt="vira a página →", cls=""):
+    return f'''<section class="s {cls}" id="s{n}">
+  <div class="mono top"><span>senerine.dev · zine nº 03 · modelo pronto</span><span>{n:02d} / 09</span></div>
   {inner}
   <div class="mono bot"><span><b>senerine.dev</b></span><span>{nxt}</span></div>
   <div class="grain"></div>
@@ -66,7 +70,7 @@ N3 = nota(64, 1046, 300, 560, 800, 'Quando a página lembra várias outras, a ca
 N4 = nota(64, 1040, 400, 430, 860, 'Foto de banco de imagem, frase que serve pra qualquer um. O cliente não vê quem está do outro lado.')
 N5 = nota(64, 900, 400, 454, 680, 'Seções que vieram no modelo, efeito que ninguém pediu, e o botão do WhatsApp perdido lá no fim da página.')
 N6 = nota(64, 900, 440, 774, 680, 'Sob medida começa pelo seu cliente: suas cores, suas fotos, o que ele procura logo no topo e o caminho mais curto até te chamar.', ponto=False)
-N7 = nota(64, 1010, 700, 640, 960, 'Pra testar uma ideia ou começar sem verba, resolve bem. O problema é o negócio crescer e o site continuar com cara de qualquer um.')
+N7 = nota(64, 640, 440, 620, 580, 'Pra testar uma ideia ou começar sem verba, resolve bem. O problema é o negócio crescer e o site continuar com cara de qualquer um.')
 N8 = nota(64, 900, 400, 716, 740, 'Faço sites e aplicações sob medida, pensados pro seu cliente. Me chama no direct.', ponto=False)
 
 S = []
@@ -113,9 +117,9 @@ S.append(slide(6, f'''
   <p class="it" style="left:64px;top:410px;font-size:64px">quem é <span class="b">diferente</span><br>fica.</p>
   {N6}'''))
 
-# 7 · o Washington apontando: ser justo, pra começar sem verba resolve
+# 7 · a reverência: ser justo, pra começar sem verba o modelo pronto resolve
 S.append(slide(7, f'''
-  <img class="img" src="{T}washington.png" style="left:150px;top:420px;width:860px">
+  <img class="img" src="{T}reverencia.png" style="left:360px;top:540px;width:740px">
   <p class="it" style="left:64px;top:140px;font-size:84px">Modelo pronto</p>
   <h1 class="h" style="left:64px;top:240px;font-size:150px">Não é <span class="b">vilão.</span></h1>
   {N7}'''))
@@ -125,7 +129,16 @@ S.append(slide(8, f'''
   <h1 class="h" style="left:64px;top:128px;font-size:140px">Quer um<br>site com a<br>sua <span class="b">cara?</span></h1>
   <div class="dot" style="left:713px;top:640px;width:190px;height:190px"></div>
   <img class="img" src="{T}botas.png" style="left:420px;top:640px;width:690px">
-  {N8}''', nxt="salva pra depois"))
+  {N8}'''))
+
+# 9 · o ponto cresceu e cobriu a página: segue pra ver os próximos projetos, com o Washington apontando pro botão
+S.append(slide(9, f'''
+  <p class="mono" style="left:64px;top:132px;z-index:3">próximos projetos</p>
+  <h1 class="h" style="left:64px;top:170px;font-size:200px;color:var(--off)">Tem mais<br>vindo.</h1>
+  <p class="it" style="left:64px;top:600px;font-size:58px;width:760px;color:var(--off)">Sites e aplicações novos saindo do estúdio.</p>
+  <img class="img" src="{T}washington.png" style="left:150px;top:640px;width:860px">
+  <div class="follow" style="left:300px;top:1170px">+ seguir</div>
+  <p class="mono" style="left:64px;top:1300px;z-index:3;width:952px;text-align:center">@senerine.dev · ativa o sininho</p>''', nxt="salva pra depois", cls="azul"))
 
 html = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
 <link rel="stylesheet" href="../../fontes/fontes.css"><style>{CSS}</style></head>
