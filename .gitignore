@@ -1,0 +1,5 @@
+# HTML e imagens geradas pelos modelos (rode o .py para recriar)
+modelos/**/*.html
+saida/
+*.log
+.DS_Store
