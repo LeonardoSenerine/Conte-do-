@@ -36,6 +36,8 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - Cores fortes demais.
 - Texto pequeno cortado no limite do cartão; imagem cobrindo rosto ou logo importante.
 - Preço ou número inventado para imitar uma referência.
+- **Papelzinho com fita em todo slide**: "sem graça". O texto corrido agora é uma **nota**: solto no papel sobre um fio, com uma linha fina até o detalhe da imagem, que ganha um ponto azul (`nota()` em `ninguem-le.py` e `modelo-pronto.py`). Menos enfeite, mais minimalista.
+- Imagem pequena esticada no slide (borda serrilhada): converter em 2x (`DOBRO` no `tinta.py`).
 - **Recolorir a cor original de uma ilustração** para o azul do ponto: a cabeça azul do "ninguém lê" ficou "bem ruim" no azul da marca. Imagem que já vem com cor própria fica com a cor dela; o azul do ponto só entra onde a cor sumiria (ou no lugar do vermelho).
 - Acento da Anton embaixo de outra letra (É, Ã, Ê no começo ou no meio da 2ª linha): mesmo com `line-height:1.08` encosta. Quebrar a linha de modo que o acento fique na 1ª linha ou embaixo de espaço vazio.
 

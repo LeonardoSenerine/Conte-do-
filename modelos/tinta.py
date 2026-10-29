@@ -34,12 +34,19 @@ COR = {
     "cabeca-azul": (lambda r, g, b: b - r > 40, None),  # trocar pelo azul do ponto ficou "bem ruim"
     "leitor": (lambda r, g, b: r - g > 80, AZUL),        # vermelho fora da marca
 }
+# originais pequenos (uns 600 px) que entram grandes no slide: dobra com Lanczos antes do limiar,
+# senão a borda da tinta sai serrilhada e mole
+DOBRO = {"cabeca-azul", "multidao", "cabeca-aberta", "lampada", "megafone", "botas", "washington", "leitor",
+         "reverencia", "toile-flores", "pele-cobra", "passaros-borrados", "ornamento", "leoes", "borboletas"}
 for name, (f, lo, hi) in jobs.items():
     if len(sys.argv) > 1 and name not in sys.argv[1:]:
         continue  # python3 tinta.py nome1 nome2 converte só esses
     src = Image.open(f)
     if src.mode in ("RGBA", "LA"):
         bg = Image.new("RGB", src.size, "white"); bg.paste(src, mask=src.split()[-1]); src = bg
+    if name in DOBRO:
+        src = src.convert("RGB")
+        src = src.resize((src.width * 2, src.height * 2), Image.LANCZOS).filter(ImageFilter.UnsharpMask(2, 60, 2))
     g = src.convert("L")
     if name in ("tvs", "pressa", "fim"):
         g = g.filter(ImageFilter.MedianFilter(3))  # tira o chiado do papel original

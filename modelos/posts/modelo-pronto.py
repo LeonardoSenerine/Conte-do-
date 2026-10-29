@@ -20,10 +20,10 @@ body { width:1080px; background:#000; }
 .dot { border-radius:50%; background:var(--blue); mix-blend-mode:multiply; }
 .img { mix-blend-mode:multiply; z-index:2; }
 .tx { font-family:"JetBrains Mono",monospace; font-size:27px; line-height:1.45; letter-spacing:-.01em; z-index:3; }
-.strip { background:#f6f5f1; padding:22px 26px; box-shadow:0 2px 0 rgba(0,0,0,.08), 0 18px 30px -18px rgba(0,0,0,.35); z-index:4; }
-.tape { width:150px; height:44px; background:rgba(230,226,214,.75); box-shadow:0 1px 2px rgba(0,0,0,.12); z-index:5; }
-.grain { inset:0; z-index:9; pointer-events:none; mix-blend-mode:multiply; opacity:.28;
+.grain { inset:0; z-index:9; pointer-events:none; mix-blend-mode:multiply; opacity:.2;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 1.25'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>"); }
+.note { border-top:2px solid var(--ink); padding-top:14px; z-index:5; }
+.ln { left:0; top:0; z-index:5; pointer-events:none; }
 .stamp { border:4px solid var(--blue); color:var(--blue); padding:10px 18px; font-family:"JetBrains Mono",monospace; font-weight:700; font-size:24px; letter-spacing:.1em; text-transform:uppercase; mix-blend-mode:multiply; z-index:6; }
 s { text-decoration:none; position:relative; }
 s::after { content:""; position:absolute; left:-4%; right:-4%; top:52%; height:.16em; background:var(--blue); mix-blend-mode:multiply; rotate:-3deg; }
@@ -49,24 +49,40 @@ def slide(n, inner, nxt="vira a página →"):
 </section>'''
 
 
+def nota(x, y, w, ax, ay, texto, ponto=True):
+    """Texto solto no papel sobre um fio; uma linha fina liga a ponta do fio ao detalhe da imagem
+    (ax, ay), onde fica um ponto azul. ponto=False quando a linha já encosta num ponto do slide."""
+    jx = x + w if ax > x + w / 2 else x
+    ln = f'<line x1="{ax}" y1="{ay}" x2="{jx}" y2="{y}"'
+    dot = f'<circle cx="{ax}" cy="{ay}" r="11" fill="#0a63b2" stroke="#e8e6e0" stroke-width="4"/>' if ponto else ""
+    return (f'<p class="tx note" style="left:{x}px;top:{y}px;width:{w}px">{texto}</p>'
+            f'<svg class="ln" width="1080" height="1440">{ln} stroke="#e8e6e0" stroke-width="8" stroke-linecap="round"/>'
+            f'{ln} stroke="#121112" stroke-width="2"/>{dot}</svg>')
+
+N1 = nota(64, 770, 760, 790, 990, 'Por que site de modelo pronto passa batido.', ponto=False)
+N2 = nota(64, 800, 560, 812, 1130, 'Foi desenhado pra caber em qualquer negócio. Pizzaria, clínica, loja de roupa. Fica bonito em todos e não é de nenhum.', ponto=False)
+N3 = nota(64, 1080, 420, 660, 900, 'Quando a página lembra várias outras, a cabeça acha que já conhece e segue rolando.', ponto=False)
+N4 = nota(64, 920, 420, 580, 580, 'Foto de banco de imagem, frase que serve pra qualquer um. O cliente não vê quem está do outro lado.', ponto=False)
+N5 = nota(64, 860, 400, 500, 840, 'Seções que vieram no modelo, efeito que ninguém pediu, e o botão do WhatsApp lá no fim da página.')
+N6 = nota(64, 1040, 480, 600, 1000, 'Pra testar uma ideia ou começar sem verba, resolve bem. O problema é o negócio crescer e o site continuar com cara de qualquer um.')
+N7 = nota(64, 780, 440, 566, 700, 'Faço sites e aplicações sob medida, pensados pro seu cliente. Me chama no direct.', ponto=False)
+
 S = []
 
 # 1 · capa: o site bonito que é estampa repetida (a toile), com um ponto no meio das flores
 S.append(slide(1, f'''
   <h1 class="h" style="left:64px;top:128px;font-size:168px">Seu site é<br><span class="b">bonito.</span></h1>
   <p class="it" style="left:64px;top:526px;font-size:84px;width:900px">E igual ao de<br>todo mundo.</p>
-  <div class="crop" style="left:0;top:760px;width:1080px;height:592px"><img src="{T}toile-flores.png" style="left:0;top:-300px;width:1080px"></div>
-  <div class="dot" style="left:690px;top:930px;width:200px;height:200px;z-index:3"></div>
-  <div class="strip tx" style="left:64px;top:1130px;width:520px;rotate:-2deg">Por que site de modelo pronto passa batido.</div>
-  <div class="tape" style="left:250px;top:1108px;rotate:3deg"></div>'''))
+  <div class="crop" style="left:0;top:860px;width:1080px;height:492px"><img src="{T}toile-flores.png" style="left:0;top:-300px;width:1080px"></div>
+  <div class="dot" style="left:690px;top:990px;width:200px;height:200px;z-index:3"></div>
+  {N1}'''))
 
 # 2 · modelo pronto é estampa: a pele de cobra numa faixa vertical (referência das faixas)
 S.append(slide(2, f'''
   <div class="crop" style="left:720px;top:96px;width:296px;height:1256px"><img src="{T}pele-cobra.png" style="left:-200px;top:0;height:1256px"></div>
   <div class="dot" style="left:808px;top:1080px;width:120px;height:120px;z-index:3"></div>
   <h1 class="h" style="left:64px;top:128px;font-size:132px">Modelo<br>pronto é<br><span class="b">estampa.</span></h1>
-  <div class="strip tx" style="left:64px;top:760px;width:560px;rotate:-1.5deg">Foi desenhado pra caber em qualquer negócio. Pizzaria, clínica, loja de roupa. Fica bonito em todos e não é de nenhum.</div>
-  <div class="tape" style="left:260px;top:738px;rotate:-4deg"></div>'''))
+  {N2}'''))
 
 # 3 · os pássaros borrados: o olho já viu e passa batido
 S.append(slide(3, f'''
@@ -74,23 +90,20 @@ S.append(slide(3, f'''
   <img class="img" src="{T}passaros-borrados.png" style="left:470px;top:110px;height:1240px">
   <h1 class="h" style="left:64px;top:128px;font-size:150px">O olho<br>já viu<br>isso.</h1>
   <p class="it" style="left:64px;top:650px;font-size:72px">e passa<br><span class="b">batido.</span></p>
-  <div class="strip tx" style="left:64px;top:1050px;width:440px;rotate:2deg">Quando a página lembra várias outras, a cabeça acha que já conhece e segue rolando.</div>
-  <div class="tape" style="left:200px;top:1030px;rotate:-3deg"></div>'''))
+  {N3}'''))
 
 # 4 · o terno sem cabeça: foto de banco e texto de exemplo deixam o negócio sem cara
 S.append(slide(4, f'''
   <img class="img" src="{T}terno.png" style="left:420px;top:420px;height:920px">
   <div class="stamp" style="left:566px;top:462px;width:150px;height:150px;border-radius:50%;border-style:dashed;padding:0"></div>
   <h1 class="h" style="left:64px;top:128px;font-size:130px">O negócio<br>fica sem<br><span class="b">cara.</span></h1>
-  <div class="strip tx" style="left:64px;top:900px;width:420px;rotate:-2deg">Foto de banco de imagem, frase que serve pra qualquer um. O cliente não vê quem está do outro lado.</div>
-  <div class="tape" style="left:210px;top:878px;rotate:4deg"></div>'''))
+  {N4}'''))
 
 # 5 · o ornamento: enfeite no lugar do que importa, e o botão perdido lá embaixo
 S.append(slide(5, f'''
   <img class="img" src="{T}ornamento.png" style="left:450px;top:290px;height:920px;clip-path:inset(1.6%)">
   <h1 class="h" style="left:64px;top:128px;font-size:120px">Enfeite no<br>lugar do que<br><span class="b">importa.</span></h1>
-  <div class="strip tx" style="left:64px;top:820px;width:420px;rotate:1.5deg">Seções que vieram no modelo, efeito que ninguém pediu, e o botão do WhatsApp lá no fim da página.</div>
-  <div class="tape" style="left:190px;top:800px;rotate:-4deg"></div>
+  {N5}
   <div class="dot" style="left:944px;top:1252px;width:56px;height:56px;z-index:3"></div>
   <p class="mono" style="left:680px;top:1266px;z-index:3;color:var(--blue)">o que importa →</p>'''))
 
@@ -113,17 +126,14 @@ S.append(slide(7, f'''
   <img class="img" src="{T}borboletas.png" style="left:300px;top:450px;width:760px">
   <p class="it" style="left:64px;top:140px;font-size:84px">Modelo pronto</p>
   <h1 class="h" style="left:64px;top:240px;font-size:150px">Não é <span class="b">vilão.</span></h1>
-  <div class="strip tx" style="left:64px;top:1000px;width:480px;rotate:-1.5deg">Pra testar uma ideia ou começar sem verba, resolve bem. O problema é o negócio crescer e o site continuar com cara de qualquer um.</div>
-  <div class="tape" style="left:220px;top:980px;rotate:3deg"></div>'''))
+  {N6}'''))
 
 # 8 · chamada com o Leonardo no ponto
 S.append(slide(8, f'''
   <div class="dot" style="left:560px;top:500px;width:480px;height:480px"></div>
   <img class="img" src="{T}leo.png" style="left:510px;top:400px;height:952px">
   <h1 class="h" style="left:64px;top:128px;font-size:150px">Quer um<br>site com a<br>sua <span class="b">cara?</span></h1>
-  <div class="strip tx" style="left:64px;top:760px;width:440px;rotate:-2deg">Faço sites e aplicações sob medida, pensados pro seu cliente. Me chama no direct.</div>
-  <div class="tape" style="left:210px;top:740px;rotate:-4deg"></div>
-  <div class="stamp" style="left:64px;top:1080px;rotate:-3deg">senerine.dev</div>''', nxt="salva pra depois"))
+  {N7}''', nxt="salva pra depois"))
 
 html = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
 <link rel="stylesheet" href="../../fontes/fontes.css"><style>{CSS}</style></head>

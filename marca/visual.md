@@ -21,7 +21,7 @@ Nomes do estilo: **estética zine / fanzine**, **xerox art** (photocopy aestheti
 - Imagens em **tinta preta sem fundo** (`elementos/tinta/`, `mix-blend-mode:multiply`).
 - Um único azul, como segunda cor de risografia, também em multiply (ponto atrás da imagem, palavra da manchete).
 - Manchete em **Anton** maiúscula; contraste com **Bodoni Moda** itálica 700 a 800 ou **Instrument Serif** (itálico na palavra-chave); texto corrido e rótulos em **JetBrains Mono**.
-- Recursos: papelzinho colado com fita, carimbo azul inclinado, etiqueta preta com texto claro (estilo recorte), palavra riscada em azul.
+- Recursos: **nota com linha** (texto no papel sobre um fio, linha fina até o detalhe da imagem, ponto azul na ponta; preferida desde o zine nº 02), papelzinho colado com fita (evitar em série: "sem graça"), carimbo azul inclinado, etiqueta preta com texto claro (estilo recorte), palavra riscada em azul.
 - Atenção: Anton com `line-height` baixo esconde acentos e cedilha (É, Ó, Ç). Use `line-height:1` nas linhas com acento.
 
 ## Linguagem 2 · Senerine (a do site)
