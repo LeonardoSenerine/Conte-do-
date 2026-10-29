@@ -27,6 +27,16 @@ jobs = {  # nome: (arquivo, preto, branco)
     "ornamento":         (U + "ornamento.jpg", 60, 200),
     "leoes":             (U + "leoes.jpg", 50, 215),
     "borboletas":        (U + "borboletas.jpg", 50, 215),
+    # modelo pronto, versão com a primeira leva (nanquim e faixas)
+    "tecido-floral":     (U + "tecido-floral.jpg", 70, 200),
+    "lirios-faixa":      (U + "lirios-faixa.jpg", 40, 215),
+    "mulher-pombas":     (U + "mulher-pombas.jpg", 40, 215),
+    "videira":           (U + "videira.jpg", 40, 220),
+    "tigre-faixa":       (U + "tigre-faixa.jpg", 60, 245),
+    "peonias-faixa":     (U + "peonias-faixa.jpg", 30, 240),
+    "cobra-fumaca":      (U + "cobra-fumaca.jpg", 40, 225),
+    "cobra-escura":      (U + "cobra-escura.jpg", 40, 220),
+    "caligrafia":        (U + "caligrafia.jpg", 50, 200),
 }
 # cor própria da imagem que não pode sumir no limiar: nome: (teste por pixel, cor nova ou None pra manter a original)
 AZUL = (10, 99, 178)
@@ -37,7 +47,9 @@ COR = {
 # originais pequenos (uns 600 px) que entram grandes no slide: dobra com Lanczos antes do limiar,
 # senão a borda da tinta sai serrilhada e mole
 DOBRO = {"cabeca-azul", "multidao", "cabeca-aberta", "lampada", "megafone", "botas", "washington", "leitor",
-         "reverencia", "toile-flores", "pele-cobra", "passaros-borrados", "ornamento", "leoes", "borboletas"}
+         "reverencia", "toile-flores", "pele-cobra", "passaros-borrados", "ornamento", "leoes", "borboletas",
+         "tecido-floral", "lirios-faixa", "mulher-pombas", "videira", "tigre-faixa", "peonias-faixa",
+         "cobra-fumaca", "cobra-escura", "caligrafia"}
 for name, (f, lo, hi) in jobs.items():
     if len(sys.argv) > 1 and name not in sys.argv[1:]:
         continue  # python3 tinta.py nome1 nome2 converte só esses
@@ -50,7 +62,7 @@ for name, (f, lo, hi) in jobs.items():
     g = src.convert("L")
     if name in ("tvs", "pressa", "fim"):
         g = g.filter(ImageFilter.MedianFilter(3))  # tira o chiado do papel original
-    if name == "leo":
+    if name in ("leo", "tecido-floral"):
         g = ImageOps.autocontrast(g, cutoff=2)
     a = g.point(lambda v: 255 if v <= lo else 0 if v >= hi else int(255 * (hi - v) / (hi - lo)))
     out = Image.new("RGBA", g.size, (17, 16, 17, 0)); out.putalpha(a)

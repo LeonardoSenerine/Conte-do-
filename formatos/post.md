@@ -23,6 +23,8 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 ## Funciona
 - **Zine**: foi o "FICOU INCRÍVEL". Imagens fortes em tinta, um só azul, tipografia que mistura Anton, serifa e mono.
 - **Elemento que atravessa os slides** (linha, fio): convida a arrastar.
+- **Colagem de fotos P&B recortadas com uma cor só** (as do "ninguém lê": megafone, botas, homem lâmpada, leitor da folha azul, cabeça aberta, multidão, cabeça azul): "gostei da seleção". Preferidas a estampas, texturas e nanquim, que ficaram sem graça no "modelo pronto".
+- **Nota com linha** no lugar do papelzinho: texto solto no fio, linha fina até o detalhe da imagem.
 - **Paradoxo como gancho** ("caro e barato ao mesmo tempo") e contraste de público ("caro pra quem... / barato pra quem...").
 - **Imagem como metáfora** de cada slide (menino correndo = cliente chegando; batida = o barato que sai caro).
 - **Um slide sendo justo** ("Linktree não é vilão"): dá credibilidade.

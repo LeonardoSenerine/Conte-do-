@@ -1,5 +1,5 @@
-"""Carrossel "por que site de modelo pronto passa batido", versão zine (nº 03): estampas e
-colagens em tinta, a faixa vertical das referências de 2026-10-29 e o ponto azul.
+"""Carrossel "por que site de modelo pronto passa batido", versão zine (nº 03) com as mesmas
+colagens do "ninguém lê" (a seleção que ele aprovou), notas com linha e o ponto azul.
 8 slides 1080x1440. Gerar: python3 modelo-pronto.py && node ../render.mjs modelo-pronto.html saida 1080 1440 8"""
 
 CSS = r'''
@@ -35,6 +35,7 @@ s::after { content:""; position:absolute; left:-4%; right:-4%; top:52%; height:.
 .list .t small { display:block; font-family:"JetBrains Mono",monospace; font-style:normal; font-weight:400; font-size:24px; letter-spacing:0; margin-top:8px; }
 .crop { overflow:hidden; mix-blend-mode:multiply; z-index:2; }
 .crop img { position:absolute; }
+.list.c .t { font-size:44px; }
 '''
 
 T = "../../elementos/tinta/"
@@ -59,81 +60,72 @@ def nota(x, y, w, ax, ay, texto, ponto=True):
             f'<svg class="ln" width="1080" height="1440">{ln} stroke="#e8e6e0" stroke-width="8" stroke-linecap="round"/>'
             f'{ln} stroke="#121112" stroke-width="2"/>{dot}</svg>')
 
-N1 = nota(64, 770, 760, 790, 990, 'Por que site de modelo pronto passa batido.', ponto=False)
-N2 = nota(64, 800, 560, 812, 1130, 'Foi desenhado pra caber em qualquer negócio. Pizzaria, clínica, loja de roupa. Fica bonito em todos e não é de nenhum.', ponto=False)
-N3 = nota(64, 1080, 420, 660, 900, 'Quando a página lembra várias outras, a cabeça acha que já conhece e segue rolando.', ponto=False)
-N4 = nota(64, 920, 420, 580, 580, 'Foto de banco de imagem, frase que serve pra qualquer um. O cliente não vê quem está do outro lado.', ponto=False)
-N5 = nota(64, 860, 400, 500, 840, 'Seções que vieram no modelo, efeito que ninguém pediu, e o botão do WhatsApp lá no fim da página.')
-N6 = nota(64, 1040, 480, 600, 1000, 'Pra testar uma ideia ou começar sem verba, resolve bem. O problema é o negócio crescer e o site continuar com cara de qualquer um.')
-N7 = nota(64, 820, 440, 702, 690, 'Faço sites e aplicações sob medida, pensados pro seu cliente. Me chama no direct.', ponto=False)
+N1 = nota(64, 1250, 760, 840, 1080, 'Por que site de modelo pronto passa batido.', ponto=False)
+N2 = nota(64, 1000, 400, 668, 450, 'Foi desenhado pra caber em qualquer negócio. Pizzaria, clínica, loja de roupa. Fica bonito em todos e não é de nenhum.', ponto=False)
+N3 = nota(64, 1046, 300, 560, 800, 'Quando a página lembra várias outras, a cabeça acha que já conhece e segue rolando.')
+N4 = nota(64, 1040, 400, 430, 860, 'Foto de banco de imagem, frase que serve pra qualquer um. O cliente não vê quem está do outro lado.')
+N5 = nota(64, 900, 400, 454, 680, 'Seções que vieram no modelo, efeito que ninguém pediu, e o botão do WhatsApp perdido lá no fim da página.')
+N6 = nota(64, 900, 440, 774, 680, 'Sob medida começa pelo seu cliente: suas cores, suas fotos, o que ele procura logo no topo e o caminho mais curto até te chamar.', ponto=False)
+N7 = nota(64, 1010, 700, 640, 960, 'Pra testar uma ideia ou começar sem verba, resolve bem. O problema é o negócio crescer e o site continuar com cara de qualquer um.')
+N8 = nota(64, 900, 400, 716, 740, 'Faço sites e aplicações sob medida, pensados pro seu cliente. Me chama no direct.', ponto=False)
 
 S = []
 
-# 1 · capa: o site bonito que é estampa repetida (a toile), com um ponto no meio das flores
+# 1 · capa: a multidão correndo, todo mundo igual
 S.append(slide(1, f'''
   <h1 class="h" style="left:64px;top:128px;font-size:168px">Seu site é<br><span class="b">bonito.</span></h1>
   <p class="it" style="left:64px;top:526px;font-size:84px;width:900px">E igual ao de<br>todo mundo.</p>
-  <div class="crop" style="left:0;top:860px;width:1080px;height:492px"><img src="{T}toile-flores.png" style="left:0;top:-300px;width:1080px"></div>
-  <div class="dot" style="left:690px;top:990px;width:200px;height:200px;z-index:3"></div>
+  <div class="dot" style="left:800px;top:850px;width:230px;height:230px"></div>
+  <img class="img" src="{T}multidao.png" style="left:-120px;top:500px;width:1260px">
   {N1}'''))
 
-# 2 · modelo pronto é estampa: a pele de cobra numa faixa vertical (referência das faixas)
+# 2 · o homem lâmpada: o modelo é o mesmo corpo, só troca a cabeça
 S.append(slide(2, f'''
-  <div class="crop" style="left:720px;top:96px;width:296px;height:1256px"><img src="{T}pele-cobra.png" style="left:-200px;top:0;height:1256px"></div>
-  <div class="dot" style="left:808px;top:1080px;width:120px;height:120px;z-index:3"></div>
+  <div class="dot" style="left:648px;top:222px;width:280px;height:280px"></div>
+  <img class="img" src="{T}lampada.png" style="left:420px;top:150px;height:1190px">
   <h1 class="h" style="left:64px;top:128px;font-size:132px">Modelo<br>pronto é<br><span class="b">estampa.</span></h1>
   {N2}'''))
 
-# 3 · os pássaros borrados: o olho já viu e passa batido
+# 3 · a cabeça azul com o olho: o olho já viu e passa batido
 S.append(slide(3, f'''
-  <div class="dot" style="left:640px;top:740px;width:260px;height:260px"></div>
-  <img class="img" src="{T}passaros-borrados.png" style="left:470px;top:110px;height:1240px">
+  <img class="img" src="{T}cabeca-azul.png" style="left:300px;top:420px;height:932px">
   <h1 class="h" style="left:64px;top:128px;font-size:150px">O olho<br>já viu<br>isso.</h1>
-  <p class="it" style="left:64px;top:650px;font-size:72px">e passa<br><span class="b">batido.</span></p>
+  <p class="it" style="left:64px;top:650px;font-size:64px">e passa<br><span class="b">batido.</span></p>
   {N3}'''))
 
-# 4 · o terno sem cabeça: foto de banco e texto de exemplo deixam o negócio sem cara
+# 4 · o leitor com a folha azul no rosto: o negócio fica sem cara
 S.append(slide(4, f'''
-  <img class="img" src="{T}terno.png" style="left:420px;top:420px;height:920px">
-  <div class="stamp" style="left:566px;top:462px;width:150px;height:150px;border-radius:50%;border-style:dashed;padding:0"></div>
+  <img class="img" src="{T}leitor.png" style="left:300px;top:500px;width:820px">
   <h1 class="h" style="left:64px;top:128px;font-size:130px">O negócio<br>fica sem<br><span class="b">cara.</span></h1>
   {N4}'''))
 
-# 5 · o ornamento: enfeite no lugar do que importa, e o botão perdido lá embaixo
+# 5 · o megafone: enfeite e barulho no lugar do que importa
 S.append(slide(5, f'''
-  <img class="img" src="{T}ornamento.png" style="left:450px;top:290px;height:920px;clip-path:inset(1.6%)">
   <h1 class="h" style="left:64px;top:128px;font-size:120px">Enfeite no<br>lugar do que<br><span class="b">importa.</span></h1>
-  {N5}
-  <div class="dot" style="left:944px;top:1252px;width:56px;height:56px;z-index:3"></div>
-  <p class="mono" style="left:680px;top:1266px;z-index:3;color:var(--blue)">o que importa →</p>'''))
+  <img class="img" src="{T}megafone.png" style="left:370px;top:520px;width:700px">
+  {N5}'''))
 
-# 6 · os leões e a figura de preto: no meio de todo mundo, o diferente fica
+# 6 · a cabeça aberta: sob medida começa pela cabeça do cliente
 S.append(slide(6, f'''
+  <img class="img" src="{T}cabeca-aberta.png" style="left:460px;top:390px;height:960px">
+  <div class="dot" style="left:772px;top:598px;width:140px;height:140px"></div>
   <h1 class="h" style="left:64px;top:128px;font-size:120px">No meio de<br>todo mundo,</h1>
-  <p class="it" style="left:64px;top:410px;font-size:64px">quem é <span class="b">diferente</span> fica.</p>
-  <div class="dot" style="left:764px;top:523px;width:200px;height:200px"></div>
-  <img class="img" src="{T}leoes.png" style="left:0;top:-327px;width:1080px">
-  <p class="mono" style="left:64px;top:900px;z-index:3">sob medida começa pelo seu cliente:</p>
-  <div class="list" style="top:950px">
-    <div><span class="n">01</span><span class="t">suas cores, suas fotos</span></div>
-    <div><span class="n">02</span><span class="t">o que ele procura, no topo</span></div>
-    <div><span class="n">03</span><span class="t">o caminho curto até te chamar</span></div>
-  </div>'''))
-
-# 7 · as borboletas: ser justo, modelo pronto serve pra começar
-S.append(slide(7, f'''
-  <div class="dot" style="left:560px;top:600px;width:300px;height:300px"></div>
-  <img class="img" src="{T}borboletas.png" style="left:300px;top:450px;width:760px">
-  <p class="it" style="left:64px;top:140px;font-size:84px">Modelo pronto</p>
-  <h1 class="h" style="left:64px;top:240px;font-size:150px">Não é <span class="b">vilão.</span></h1>
+  <p class="it" style="left:64px;top:410px;font-size:64px">quem é <span class="b">diferente</span><br>fica.</p>
   {N6}'''))
 
-# 8 · chamada: o terno do slide 4 volta com o ponto azul no lugar da cabeça (a cara que faltava)
+# 7 · o Washington apontando: ser justo, pra começar sem verba resolve
+S.append(slide(7, f'''
+  <img class="img" src="{T}washington.png" style="left:150px;top:420px;width:860px">
+  <p class="it" style="left:64px;top:140px;font-size:84px">Modelo pronto</p>
+  <h1 class="h" style="left:64px;top:240px;font-size:150px">Não é <span class="b">vilão.</span></h1>
+  {N7}'''))
+
+# 8 · chamada: as botas, alguém com a própria cara
 S.append(slide(8, f'''
-  <img class="img" src="{T}terno.png" style="left:560px;top:520px;height:820px">
-  <div class="dot" style="left:700px;top:618px;width:134px;height:134px;z-index:3"></div>
-  <h1 class="h" style="left:64px;top:128px;font-size:150px">Quer um<br>site com a<br>sua <span class="b">cara?</span></h1>
-  {N7}''', nxt="salva pra depois"))
+  <h1 class="h" style="left:64px;top:128px;font-size:140px">Quer um<br>site com a<br>sua <span class="b">cara?</span></h1>
+  <div class="dot" style="left:713px;top:640px;width:190px;height:190px"></div>
+  <img class="img" src="{T}botas.png" style="left:420px;top:640px;width:690px">
+  {N8}''', nxt="salva pra depois"))
 
 html = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
 <link rel="stylesheet" href="../../fontes/fontes.css"><style>{CSS}</style></head>
