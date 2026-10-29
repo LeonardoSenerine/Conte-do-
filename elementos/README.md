@@ -22,7 +22,7 @@ Para converter um original novo, adicione uma linha em `modelos/tinta.py` (nome,
 | batida | dois carros batendo | caro e barato, "o barato que sai caro" | erro, prejuízo, retrabalho |
 | porsche | Porsche de corrida de frente (assinatura RRM) | caro e barato, "caro pra quem só quer ter" | luxo, desempenho |
 | mao | mão gigante e homem caindo (em `tinta/` como mao-mao e mao-homem) | caro e barato, "cliente chega e vai embora" | perder cliente, quase |
-| cabeca-azul | perfil de cabeça azul com a faixa do olho (azul já convertido para o do ponto) | capa "ninguém lê o seu site" | olhar, atenção, primeira impressão |
+| cabeca-azul | perfil de cabeça azul com a faixa do olho (mantém o azul original; trocar pelo do ponto ficou ruim) | capa "ninguém lê o seu site" | olhar, atenção, primeira impressão |
 | multidao | multidão correndo para a direita | "ninguém lê", "todo mundo passa correndo" | pressa, feed, gente passando batido |
 | cabeca-aberta | homem com o topo da cabeça aberto (rosto de ator conhecido) | "ninguém lê", "ele decide antes de pensar" | decisão, mente do cliente, impressão |
 | lampada | homem de terno com cabeça de lâmpada numa poltrona | "ninguém lê", "e julga do sofá" | julgamento, ideia, cliente exigente |
@@ -31,12 +31,18 @@ Para converter um original novo, adicione uma linha em `modelos/tinta.py` (nome,
 | washington | George Washington da nota de dólar apontando para baixo de um parapeito | "ninguém lê", lista "o que ele precisa ver primeiro" | apontar, lista, dinheiro |
 | leitor | homem lendo numa cadeira, folha que vira o azul do ponto | "ninguém lê", "texto importa, sim" | leitura, conteúdo, ser justo |
 | reverencia | homem de casaca fazendo reverência | chamada final "ninguém lê" | convite, a seu dispor, bem-vindo |
+| toile-flores | estampa de flores em gravura, repetida | capa "modelo pronto", "bonito e igual ao de todo mundo" | estampa, padrão, repetição, modelo |
+| pele-cobra | textura de pele de cobra (usar em faixa vertical) | "modelo pronto é estampa" | estampa, superfície, faixa |
+| passaros-borrados | pássaros borrados passando | "o olho já viu isso e passa batido" | passar batido, pressa, movimento |
+| ornamento | ornamento barroco (cortar a moldura com `clip-path:inset(1.6%)`) | "enfeite no lugar do que importa" | excesso, enfeite sem função |
+| leoes | leões e uma figura de preto parada ao lado | "no meio de todo mundo, quem é diferente fica" | destaque, coragem, o diferente |
+| borboletas | três borboletas em alto contraste | "modelo pronto não é vilão" | começo, crescer, leveza |
 | leo / leonardo-ponto | o Leonardo (tinta e no ponto azul) | chamadas finais, foto de perfil | CTA, apresentação |
 
 ### Originais ainda sem versão em tinta (chegaram em 2026-10-29)
 Estão em `originais/` com estes nomes; converter quando forem usados.
-- **Bichos:** `cobra-fumaca`, `cobra-galho`, `cobra-escura`, `pele-cobra` (textura), `coruja`, `tigre-faixa`, `leopardos` (brigando), `leoes` (leões e uma figura de preto), `pegaso` (gravura), `andorinhas-faixa`, `gansos-faixa`, `passaros-borrados`, `mulher-pombas` (gravura), `libelula` (com tipografia), `borboletas`.
-- **Flores e plantas:** `videira` (gravura de uva), `peonias-faixa`, `lirios-faixa`, `iris`, `ramo-pontilhado`, `flor-nanquim`, `flores-bitmap`, `flores-silhueta`, `flores-fluidas`, `toile-flores`, `toile-vermelho` (estampa; o vermelho não entra, só como forma), `tecido-floral`, `ornamento` (barroco).
+- **Bichos:** `cobra-fumaca`, `cobra-galho`, `cobra-escura`, `coruja`, `tigre-faixa`, `leopardos` (brigando), `pegaso` (gravura), `andorinhas-faixa`, `gansos-faixa`, `mulher-pombas` (gravura), `libelula` (com tipografia).
+- **Flores e plantas:** `videira` (gravura de uva), `peonias-faixa`, `lirios-faixa`, `iris`, `ramo-pontilhado`, `flor-nanquim`, `flores-bitmap`, `flores-silhueta`, `flores-fluidas`, `toile-vermelho` (estampa; o vermelho não entra, só como forma), `tecido-floral`.
 - **Texturas e gestos:** `caligrafia` (pinceladas pretas e dourado), `pincelada`, `explosao` (raios de tinta), `reticula-escura`, `reticula-clara`, `nuvens-reticula` (meio-tom, combina com o ponto).
 
 ## senerine/

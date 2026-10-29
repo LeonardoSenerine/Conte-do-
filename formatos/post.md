@@ -13,7 +13,7 @@
 ## Estruturas que já funcionaram
 | Estrutura | Como é | Exemplo | Modelo |
 |---|---|---|---|
-| Zine com imagens | manchete Anton + imagem em tinta sobre ponto azul + papelzinho com o texto | Link na bio (zine), Ninguém lê (zine nº 02, 3:4) | `modelos/posts/zine.py`, `modelos/posts/ninguem-le.py` |
+| Zine com imagens | manchete Anton + imagem em tinta sobre ponto azul + papelzinho com o texto | Link na bio (zine), Ninguém lê (zine nº 02), Modelo pronto (zine nº 03, com faixa vertical) | `modelos/posts/zine.py`, `ninguem-le.py`, `modelo-pronto.py` |
 | Linha contínua | uma frase curta por slide, uma linha azul atravessa os slides e encosta no texto, que alterna esquerda/direita; termina no ponto | Caro e barato | `modelos/posts/linha-continua.py` (panorama) |
 | Fio + mockups | um fio azul que vira a linha do rodapé e anda como progresso | Link na bio (Senerine) | `modelos/posts/fio-mockups.py` (panorama) |
 | Capturas reais em grade | cartão com captura do site, faixa "passa batido", título com ponto | 5 detalhes | `modelos/posts/senerine-capturas.py` |
@@ -36,6 +36,8 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - Cores fortes demais.
 - Texto pequeno cortado no limite do cartão; imagem cobrindo rosto ou logo importante.
 - Preço ou número inventado para imitar uma referência.
+- **Recolorir a cor original de uma ilustração** para o azul do ponto: a cabeça azul do "ninguém lê" ficou "bem ruim" no azul da marca. Imagem que já vem com cor própria fica com a cor dela; o azul do ponto só entra onde a cor sumiria (ou no lugar do vermelho).
+- Acento da Anton embaixo de outra letra (É, Ã, Ê no começo ou no meio da 2ª linha): mesmo com `line-height:1.08` encosta. Quebrar a linha de modo que o acento fique na 1ª linha ou embaixo de espaço vazio.
 
 ## Checklist antes de mandar
 - [ ] 3:4, texto da capa inteiro na grade

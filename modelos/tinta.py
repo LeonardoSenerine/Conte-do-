@@ -20,13 +20,20 @@ jobs = {  # nome: (arquivo, preto, branco)
     "washington":    (U + "washington.jpg", 70, 225),
     "leitor":        (U + "leitor.jpg", 40, 200),
     "reverencia":    (U + "reverencia.jpg", 40, 215),
+    # post "modelo pronto passa batido"
+    "toile-flores":      (U + "toile-flores.jpg", 40, 210),
+    "pele-cobra":        (U + "pele-cobra.jpg", 40, 200),
+    "passaros-borrados": (U + "passaros-borrados.jpg", 30, 235),
+    "ornamento":         (U + "ornamento.jpg", 60, 200),
+    "leoes":             (U + "leoes.jpg", 50, 215),
+    "borboletas":        (U + "borboletas.jpg", 50, 215),
 }
-# cor própria da imagem que vira o azul do ponto (em vez de sumir no limiar): nome: teste por pixel
-COR = {
-    "cabeca-azul": lambda r, g, b: b - r > 40,
-    "leitor": lambda r, g, b: r - g > 80,
-}
+# cor própria da imagem que não pode sumir no limiar: nome: (teste por pixel, cor nova ou None pra manter a original)
 AZUL = (10, 99, 178)
+COR = {
+    "cabeca-azul": (lambda r, g, b: b - r > 40, None),  # trocar pelo azul do ponto ficou "bem ruim"
+    "leitor": (lambda r, g, b: r - g > 80, AZUL),        # vermelho fora da marca
+}
 for name, (f, lo, hi) in jobs.items():
     if len(sys.argv) > 1 and name not in sys.argv[1:]:
         continue  # python3 tinta.py nome1 nome2 converte só esses
@@ -44,5 +51,6 @@ for name, (f, lo, hi) in jobs.items():
         rgb, px = src.convert("RGB").load(), out.load()
         for y in range(g.size[1]):
             for x in range(g.size[0]):
-                if COR[name](*rgb[x, y]): px[x, y] = AZUL + (255,)
+                teste, cor = COR[name]
+                if teste(*rgb[x, y]): px[x, y] = (cor or rgb[x, y]) + (255,)
     out.save(f"../elementos/tinta/{name}.png"); print(name, g.size)
