@@ -24,6 +24,7 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - **Zine**: foi o "FICOU INCRÍVEL". Imagens fortes em tinta, um só azul, tipografia que mistura Anton, serifa e mono.
 - **Elemento que atravessa os slides** (linha, fio): convida a arrastar.
 - **Colagem de fotos P&B recortadas com uma cor só** (as do "ninguém lê": megafone, botas, homem lâmpada, leitor da folha azul, cabeça aberta, multidão, cabeça azul): "gostei da seleção". Preferidas a estampas, texturas e nanquim, que ficaram sem graça no "modelo pronto".
+- **Imagem dele como fundo do slide inteiro** (flores no "modelo pronto é estampa"): texto na área clara, halo cor de papel na nota e etiqueta de papel no cabeçalho e no rodapé.
 - **Nota com linha** no lugar do papelzinho: texto solto no fio, linha fina até o detalhe da imagem.
 - **Paradoxo como gancho** ("caro e barato ao mesmo tempo") e contraste de público ("caro pra quem... / barato pra quem...").
 - **Imagem como metáfora** de cada slide (menino correndo = cliente chegando; batida = o barato que sai caro).
@@ -38,6 +39,8 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - Cores fortes demais.
 - Texto pequeno cortado no limite do cartão; imagem cobrindo rosto ou logo importante.
 - Preço ou número inventado para imitar uma referência.
+- **Imagem que não conversa com a frase** (megafone em "enfeite no lugar do que importa"): "não tem sentido estar ali". Cada imagem tem que ser metáfora direta do slide.
+- Slide final azul "segue pra ver os próximos" no modelo pronto: tirado. Fechar na chamada do direct.
 - **Rosto do Leonardo grande em tinta** na chamada final: "estranho". Tirar.
 - **Papelzinho com fita em todo slide**: "sem graça". O texto corrido agora é uma **nota**: solto no papel sobre um fio, com uma linha fina até o detalhe da imagem, que ganha um ponto azul (`nota()` em `ninguem-le.py` e `modelo-pronto.py`). Menos enfeite, mais minimalista.
 - Imagem pequena esticada no slide (borda serrilhada): converter em 2x (`DOBRO` no `tinta.py`).

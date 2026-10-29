@@ -37,6 +37,7 @@ jobs = {  # nome: (arquivo, preto, branco)
     "cobra-fumaca":      (U + "cobra-fumaca.jpg", 40, 225),
     "cobra-escura":      (U + "cobra-escura.jpg", 40, 220),
     "caligrafia":        (U + "caligrafia.jpg", 50, 200),
+    "flores-fluidas":    (U + "flores-fluidas.jpg", 15, 245),  # fundo inteiro do slide "estampa"
 }
 # cor própria da imagem que não pode sumir no limiar: nome: (teste por pixel, cor nova ou None pra manter a original)
 AZUL = (10, 99, 178)
@@ -49,7 +50,7 @@ COR = {
 DOBRO = {"cabeca-azul", "multidao", "cabeca-aberta", "lampada", "megafone", "botas", "washington", "leitor",
          "reverencia", "toile-flores", "pele-cobra", "passaros-borrados", "ornamento", "leoes", "borboletas",
          "tecido-floral", "lirios-faixa", "mulher-pombas", "videira", "tigre-faixa", "peonias-faixa",
-         "cobra-fumaca", "cobra-escura", "caligrafia"}
+         "cobra-fumaca", "cobra-escura", "caligrafia", "flores-fluidas"}
 for name, (f, lo, hi) in jobs.items():
     if len(sys.argv) > 1 and name not in sys.argv[1:]:
         continue  # python3 tinta.py nome1 nome2 converte só esses
