@@ -68,6 +68,7 @@ N3 = nota(64, 1046, 300, 560, 800, 'Quando a página lembra várias outras, a ca
 N4 = nota(64, 1040, 400, 430, 860, 'Foto de banco de imagem, frase que serve pra qualquer um. O cliente não vê quem está do outro lado.')
 N5 = nota(64, 980, 400, 504, 885, 'Seções que vieram no modelo, efeito que ninguém pediu, e o botão do WhatsApp perdido lá no fim da página.')
 N6 = nota(64, 900, 440, 774, 680, 'Sob medida começa pelo seu cliente: suas cores, suas fotos, o que ele procura logo no topo e o caminho mais curto até te chamar.', ponto=False)
+N7 = nota(64, 820, 400, 678, 652, 'O problema é o negócio crescer e o site continuar com cara de qualquer um.')
 N8 = nota(64, 900, 400, 716, 740, 'Faço sites e aplicações sob medida, pensados pro seu cliente. Me chama no direct.', ponto=False)
 
 S = []
@@ -114,12 +115,13 @@ S.append(slide(6, f'''
   <p class="it" style="left:64px;top:410px;font-size:64px">quem é <span class="b">diferente</span><br>fica.</p>
   {N6}'''))
 
-# 7 · ser justo, só tipografia: pra começar sem verba o modelo pronto resolve
+# 7 · ser justo: o vilão de terno que ele mandou; o problema (a nota) sai do rosto dele
 S.append(slide(7, f'''
   <p class="it" style="left:64px;top:140px;font-size:84px">Modelo pronto</p>
   <h1 class="h" style="left:64px;top:240px;font-size:150px">Não é <span class="b">vilão.</span></h1>
-  <p class="it" style="left:64px;top:620px;width:900px;font-size:76px;line-height:1.08">Pra testar uma ideia ou começar sem verba, <span class="b">resolve bem.</span></p>
-  <p class="tx note" style="left:64px;top:1040px;width:620px">O problema é o negócio crescer e o site continuar com cara de qualquer um.</p>'''))
+  <div class="crop" style="left:480px;top:420px;width:600px;height:932px"><img src="{T}vilao.png" style="left:-130px;top:-93px;height:1300px"></div>
+  <p class="it" style="left:64px;top:470px;width:420px;font-size:56px;line-height:1.08">Pra testar uma ideia ou começar sem verba, <span class="b">resolve bem.</span></p>
+  {N7}'''))
 
 # 8 · chamada: as botas, alguém com a própria cara
 S.append(slide(8, f'''

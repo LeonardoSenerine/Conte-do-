@@ -38,6 +38,8 @@ Para converter um original novo, adicione uma linha em `modelos/tinta.py` (nome,
 | leoes | leões e uma figura de preto parada ao lado | "no meio de todo mundo, quem é diferente fica" | destaque, coragem, o diferente |
 | borboletas | três borboletas em alto contraste | "modelo pronto não é vilão" | começo, crescer, leveza |
 | lirios-faixa, cobra-escura, mulher-pombas, tigre-faixa, peonias-faixa, caligrafia, cobra-fumaca, videira, tecido-floral | primeira leva (nanquim e faixas) já em tinta 2x | testadas no "modelo pronto" e trocadas pelas colagens | linguagem "nanquim" futura; `tecido-floral` vira mancha, não usar |
+| vilao | homem de terno em 1-bit, com cara de vilão (recortar em bloco, sangrando a borda) | "modelo pronto não é vilão" | vilão, problema, suspeita |
+| flores-fluidas | flores de tinta escorrida | fundo inteiro do "modelo pronto é estampa" | estampa, fundo, beleza genérica |
 | leo / leonardo-ponto | o Leonardo (tinta e no ponto azul) | chamadas finais, foto de perfil | CTA, apresentação |
 
 ### Originais ainda sem versão em tinta (chegaram em 2026-10-29)
