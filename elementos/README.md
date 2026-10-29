@@ -14,7 +14,7 @@ Para converter um original novo, adicione uma linha em `modelos/tinta.py` (nome,
 | petala | metade de uma flor saindo da borda | story "post novo" | anúncio, novidade |
 | eclipse | eclipse com pessoas olhando | story "todo mundo olha pra sua bio" | atenção, revelação, lançamento |
 | cao | cão latindo com grill, de baixo | story "sem dó" (trocado) | crítica direta, avaliação |
-| dobermans | dois dobermans de óculos | story "olha de perto", destaque Processo (Entender) | análise, revisão, olhar técnico |
+| dobermans | dois dobermans de óculos | story "olha de perto", destaque Processo (Entender), "modelo pronto não é vilão" (cara de vilão, mas comportados) | análise, revisão, olhar técnico |
 | terno | homem de terno sem cabeça pulando | caro e barato, "site genérico deixa o negócio sem cara", modelo pronto ("sem cara" e chamada com o ponto como cabeça) | sem identidade, anônimo |
 | tulipa | tulipa desenhada a grafite | capa caro e barato | sofisticação, valor |
 | faixa | flores brancas em faixa preta | caro e barato, "vitrine que nunca fecha" | vitrine, contraste |
@@ -38,7 +38,7 @@ Para converter um original novo, adicione uma linha em `modelos/tinta.py` (nome,
 | leoes | leões e uma figura de preto parada ao lado | "no meio de todo mundo, quem é diferente fica" | destaque, coragem, o diferente |
 | borboletas | três borboletas em alto contraste | "modelo pronto não é vilão" | começo, crescer, leveza |
 | lirios-faixa, cobra-escura, mulher-pombas, tigre-faixa, peonias-faixa, caligrafia, cobra-fumaca, videira, tecido-floral | primeira leva (nanquim e faixas) já em tinta 2x | testadas no "modelo pronto" e trocadas pelas colagens | linguagem "nanquim" futura; `tecido-floral` vira mancha, não usar |
-| vilao-grito | rosto gritando com respingos (ator conhecido, cena de filme) | "modelo pronto não é vilão", grande, a nota sai da boca | vilão, exagero, susto |
+| vilao-grito | rosto gritando com respingos (ator conhecido, cena de filme) | testado no "não é vilão" e recusado ("não gostei") | vilão, exagero, susto |
 | vilao | homem de terno em 1-bit, com cara de vilão (recortar em bloco, sangrando a borda) | testado no "não é vilão", trocado pelo vilao-grito | vilão, problema, suspeita |
 | flores-fluidas | flores de tinta escorrida | fundo inteiro do "modelo pronto é estampa" | estampa, fundo, beleza genérica |
 | leo / leonardo-ponto | o Leonardo (tinta e no ponto azul) | chamadas finais, foto de perfil | CTA, apresentação |

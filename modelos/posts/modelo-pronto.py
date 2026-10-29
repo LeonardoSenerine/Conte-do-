@@ -68,7 +68,7 @@ N3 = nota(64, 1046, 300, 560, 800, 'Quando a página lembra várias outras, a ca
 N4 = nota(64, 1040, 400, 430, 860, 'Foto de banco de imagem, frase que serve pra qualquer um. O cliente não vê quem está do outro lado.')
 N5 = nota(64, 980, 400, 504, 885, 'Seções que vieram no modelo, efeito que ninguém pediu, e o botão do WhatsApp perdido lá no fim da página.')
 N6 = nota(64, 900, 440, 774, 680, 'Sob medida começa pelo seu cliente: suas cores, suas fotos, o que ele procura logo no topo e o caminho mais curto até te chamar.', ponto=False)
-N7 = nota(64, 960, 340, 666, 1124, 'O problema é o negócio crescer e o site continuar com cara de qualquer um.')
+N7 = nota(64, 960, 340, 587, 705, 'O problema é o negócio crescer e o site continuar com cara de qualquer um.')
 N8 = nota(64, 900, 400, 716, 740, 'Faço sites e aplicações sob medida, pensados pro seu cliente. Me chama no direct.', ponto=False)
 
 S = []
@@ -115,11 +115,11 @@ S.append(slide(6, f'''
   <p class="it" style="left:64px;top:410px;font-size:64px">quem é <span class="b">diferente</span><br>fica.</p>
   {N6}'''))
 
-# 7 · ser justo: o rosto gritando que ele mandou, grande; o problema (a nota) sai da boca dele
+# 7 · ser justo: os dobermans de óculos têm cara de vilão e não são; a nota sai dos óculos
 S.append(slide(7, f'''
   <p class="it" style="left:64px;top:140px;font-size:84px">Modelo pronto</p>
   <h1 class="h" style="left:64px;top:240px;font-size:150px">Não é <span class="b">vilão.</span></h1>
-  <img class="img" src="{T}vilao-grito.png" style="left:268px;top:540px;width:812px">
+  <img class="img" src="{T}dobermans.png" style="left:330px;top:532px;width:820px">
   <p class="it" style="left:64px;top:410px;width:952px;font-size:52px;line-height:1.08">Pra testar uma ideia ou começar sem verba, <span class="b">resolve bem.</span></p>
   {N7}'''))
 
