@@ -16,6 +16,7 @@ Evitar vermelho.
 O ponto azul aceso é a assinatura: fecha títulos (`.dot`), vira indicador de progresso, carrega a foto do Leonardo, termina as linhas que atravessam os slides. Reaproveitar antes de inventar outro recurso.
 
 ## Linguagem 1 · Zine (a preferida até agora)
+Nomes do estilo: **estética zine / fanzine**, **xerox art** (photocopy aesthetic) com cor de **risografia** (riso print) e imagens em **bitmap / 1-bit** (threshold, alto contraste). Para buscar referência: `xerox art`, `photocopy aesthetic`, `risograph poster`, `zine collage`, `1-bit image`, `threshold art`, `stencil photo`, `brutalist editorial`.
 - Papel `#e8e6e0` com grão (SVG feTurbulence em multiply, opacidade ~0.28).
 - Imagens em **tinta preta sem fundo** (`elementos/tinta/`, `mix-blend-mode:multiply`).
 - Um único azul, como segunda cor de risografia, também em multiply (ponto atrás da imagem, palavra da manchete).
@@ -24,6 +25,7 @@ O ponto azul aceso é a assinatura: fecha títulos (`.dot`), vira indicador de p
 - Atenção: Anton com `line-height` baixo esconde acentos e cedilha (É, Ó, Ç). Use `line-height:1` nas linhas com acento.
 
 ## Linguagem 2 · Senerine (a do site)
+Nomes do estilo: **editorial minimalista** com **tipografia suíça** (grade rígida, sem serifa, muito respiro). O carrossel "caro e barato" também é minimalista editorial, só que no papel do zine.
 - Fundo `#1e1d1e`, Inter Tight bold com `letter-spacing:-.055em`, JetBrains Mono nos rótulos, ponto azul fechando o título.
 - Estrutura de grade rígida: margem 72 px, cabeçalho com rótulo e fólio ("01 / 05"), régua, cartão de imagem, título, texto, rodapé com logo e "arrasta →".
 - Imagens: **capturas reais** do site e dos projetos (`elementos/senerine/`), nunca mockups inventados.
