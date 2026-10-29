@@ -15,7 +15,7 @@ Para converter um original novo, adicione uma linha em `modelos/tinta.py` (nome,
 | eclipse | eclipse com pessoas olhando | story "todo mundo olha pra sua bio" | atenção, revelação, lançamento |
 | cao | cão latindo com grill, de baixo | story "sem dó" (trocado) | crítica direta, avaliação |
 | dobermans | dois dobermans de óculos | story "olha de perto", destaque Processo (Entender) | análise, revisão, olhar técnico |
-| terno | homem de terno sem cabeça pulando | caro e barato, "site genérico deixa o negócio sem cara" | sem identidade, anônimo |
+| terno | homem de terno sem cabeça pulando | caro e barato, "site genérico deixa o negócio sem cara", modelo pronto ("sem cara" e chamada com o ponto como cabeça) | sem identidade, anônimo |
 | tulipa | tulipa desenhada a grafite | capa caro e barato | sofisticação, valor |
 | faixa | flores brancas em faixa preta | caro e barato, "vitrine que nunca fecha" | vitrine, contraste |
 | lirios | dois lírios | caro e barato, "barato pra quem quer cliente" | crescimento, resultado |

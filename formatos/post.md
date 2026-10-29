@@ -2,7 +2,7 @@
 
 ## Padrão quando ele só diz "faz um post sobre X"
 - **Carrossel de 7 a 9 slides**, linguagem **zine**, **1080x1440 (3:4)**.
-- Slide 1: gancho que cria curiosidade ou toca na dor. Slides do meio: um ponto por slide. Penúltimo: a nuance (ser justo). Último: chamada (direct ou link da bio) com o Leonardo no ponto azul.
+- Slide 1: gancho que cria curiosidade ou toca na dor. Slides do meio: um ponto por slide. Penúltimo: a nuance (ser justo). Último: chamada (direct ou link da bio) com o ponto azul. O rosto do Leonardo em tinta grande ficou "estranho" (modelo pronto); prefira fechar com uma imagem do próprio post e o ponto (ex.: o terno sem cabeça volta com o ponto azul no lugar da cara).
 - Entregar junto: a legenda (ver `legenda.md`) se ele pedir.
 
 ## Especificações
@@ -36,6 +36,7 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - Cores fortes demais.
 - Texto pequeno cortado no limite do cartão; imagem cobrindo rosto ou logo importante.
 - Preço ou número inventado para imitar uma referência.
+- **Rosto do Leonardo grande em tinta** na chamada final: "estranho". Tirar.
 - **Papelzinho com fita em todo slide**: "sem graça". O texto corrido agora é uma **nota**: solto no papel sobre um fio, com uma linha fina até o detalhe da imagem, que ganha um ponto azul (`nota()` em `ninguem-le.py` e `modelo-pronto.py`). Menos enfeite, mais minimalista.
 - Imagem pequena esticada no slide (borda serrilhada): converter em 2x (`DOBRO` no `tinta.py`).
 - **Recolorir a cor original de uma ilustração** para o azul do ponto: a cabeça azul do "ninguém lê" ficou "bem ruim" no azul da marca. Imagem que já vem com cor própria fica com a cor dela; o azul do ponto só entra onde a cor sumiria (ou no lugar do vermelho).

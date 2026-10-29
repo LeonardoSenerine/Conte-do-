@@ -65,7 +65,7 @@ N3 = nota(64, 1080, 420, 660, 900, 'Quando a página lembra várias outras, a ca
 N4 = nota(64, 920, 420, 580, 580, 'Foto de banco de imagem, frase que serve pra qualquer um. O cliente não vê quem está do outro lado.', ponto=False)
 N5 = nota(64, 860, 400, 500, 840, 'Seções que vieram no modelo, efeito que ninguém pediu, e o botão do WhatsApp lá no fim da página.')
 N6 = nota(64, 1040, 480, 600, 1000, 'Pra testar uma ideia ou começar sem verba, resolve bem. O problema é o negócio crescer e o site continuar com cara de qualquer um.')
-N7 = nota(64, 780, 440, 566, 700, 'Faço sites e aplicações sob medida, pensados pro seu cliente. Me chama no direct.', ponto=False)
+N7 = nota(64, 820, 440, 702, 690, 'Faço sites e aplicações sob medida, pensados pro seu cliente. Me chama no direct.', ponto=False)
 
 S = []
 
@@ -128,10 +128,10 @@ S.append(slide(7, f'''
   <h1 class="h" style="left:64px;top:240px;font-size:150px">Não é <span class="b">vilão.</span></h1>
   {N6}'''))
 
-# 8 · chamada com o Leonardo no ponto
+# 8 · chamada: o terno do slide 4 volta com o ponto azul no lugar da cabeça (a cara que faltava)
 S.append(slide(8, f'''
-  <div class="dot" style="left:560px;top:500px;width:480px;height:480px"></div>
-  <img class="img" src="{T}leo.png" style="left:510px;top:400px;height:952px">
+  <img class="img" src="{T}terno.png" style="left:560px;top:520px;height:820px">
+  <div class="dot" style="left:700px;top:618px;width:134px;height:134px;z-index:3"></div>
   <h1 class="h" style="left:64px;top:128px;font-size:150px">Quer um<br>site com a<br>sua <span class="b">cara?</span></h1>
   {N7}''', nxt="salva pra depois"))
 
