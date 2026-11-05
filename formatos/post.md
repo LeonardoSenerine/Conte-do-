@@ -5,6 +5,14 @@
 - Slide 1: gancho que cria curiosidade ou toca na dor. Slides do meio: um ponto por slide. Penúltimo: a nuance (ser justo). Último: chamada (direct ou link da bio) com o ponto azul. O rosto do Leonardo em tinta grande ficou "estranho" (modelo pronto); prefira fechar com uma imagem do próprio post e o ponto (ex.: o terno sem cabeça volta com o ponto azul no lugar da cara).
 - Entregar junto: a legenda (ver `legenda.md`) se ele pedir.
 
+## Checklist de alcance (referência @filipe.viana)
+- [ ] Resolve um problema específico de muita gente (dono de pequeno negócio)? Prático, não opinião solta.
+- [ ] O slide 2 já entrega valor? Nada de introdução.
+- [ ] O texto manda mais que a imagem?
+- [ ] O título da capa foi reescrito até chamar atenção (testar 3 versões antes de escolher)?
+- [ ] A chamada final pede pra **salvar, mandar pra alguém ou comentar uma palavra** pra receber algo, além do direct?
+- [ ] Na hora de postar: colocar um áudio no carrossel.
+
 ## Especificações
 - Tamanho: **1080x1440**. A grade do perfil mostra 3:4; 4:5 (1080x1350) é cortado nas laterais. Se usar 1080x1350, título da capa dentro dos 1012 px centrais.
 - Margem lateral 64 a 72 px. **Zine sem cabeçalho e sem rodapé**: o slide é só manchete, imagem e nota.

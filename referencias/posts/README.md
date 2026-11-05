@@ -27,3 +27,12 @@ Os arquivos estão em `elementos/originais/` (nomes no `elementos/README.md`).
 - **Fotos:** de bastidor e de vida real (pessoas trabalhando, café, notebook, ecobag com a frase da marca), não ilustração.
 - **Detalhes:** rótulos minúsculos nos cantos (nome do estúdio, "strategy · design · content") e uma seta →.
 - **Contexto:** chegou junto com "não gostei do post, achei meio genérico" sobre o zine nº 05 ("precisa que te achem").
+
+## 2026-11-05 · @filipe.viana, "o que os carrosséis que viralizam têm em comum"
+- São **tutoriais práticos** que resolvem um problema específico pra um público enorme.
+- **O texto aparece mais que a imagem.**
+- **Têm áudio** (não precisa ser música em alta).
+- **Sem introdução longa**: entregam valor a partir do 2º slide.
+- **Chamada final** que convida a salvar e compartilhar, ou a comentar pra receber alguma coisa.
+- Acima de tudo: **trabalho de escrita nos títulos** pra chamarem atenção.
+- Visual dele: fundo branco quadriculado, serifa condensada preta grande, texto centralizado, nada mais.
