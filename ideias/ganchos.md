@@ -10,6 +10,6 @@ Frases soltas para capa, primeira cena ou primeira linha da legenda. Marque com 
 - "Seu cliente já desistiu antes de você responder."
 - ✓ "Ninguém lê o seu site. Todo mundo olha."
 - "O site mais caro é o que ninguém encontra."
-- "Você não precisa de um site. Precisa que te achem."
+- ✓ "Você não precisa de um site. Precisa que te achem."
 - "Caro mesmo é o barato que sai caro."
 - "Quem tem pressa não escolhe botão."
