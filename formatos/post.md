@@ -28,6 +28,8 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - **Imagem dele como fundo do slide inteiro** (flores no "modelo pronto é estampa"): texto na área clara, halo cor de papel na nota.
 - **Nota com linha** no lugar do papelzinho: texto solto no fio, linha fina até o detalhe da imagem.
 - **Dor concreta do dia a dia** no lugar de dica genérica de busca: agenda no Forms, links no Linktree, cardápio em PDF, preço só no direct ("não gostei dessa pegada da busca"). E um **case real como prova** (D'Conde: agenda saiu do WhatsApp), com os números do estudo de caso.
+- **Prova social com os clientes reais** (Doce&Sabor, Cantina, D'Conde, Gordinho), cada uma com etiqueta "cliente real", captura do site, carimbo "no ar" e um **antes riscado / depois** tirado do estudo de caso.
+- **"Bem estilizado"**: pedaços de interface colados como colagem (formulário, botões do linktree, arquivo pdf, balões de mensagem), rabiscos à mão em SVG (círculo, X, seta, nota em serifa itálica), elementos girados e sobrepostos. Funções `oval`, `seta`, `xis`, `nota_mao` em `espalhado.py`.
 - **Tom afirmativo** ("você precisa de um site."), não pergunta em cima do muro ("precisa mesmo?"): ele pediu "uma pegada mais, você precisa de um site".
 - **Paradoxo como gancho** ("caro e barato ao mesmo tempo") e contraste de público ("caro pra quem... / barato pra quem...").
 - **Imagem como metáfora** de cada slide (menino correndo = cliente chegando; batida = o barato que sai caro).

@@ -14,4 +14,4 @@ Status: `ideia` · `em produção` · `pronto` · `postado`
 | em produção | Por que site de modelo pronto passa batido | "Seu site é bonito. E igual ao de todo mundo." | zine nº 03, 8 slides, colagens do nº 02 e flores de fundo no slide "estampa" (`modelos/posts/modelo-pronto.py`) |
 | pronto | Seu cliente perdeu o foco | "Seu cliente perdeu o foco. E você nem viu." | zine nº 04, 8 slides, só imagens do banco (`modelos/posts/foco.py`) |
 | pronto | Você precisa de um site | "Você precisa de um site." (afirmativo; a versão em pergunta ficou fraca) | editorial, 8 slides (`modelos/posts/busca-editorial.py`); a versão zine nº 05 (`busca.py`) ficou genérica |
-| pronto | Você precisa de um site (o negócio espalhado) | "você precisa de um site. porque hoje o seu negócio está espalhado." | editorial, 9 slides: forms, linktree, pdf, direct, d'conde como prova (`modelos/posts/espalhado.py`) |
+| pronto | Você precisa de um site (o negócio espalhado) | "você precisa de um site. porque hoje o seu negócio está espalhado." | editorial, 12 slides: forms, linktree, pdf, direct, prova social com os 4 clientes reais (`modelos/posts/espalhado.py`) |
