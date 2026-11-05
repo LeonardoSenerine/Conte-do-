@@ -19,3 +19,11 @@ Os arquivos estão em `elementos/originais/` (nomes no `elementos/README.md`).
 - **Tipografia editorial cortada** (`libelula`): palavra grande em serifa cortada pela borda, texto miúdo justificado ao lado da imagem.
 - **Nanquim oriental** (cobras, tigre, peônias): o carimbo vermelho da pintura é a assinatura; no nosso caso o ponto azul faz esse papel. Pode virar uma linguagem nova ("nanquim"), mais calma que o zine.
 - **Virou:** carrossel "ninguém lê o seu site" (zine nº 02), com as colagens da segunda leva.
+
+## 2026-11-05 · feed do estúdio "Herground" (Pinterest, Vitos Kreos)
+- **Formato:** grade de feed coesa; cada post é uma frase curta e forte, em minúsculas, numa grotesca pesada com entrelinha apertada ("ideas build brands.", "Do you *really* need a website?").
+- **Tipografia:** uma palavra em itálico ou entre parênteses como acento ("(different results)", "*really*"); "here." circulado à mão.
+- **Cor:** três cores só (vinho, creme, ferrugem) que se alternam pela grade; foto em metade dos posts, só tipografia na outra metade.
+- **Fotos:** de bastidor e de vida real (pessoas trabalhando, café, notebook, ecobag com a frase da marca), não ilustração.
+- **Detalhes:** rótulos minúsculos nos cantos (nome do estúdio, "strategy · design · content") e uma seta →.
+- **Contexto:** chegou junto com "não gostei do post, achei meio genérico" sobre o zine nº 05 ("precisa que te achem").
