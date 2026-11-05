@@ -1,4 +1,4 @@
-"""Carrossel "você precisa mesmo de um site?" na linguagem editorial (referência: feed do estúdio Herground):
+"""Carrossel "você precisa de um site." (afirmativo, a pedido dele) na linguagem editorial (referência: feed do estúdio Herground):
 uma frase forte por slide, Inter Tight 800 em minúsculas com uma palavra em Instrument Serif itálica,
 três fundos se alternando (creme, preto, azul) e imagens do banco grandes. Refaz o zine nº 05, que ficou genérico.
 8 slides 1080x1440. Gerar: python3 busca-editorial.py && node ../render.mjs busca-editorial.html saida 1080 1440 8"""
@@ -35,27 +35,27 @@ def slide(n, cor, inner, sm="", arrow=True):
 
 
 S = [
-    slide(1, "cream", '<h1 class="h" style="top:300px;font-size:190px">você <i>precisa<br>mesmo</i> de<br>um site?</h1>',
-          "sim. e não pelo motivo<br>que te falaram."),
+    slide(1, "cream", '<h1 class="h" style="top:330px;font-size:210px">você<br><i>precisa</i> de<br>um site.</h1>',
+          "e não é pra dizer que tem.<br>é pra vender."),
     slide(2, "black", f'''<img class="img" src="{T}eclipse-sol-claro.png" style="left:300px;top:640px;width:900px;opacity:.9">
       <div style="left:680px;top:914px;width:150px;height:150px;border-radius:50%;background:var(--blue);z-index:2;box-shadow:0 0 60px rgba(74,163,234,.5)"></div>
-      <h1 class="h" style="top:110px;font-size:150px">ninguém<br>acorda<br>querendo<br>um <i>site.</i></h1>''',
-          "a pessoa acorda querendo comer,<br>cortar o cabelo, dar um presente."),
-    slide(3, "blue", '<h1 class="h" style="top:420px;font-size:200px">ela procura.<br><i>você<br>aparece?</i></h1>',
-          "no google, no mapa,<br>no “perto de mim”."),
+      <h1 class="h" style="top:110px;font-size:150px">seu cliente<br>já está te<br><i>procurando.</i></h1>''',
+          "no google, no mapa, no “perto de mim”.<br>a pergunta é o que ele encontra."),
+    slide(3, "blue", '<h1 class="h" style="top:420px;font-size:190px">instagram<br>é <i>aluguel.</i><br>site é seu.</h1>',
+          "o perfil segue as regras de outra empresa.<br>o endereço do site é seu."),
     slide(4, "cream", f'''<img class="img" src="{T}estrelas.png" style="left:640px;top:40px;height:1360px">
-      <h1 class="h" style="top:110px;font-size:150px">o google<br>não lê<br><i>bonito.</i><br>lê claro.</h1>''',
-          "nome, endereço, horário e o que<br>você faz. escrito, não dentro de imagem."),
+      <h1 class="h" style="top:110px;font-size:140px">confiança<br>vem <i>antes</i><br>do primeiro<br>oi.</h1>''',
+          "endereço, fotos, cardápio, avaliações.<br>quem vê antes chama mais seguro."),
     slide(5, "black", f'''<img class="img" src="{T}cisnes-claro.png" style="left:90px;top:560px;width:900px">
-      <h1 class="h" style="top:110px;font-size:140px">site, google<br>e instagram<br><i>dizendo a<br>mesma coisa.</i></h1>''',
-          "informação que bate<br>passa confiança."),
+      <h1 class="h" style="top:110px;font-size:150px">site <i>trabalha</i><br>enquanto<br>você dorme.</h1>''',
+          "a vitrine que não fecha e responde<br>as mesmas perguntas por você."),
     slide(6, "cream", f'''<img class="img" src="{T}washington.png" style="left:40px;top:620px;width:1000px">
-      <h1 class="h" style="top:110px;font-size:140px">quem promete<br>o topo do<br>google <i>está<br>chutando.</i></h1>''',
-          "eu deixo o site pronto pra ser<br>encontrado. o resto é concorrência.", arrow=True),
+      <h1 class="h" style="top:110px;font-size:150px"><i>sem site,</i><br>você depende<br>de sorte.</h1>''',
+          "do algoritmo, do story certo<br>na hora certa.", arrow=True),
     slide(7, "blue", '<h1 class="h" style="top:330px;font-size:180px">site é a<br><i>vitrine.</i><br>a busca<br>é a <i>rua.</i></h1>',
-          "não adianta vitrine linda<br>numa rua sem ninguém."),
+          "e o seu negócio precisa<br>estar nas duas."),
     slide(8, "black", '''<div style="left:72px;top:150px;width:120px;height:120px;border-radius:50%;background:var(--blue);box-shadow:0 0 50px rgba(74,163,234,.55)"></div>
-      <h1 class="h" style="top:420px;font-size:170px">vamos te<br>colocar na<br><i>rua certa?</i></h1>''',
+      <h1 class="h" style="top:420px;font-size:200px">vamos<br>fazer o<br><i>seu?</i></h1>''',
           "me chama no direct.<br>quem responde sou eu.", arrow=False),
 ]
 S[-1] = S[-1].replace('<div class="grain">', '<p class="sm" style="right:72px;left:auto;bottom:72px;text-align:right">senerine.dev</p><div class="grain">')

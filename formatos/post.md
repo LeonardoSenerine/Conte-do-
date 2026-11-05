@@ -16,7 +16,7 @@
 | Zine com imagens | manchete Anton + imagem em tinta sobre ponto azul + papelzinho com o texto | Link na bio (zine), Ninguém lê (zine nº 02), Modelo pronto (zine nº 03, com faixa vertical) | `modelos/posts/zine.py`, `ninguem-le.py`, `modelo-pronto.py` |
 | Linha contínua | uma frase curta por slide, uma linha azul atravessa os slides e encosta no texto, que alterna esquerda/direita; termina no ponto | Caro e barato | `modelos/posts/linha-continua.py` (panorama) |
 | Fio + mockups | um fio azul que vira a linha do rodapé e anda como progresso | Link na bio (Senerine) | `modelos/posts/fio-mockups.py` (panorama) |
-| Editorial (em teste) | uma frase forte por slide em Inter Tight 800 minúscula, uma palavra em Instrument Serif itálica, fundos creme / preto / azul alternando, imagem do banco grande, texto pequeno em caixa alta embaixo e seta → | Você precisa mesmo de um site? | `modelos/posts/busca-editorial.py` |
+| Editorial (em teste) | uma frase forte por slide em Inter Tight 800 minúscula, uma palavra em Instrument Serif itálica, fundos creme / preto / azul alternando, imagem do banco grande, texto pequeno em caixa alta embaixo e seta → | Você precisa de um site. | `modelos/posts/busca-editorial.py` |
 | Capturas reais em grade | cartão com captura do site, faixa "passa batido", título com ponto | 5 detalhes | `modelos/posts/senerine-capturas.py` |
 
 Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `panorama` quando a linha atravessa slides).
@@ -27,6 +27,7 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - **Colagem de fotos P&B recortadas com uma cor só** (as do "ninguém lê": megafone, botas, homem lâmpada, leitor da folha azul, cabeça aberta, multidão, cabeça azul): "gostei da seleção". Preferidas a estampas, texturas e nanquim, que ficaram sem graça no "modelo pronto".
 - **Imagem dele como fundo do slide inteiro** (flores no "modelo pronto é estampa"): texto na área clara, halo cor de papel na nota.
 - **Nota com linha** no lugar do papelzinho: texto solto no fio, linha fina até o detalhe da imagem.
+- **Tom afirmativo** ("você precisa de um site."), não pergunta em cima do muro ("precisa mesmo?"): ele pediu "uma pegada mais, você precisa de um site".
 - **Paradoxo como gancho** ("caro e barato ao mesmo tempo") e contraste de público ("caro pra quem... / barato pra quem...").
 - **Imagem como metáfora** de cada slide (menino correndo = cliente chegando; batida = o barato que sai caro).
 - **Um slide sendo justo** ("Linktree não é vilão"): dá credibilidade.
