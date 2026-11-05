@@ -30,5 +30,11 @@ Nomes do estilo: **editorial minimalista** com **tipografia suíça** (grade rí
 - Estrutura de grade rígida: margem 72 px, cabeçalho com rótulo e fólio ("01 / 05"), régua, cartão de imagem, título, texto, rodapé com logo e "arrasta →".
 - Imagens: **capturas reais** do site e dos projetos (`elementos/senerine/`), nunca mockups inventados.
 
+## Linguagem 3 · Editorial (em teste, referência Herground)
+- Uma frase curta e com opinião por slide, **Inter Tight 800 em minúsculas**, entrelinha 0.9, `letter-spacing:-.06em`.
+- A palavra-chave em **Instrument Serif itálica**, um pouco maior: azul no creme, azul claro no preto, preto no azul.
+- Três fundos alternando pela grade: creme `#f2efea`, preto `#1e1d1e`, azul `#0a63b2`. Metade dos slides com imagem grande do banco (versão `-claro` no fundo escuro), metade só tipografia.
+- Rodapé de conteúdo: texto pequeno em caixa alta (o complemento da frase) e a seta →. Nada de rótulo, fólio nem régua.
+
 ## Fontes
 Todas em `fontes/fontes.css` (OFL). No HTML do modelo: `<link rel="stylesheet" href="../../fontes/fontes.css">`.
