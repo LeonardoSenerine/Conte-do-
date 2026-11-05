@@ -41,13 +41,13 @@ Para converter um original novo, adicione uma linha em `modelos/tinta.py` (nome,
 | vilao-grito | rosto gritando com respingos (ator conhecido, cena de filme) | testado no "não é vilão" e recusado ("não gostei") | vilão, exagero, susto |
 | vilao | homem de terno em 1-bit, com cara de vilão (recortar em bloco, sangrando a borda) | testado no "não é vilão", trocado pelo vilao-grito | vilão, problema, suspeita |
 | flores-fluidas | flores de tinta escorrida | fundo inteiro do "modelo pronto é estampa" | estampa, fundo, beleza genérica |
-| foco | a palavra "focus" com rastro borrado, como foto tremida | ainda não | foco, atenção, distração, o que se perde ao rolar |
-| queda | homem caindo de costas, pequeno (convertido em 2x) | ainda não | perder cliente, despencar, queda nas vendas |
-| andorinhas | duas andorinhas em voo, uma descendo até a outra | ainda não | encontro, cliente e negócio, chegada |
+| foco | a palavra "focus" com rastro borrado, como foto tremida | capa e chamada do "perdeu o foco" | foco, atenção, distração, o que se perde ao rolar |
+| queda | homem caindo de costas, pequeno (convertido em 2x) | "tela em branco, cliente fora" | perder cliente, despencar, queda nas vendas |
+| andorinhas | duas andorinhas em voo, uma descendo até a outra | "um caminho só" | encontro, cliente e negócio, chegada |
 | cisnes | dois cisnes de frente formando um coração | ainda não | parceria, combinar, cliente fiel |
 | estrelas | coluna de estrelas carimbadas | ainda não | avaliação, nota, Google, reputação (sem inventar nota) |
-| cavalo | cavalo galopando em 1-bit | ainda não | velocidade, site rápido, sair na frente |
-| lirios-ramo | ramo de lírios em 1-bit | ainda não | crescimento, delicadeza, acabamento |
+| cavalo | cavalo galopando em 1-bit | "rápido no celular" | velocidade, site rápido, sair na frente |
+| lirios-ramo | ramo de lírios em 1-bit | "foco não é site sem graça" | crescimento, delicadeza, acabamento |
 | leo / leonardo-ponto | o Leonardo (tinta e no ponto azul) | chamadas finais, foto de perfil | CTA, apresentação |
 
 ### Originais ainda sem versão em tinta (chegaram em 2026-10-29)

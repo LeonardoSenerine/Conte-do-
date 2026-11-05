@@ -12,3 +12,4 @@ Status: `ideia` · `em produção` · `pronto` · `postado`
 | ideia | Antes e depois de um card de WhatsApp | a prévia do link que ninguém configura | capturas reais (só de clientes com permissão) |
 | em produção | Ninguém lê o seu site | "Ninguém lê o seu site. Todo mundo olha." | zine nº 02, 9 slides, colagens (`modelos/posts/ninguem-le.py`) |
 | em produção | Por que site de modelo pronto passa batido | "Seu site é bonito. E igual ao de todo mundo." | zine nº 03, 8 slides, colagens do nº 02 e flores de fundo no slide "estampa" (`modelos/posts/modelo-pronto.py`) |
+| pronto | Seu cliente perdeu o foco | "Seu cliente perdeu o foco. E você nem viu." | zine nº 04, 8 slides, só imagens do banco (`modelos/posts/foco.py`) |
