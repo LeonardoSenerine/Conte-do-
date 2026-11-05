@@ -27,6 +27,7 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - **Colagem de fotos P&B recortadas com uma cor só** (as do "ninguém lê": megafone, botas, homem lâmpada, leitor da folha azul, cabeça aberta, multidão, cabeça azul): "gostei da seleção". Preferidas a estampas, texturas e nanquim, que ficaram sem graça no "modelo pronto".
 - **Imagem dele como fundo do slide inteiro** (flores no "modelo pronto é estampa"): texto na área clara, halo cor de papel na nota.
 - **Nota com linha** no lugar do papelzinho: texto solto no fio, linha fina até o detalhe da imagem.
+- **Dor concreta do dia a dia** no lugar de dica genérica de busca: agenda no Forms, links no Linktree, cardápio em PDF, preço só no direct ("não gostei dessa pegada da busca"). E um **case real como prova** (D'Conde: agenda saiu do WhatsApp), com os números do estudo de caso.
 - **Tom afirmativo** ("você precisa de um site."), não pergunta em cima do muro ("precisa mesmo?"): ele pediu "uma pegada mais, você precisa de um site".
 - **Paradoxo como gancho** ("caro e barato ao mesmo tempo") e contraste de público ("caro pra quem... / barato pra quem...").
 - **Imagem como metáfora** de cada slide (menino correndo = cliente chegando; batida = o barato que sai caro).
@@ -54,6 +55,6 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 ## Checklist antes de mandar
 - [ ] 3:4, texto da capa inteiro na grade
 - [ ] Nada sobreposto sem querer, nenhum acento cortado
-- [ ] Sem travessão, sem número inventado, sem cidade
+- [ ] Sem travessão, sem número inventado, sem cidade (a captura do celular da D'Conde mostra a cidade no topo: usar só o `dconde-agenda.jpg`)
 - [ ] Último slide com chamada
 - [ ] Imagens de terceiros anotadas para crédito na legenda
