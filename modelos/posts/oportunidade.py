@@ -1,5 +1,5 @@
 """Carrossel "a oportunidade está mais perto do que você imagina" (zine): por que falar do
-próprio trabalho. Mesmo sistema do "modelo pronto", só com imagens que nunca entraram em post (pedido dele).
+próprio trabalho. Imagens que nunca entraram em post, capa testada em 3 versões, ponte pro site com o caso real do Gordinho.
 7 slides 1080x1440, sem cabeçalho nem rodapé. Gerar: python3 oportunidade.py && node ../render.mjs oportunidade.html saida 1080 1440 7"""
 
 CSS = r'''
@@ -35,6 +35,13 @@ s::after { content:""; position:absolute; left:-4%; right:-4%; top:52%; height:.
 .list .t small { display:block; font-family:"JetBrains Mono",monospace; font-style:normal; font-weight:400; font-size:24px; letter-spacing:0; margin-top:8px; }
 .crop { overflow:hidden; mix-blend-mode:multiply; z-index:2; }
 .crop img { position:absolute; }
+.shot { overflow:hidden; z-index:2; }
+.shot img { display:block; }
+.cal { z-index:3; font-family:"JetBrains Mono",monospace; font-size:24px; text-transform:uppercase; }
+.cal > div { display:flex; gap:28px; margin-bottom:26px; }
+.cal .d span { width:100px; text-align:center; }
+.cal i { width:100px; height:100px; border-radius:50%; border:3px solid var(--ink); display:block; }
+.cal i.on { background:var(--blue); border-color:var(--blue); mix-blend-mode:multiply; }
 .s.fundo .top span, .s.fundo .bot span { background:var(--paper); padding:2px 8px; margin:0 -8px; }
 .s.fundo .note { text-shadow:0 0 4px var(--paper), 0 0 8px var(--paper), 0 0 14px var(--paper), 0 0 20px var(--paper); }
 .list.c .t { font-size:44px; }
@@ -60,63 +67,66 @@ def nota(x, y, w, ax, ay, texto, ponto=True):
             f'<svg class="ln" width="1080" height="1440">{ln} stroke="#e8e6e0" stroke-width="8" stroke-linecap="round"/>'
             f'{ln} stroke="#121112" stroke-width="2"/>{dot}</svg>')
 
-N2 = nota(64, 900, 320, 630, 560, 'Quem precisa do que você faz já está por perto: te segue, passa na sua porta, ouviu seu nome de alguém.')
-N3 = nota(64, 1000, 400, 491, 624, 'Enquanto você faz bem feito e fica quieto, quem fala mais alto fica com o cliente.')
-N4 = nota(64, 900, 300, 846, 981, 'Mostra o antes e o depois, o bastidor, o detalhe que só você vê. Não é se exibir: é deixar quem está perto te encontrar.', ponto=False)
-N5 = nota(64, 1000, 400, 724, 1162, 'Quem viu o seu trabalho uma vez lembra de você quando precisar. E quem te indica tem o que mostrar.')
-N6 = nota(64, 1040, 340, 520, 1000, 'Constância vale mais que volume. Pouco e sempre já mostra que você está ali.')
-N7 = nota(64, 1010, 360, 545, 880, 'Faço sites e aplicações que mostram o seu trabalho do jeito que ele é. Me chama no direct.<br><br><b style="color:var(--blue)">Manda pra alguém que trabalha bem e fala pouco.</b>', ponto=False)
+U = "../../elementos/senerine/"
+
+N1 = nota(64, 1040, 300, 630, 930, 'Ele já está por perto: te segue, passa na sua porta, ouviu seu nome de alguém. Só não sabe ainda o que você faz.')
+N2 = nota(64, 960, 380, 700, 900, 'Enquanto você faz bem feito e fica quieto, quem fala mais alto fica com o cliente.')
+N3 = nota(64, 900, 300, 846, 981, 'Mostra o antes e o depois, o bastidor, o detalhe que só você vê. Não é se exibir: é deixar quem está perto te encontrar.', ponto=False)
+N4 = nota(64, 1100, 520, 712, 1150, 'Quem viu o seu trabalho uma vez lembra de você quando precisar. E quem te indica tem o que mostrar.', ponto=False)
+N5 = nota(64, 1050, 620, 560, 960, 'Gordinho Lanches: 34 anos de história que só existiam num mural na parede. Hoje tem linha do tempo desde 1992, horário do dia e pedido pelo WhatsApp e iFood.')
+N6 = nota(64, 1130, 560, 242, 1093, 'Constância vale mais que volume. Pouco e sempre já mostra que você está ali.', ponto=False)
+N7 = nota(64, 1010, 560, 762, 1170, 'E se esse alguém é você: faço sites e aplicações que mostram o seu trabalho do jeito que ele é. Me chama no direct.', ponto=False)
+
+DIAS = "".join(f'<span>{d}</span>' for d in ["seg", "ter", "qua", "qui", "sex", "sáb", "dom"])
+SEMANAS = "".join('<div>' + "".join(f'<i class="{"on" if d == 1 else ""}"></i>' for d in range(7)) + '</div>' for _ in range(4))
 
 S = []
 
-# 1 · capa: as pombas voando em volta dela; a oportunidade já está do lado
+# 1 · capa: a coruja olhando de cima; o cliente já está de olho
 S.append(slide(1, f'''
-  <div class="crop" style="left:200px;top:560px;width:880px;height:880px"><img src="{T}mulher-pombas.png" style="left:0;top:-70px;width:880px"></div>
-  <div class="dot" style="left:560px;top:810px;width:90px;height:90px;z-index:3"></div>
-  <p class="it" style="left:64px;top:140px;font-size:84px">A oportunidade está</p>
-  <h1 class="h" style="left:64px;top:240px;font-size:196px"><span class="b">mais perto</span></h1>
-  <p class="it" style="left:64px;top:470px;font-size:84px">do que você imagina.</p>'''))
+  <h1 class="h" style="left:64px;top:128px;font-size:150px;line-height:1.22">Seu próximo<br>cliente já<br>te <span class="b">segue.</span></h1>
+  <div class="crop" style="left:380px;top:700px;width:700px;height:740px"><img src="{T}coruja.png" style="left:0;top:-20px;width:760px"></div>
+  {N1}'''))
 
-# 2 · a coruja olhando: quem precisa de você já está olhando
+# 2 · o homem de terno com a mão na boca: trabalha bem e fica calado
 S.append(slide(2, f'''
-  <div class="crop" style="left:380px;top:330px;width:700px;height:1110px"><img src="{T}coruja.png" style="left:0;top:-20px;width:760px"></div>
-  <h1 class="h" style="left:64px;top:128px;font-size:140px">Ela já está<br>te <span class="b">olhando.</span></h1>
+  <h1 class="h" style="left:64px;top:128px;font-size:120px;line-height:1.22">Você trabalha<br>bem. Só que<br>ninguém <span class="b">sabe.</span></h1>
+  <div class="crop" style="left:480px;top:600px;width:600px;height:840px"><img src="{T}vilao.png" style="left:-130px;top:-93px;height:1300px"></div>
   {N2}'''))
 
-# 3 · os gansos saindo da faixa: trabalho bom calado passa batido
+# 3 · a explosão de tinta saindo do ponto: fala do seu trabalho (falar não é gritar)
 S.append(slide(3, f'''
-  <img class="img" src="{T}gansos-faixa.png" style="left:285px;top:0;height:1440px">
-  <h1 class="h" style="left:64px;top:128px;font-size:120px">Trabalho bom<br>calado passa<br><span class="b">batido.</span></h1>
-  {N3}'''))
-
-# 4 · a explosão de tinta saindo do ponto: fala do seu trabalho (falar não é gritar)
-S.append(slide(4, f'''
   <div class="crop" style="left:380px;top:520px;width:700px;height:920px"><img src="{T}explosao.png" style="left:0;top:0;width:700px"></div>
   <div class="dot" style="left:846px;top:901px;width:160px;height:160px;z-index:3"></div>
   <h1 class="h" style="left:64px;top:128px;font-size:140px">Fala do seu<br><span class="b">trabalho.</span></h1>
   <p class="it" style="left:64px;top:452px;font-size:64px">Falar não é gritar.</p>
+  {N3}'''))
+
+# 4 · só tipografia: o ponto é o que fica na memória
+S.append(slide(4, f'''
+  <h1 class="h" style="left:64px;top:128px;font-size:220px">Quem vê,<br><span class="b">lembra.</span></h1>
+  <p class="it" style="left:64px;top:640px;font-size:110px">Quem lembra,<br>chama.</p>
+  <div class="dot" style="left:710px;top:1000px;width:300px;height:300px"></div>
   {N4}'''))
 
-# 5 · as andorinhas (que sempre voltam): quem vê lembra, quem lembra chama
+# 5 · a ponte pro site, com prova real: a história do Gordinho que só existia na parede
 S.append(slide(5, f'''
-  <img class="img" src="{T}andorinhas-faixa.png" style="left:285px;top:0;height:1440px">
-  <h1 class="h" style="left:64px;top:128px;font-size:150px">Quem vê,<br><span class="b">lembra.</span></h1>
-  <p class="it" style="left:64px;top:470px;font-size:64px">Quem lembra, chama.</p>
+  <h1 class="h" style="left:64px;top:128px;font-size:120px;line-height:1.22">E quando ele<br>vem te ver,<br>acha <span class="b">o quê?</span></h1>
+  <p class="mono" style="left:64px;top:610px;z-index:3">cliente real · no ar</p>
+  <div class="shot" style="left:64px;top:650px;width:952px;height:317px"><img src="{U}gordinho-desde-1992.jpg" style="width:952px"></div>
   {N5}'''))
 
-# 6 · a íris: ser justo, não precisa postar todo dia
+# 6 · ser justo, só tipografia: um ponto por semana já é constância
 S.append(slide(6, f'''
-  <div class="dot" style="left:600px;top:640px;width:230px;height:230px"></div>
-  <div class="crop" style="left:260px;top:470px;width:820px;height:970px"><img src="{T}iris.png" style="left:0;top:0;width:820px"></div>
   <p class="it" style="left:64px;top:140px;font-size:84px">Não precisa</p>
   <h1 class="h" style="left:64px;top:240px;font-size:128px">postar <span class="b">todo dia.</span></h1>
+  <div class="cal" style="left:64px;top:560px"><div class="d">{DIAS}</div>{SEMANAS}</div>
   {N6}'''))
 
-# 7 · chamada: o pégaso diante do ponto azul, como um sol
+# 7 · chamada grande: manda pra alguém
 S.append(slide(7, f'''
-  <div class="dot" style="left:540px;top:620px;width:420px;height:420px"></div>
-  <img class="img" src="{T}pegaso.png" style="left:160px;top:300px;width:1100px">
-  <h1 class="h" style="left:64px;top:128px;font-size:130px">Seu trabalho<br>merece ser<br><span class="b">visto.</span></h1>
+  <h1 class="h" style="left:64px;top:128px;font-size:150px">Manda pra<br>quem trabalha<br>bem e fala<br><span class="b">pouco.</span></h1>
+  <div class="dot" style="left:760px;top:1050px;width:240px;height:240px"></div>
   {N7}''', nxt="salva pra depois"))
 
 html = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">

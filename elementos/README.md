@@ -48,13 +48,13 @@ Para converter um original novo, adicione uma linha em `modelos/tinta.py` (nome,
 | estrelas | coluna de estrelas carimbadas | ainda não | avaliação, nota, Google, reputação (sem inventar nota) |
 | cavalo | cavalo galopando em 1-bit | "rápido no celular" | velocidade, site rápido, sair na frente |
 | lirios-ramo | ramo de lírios em 1-bit | "foco não é site sem graça" | crescimento, delicadeza, acabamento |
-| mulher-pombas | mulher em gravura com pombas em volta (cortar o ícone de som no canto) | capa "oportunidade" | oportunidade por perto, rodeado |
-| coruja | coruja de cima, olhando pra baixo | "oportunidade", "ela já está te olhando" | atenção, alguém de olho |
-| gansos-faixa | gansos saindo de uma faixa cinza | "oportunidade", "trabalho bom calado passa batido" | passar batido, ir embora |
+| mulher-pombas | mulher em gravura com pombas em volta (cortar o ícone de som no canto) | testada na capa do "oportunidade" e trocada | oportunidade por perto, rodeado |
+| coruja | coruja de cima, olhando pra baixo | capa "oportunidade", "seu próximo cliente já te segue" | atenção, alguém de olho |
+| gansos-faixa | gansos saindo de uma faixa cinza | testada no "oportunidade" e trocada | passar batido, ir embora |
 | explosao | raios de tinta saindo de um centro (o ponto vai no foco) | "oportunidade", "fala do seu trabalho" | espalhar, falar, alcance |
-| andorinhas-faixa | andorinhas num salgueiro em faixa | "oportunidade", "quem vê, lembra" | voltar, lembrar |
-| iris | íris em gravura | "oportunidade", "não precisa postar todo dia" | calma, constância |
-| pegaso | pégaso com amazona em gravura | chamada "seu trabalho merece ser visto" | conquista, ser visto |
+| andorinhas-faixa | andorinhas num salgueiro em faixa | testada no "oportunidade" e trocada | voltar, lembrar |
+| iris | íris em gravura | testada no "oportunidade" e trocada (metáfora fraca) | calma, constância |
+| pegaso | pégaso com amazona em gravura | testado na chamada do "oportunidade" e trocado (metáfora fraca) | conquista, ser visto |
 | leo / leonardo-ponto | o Leonardo (tinta e no ponto azul) | chamadas finais, foto de perfil | CTA, apresentação |
 
 ### Originais ainda sem versão em tinta (chegaram em 2026-10-29)
