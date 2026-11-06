@@ -39,6 +39,13 @@ jobs = {  # nome: (arquivo, preto, branco)
     "caligrafia":        (U + "caligrafia.jpg", 50, 200),
     "flores-fluidas":    (U + "flores-fluidas.jpg", 15, 245),  # fundo inteiro do slide "estampa"
     "vilao":             (U + "vilao.jpg", 60, 200),          # homem de terno em 1-bit, "não é vilão"
+    # oportunidade (zine nº 04): só imagens que nunca entraram em post
+    "coruja":            (U + "coruja.jpg", 40, 225),
+    "gansos-faixa":      (U + "gansos-faixa.jpg", 40, 240),
+    "explosao":          (U + "explosao.jpg", 60, 200),
+    "andorinhas-faixa":  (U + "andorinhas-faixa.jpg", 40, 240),
+    "iris":              (U + "iris.jpg", 40, 230),
+    "pegaso":            (U + "pegaso.jpg", 40, 235),
     "vilao-grito":       (U + "vilao-grito.jpg", 60, 200),    # rosto gritando, trocou o "vilao" no slide 7
     # leva de 2026-11-05
     "foco":              (U + "foco.jpg", 30, 240),        # "focus" com rastro borrado: limiar suave pra manter o fantasma
@@ -61,7 +68,8 @@ DOBRO = {"cabeca-azul", "multidao", "cabeca-aberta", "lampada", "megafone", "bot
          "reverencia", "toile-flores", "pele-cobra", "passaros-borrados", "ornamento", "leoes", "borboletas",
          "tecido-floral", "lirios-faixa", "mulher-pombas", "videira", "tigre-faixa", "peonias-faixa",
          "cobra-fumaca", "cobra-escura", "caligrafia", "flores-fluidas", "vilao", "vilao-grito",
-         "foco", "queda", "andorinhas", "cisnes", "estrelas", "cavalo", "lirios-ramo"}
+         "foco", "queda", "andorinhas", "cisnes", "estrelas", "cavalo", "lirios-ramo",
+         "coruja", "gansos-faixa", "explosao", "andorinhas-faixa", "iris", "pegaso"}
 for name, (f, lo, hi) in jobs.items():
     if len(sys.argv) > 1 and name not in sys.argv[1:]:
         continue  # python3 tinta.py nome1 nome2 converte só esses

@@ -15,3 +15,4 @@ Status: `ideia` · `em produção` · `pronto` · `postado`
 | pronto | Seu cliente perdeu o foco | "Seu cliente perdeu o foco. E você nem viu." | zine nº 04, 8 slides, só imagens do banco (`modelos/posts/foco.py`) |
 | pronto | Você precisa de um site | "Você precisa de um site." (afirmativo; a versão em pergunta ficou fraca) | editorial, 8 slides (`modelos/posts/busca-editorial.py`); a versão zine nº 05 (`busca.py`) ficou genérica |
 | pronto | Você precisa de um site (o negócio espalhado) | "você precisa de um site. porque hoje o seu negócio está espalhado." | editorial, 12 slides: forms, linktree, pdf, direct, prova social com os 4 clientes reais (`modelos/posts/espalhado.py`) |
+| em produção | Você precisa falar do seu trabalho | "A oportunidade está mais perto do que você imagina." | zine, 7 slides, só imagens inéditas (`modelos/posts/oportunidade.py`) |

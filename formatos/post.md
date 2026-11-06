@@ -52,6 +52,7 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - Cores fortes demais.
 - Texto pequeno cortado no limite do cartão; imagem cobrindo rosto ou logo importante.
 - Preço ou número inventado para imitar uma referência.
+- **Repetir imagem de outro post**: "não reuse as imagens". Cada post usa imagens que nunca entraram em outro; conferir a coluna "Já usado em" do `elementos/README.md`.
 - **Imagem que não conversa com a frase** (megafone em "enfeite no lugar do que importa"): "não tem sentido estar ali". Cada imagem tem que ser metáfora direta do slide.
 - Slide final azul "segue pra ver os próximos" no modelo pronto: tirado. Fechar na chamada do direct.
 - **Rosto do Leonardo grande em tinta** na chamada final: "estranho". Tirar.

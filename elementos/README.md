@@ -48,13 +48,20 @@ Para converter um original novo, adicione uma linha em `modelos/tinta.py` (nome,
 | estrelas | coluna de estrelas carimbadas | ainda não | avaliação, nota, Google, reputação (sem inventar nota) |
 | cavalo | cavalo galopando em 1-bit | "rápido no celular" | velocidade, site rápido, sair na frente |
 | lirios-ramo | ramo de lírios em 1-bit | "foco não é site sem graça" | crescimento, delicadeza, acabamento |
+| mulher-pombas | mulher em gravura com pombas em volta (cortar o ícone de som no canto) | capa "oportunidade" | oportunidade por perto, rodeado |
+| coruja | coruja de cima, olhando pra baixo | "oportunidade", "ela já está te olhando" | atenção, alguém de olho |
+| gansos-faixa | gansos saindo de uma faixa cinza | "oportunidade", "trabalho bom calado passa batido" | passar batido, ir embora |
+| explosao | raios de tinta saindo de um centro (o ponto vai no foco) | "oportunidade", "fala do seu trabalho" | espalhar, falar, alcance |
+| andorinhas-faixa | andorinhas num salgueiro em faixa | "oportunidade", "quem vê, lembra" | voltar, lembrar |
+| iris | íris em gravura | "oportunidade", "não precisa postar todo dia" | calma, constância |
+| pegaso | pégaso com amazona em gravura | chamada "seu trabalho merece ser visto" | conquista, ser visto |
 | leo / leonardo-ponto | o Leonardo (tinta e no ponto azul) | chamadas finais, foto de perfil | CTA, apresentação |
 
 ### Originais ainda sem versão em tinta (chegaram em 2026-10-29)
 Estão em `originais/` com estes nomes; converter quando forem usados.
-- **Bichos:** `cobra-fumaca`, `cobra-galho`, `cobra-escura`, `coruja`, `tigre-faixa`, `leopardos` (brigando), `pegaso` (gravura), `andorinhas-faixa`, `gansos-faixa`, `mulher-pombas` (gravura), `libelula` (com tipografia).
-- **Flores e plantas:** `videira` (gravura de uva), `peonias-faixa`, `lirios-faixa`, `iris`, `ramo-pontilhado`, `flor-nanquim`, `flores-bitmap`, `flores-silhueta`, `flores-fluidas`, `toile-vermelho` (estampa; o vermelho não entra, só como forma), `tecido-floral`.
-- **Texturas e gestos:** `caligrafia` (pinceladas pretas e dourado), `pincelada`, `explosao` (raios de tinta), `reticula-escura`, `reticula-clara`, `nuvens-reticula` (meio-tom, combina com o ponto).
+- **Bichos:** `cobra-fumaca`, `cobra-galho`, `cobra-escura`, `tigre-faixa`, `leopardos` (brigando),  (gravura), `libelula` (com tipografia).
+- **Flores e plantas:** `videira` (gravura de uva), `peonias-faixa`, `lirios-faixa`, `ramo-pontilhado`, `flor-nanquim`, `flores-bitmap`, `flores-silhueta`, `flores-fluidas`, `toile-vermelho` (estampa; o vermelho não entra, só como forma), `tecido-floral`.
+- **Texturas e gestos:** `caligrafia` (pinceladas pretas e dourado), `pincelada`, `reticula-escura`, `reticula-clara`, `nuvens-reticula` (meio-tom, combina com o ponto).
 
 ## senerine/
 Capturas reais do senerine.dev (celular @3x, 390 px de largura) e a foto do Leonardo, para a linguagem Senerine:
