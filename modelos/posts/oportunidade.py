@@ -1,6 +1,6 @@
-"""Carrossel "a oportunidade está mais perto do que você imagina" (zine nº 04): por que falar do
+"""Carrossel "a oportunidade está mais perto do que você imagina" (zine): por que falar do
 próprio trabalho. Mesmo sistema do "modelo pronto", só com imagens que nunca entraram em post (pedido dele).
-7 slides 1080x1440. Gerar: python3 oportunidade.py && node ../render.mjs oportunidade.html saida 1080 1440 7"""
+7 slides 1080x1440, sem cabeçalho nem rodapé. Gerar: python3 oportunidade.py && node ../render.mjs oportunidade.html saida 1080 1440 7"""
 
 CSS = r'''
 :root { --paper:#e8e6e0; --ink:#121112; --blue:#0a63b2; --off:#f2efea; }
@@ -45,9 +45,7 @@ T = "../../elementos/tinta/"
 
 def slide(n, inner, nxt="vira a página →", cls=""):
     return f'''<section class="s {cls}" id="s{n}">
-  <div class="mono top"><span>senerine.dev · zine nº 04 · oportunidade</span><span>{n:02d} / 07</span></div>
   {inner}
-  <div class="mono bot"><span><b>senerine.dev</b></span><span>{nxt}</span></div>
   <div class="grain"></div>
 </section>'''
 
@@ -63,17 +61,17 @@ def nota(x, y, w, ax, ay, texto, ponto=True):
             f'{ln} stroke="#121112" stroke-width="2"/>{dot}</svg>')
 
 N2 = nota(64, 900, 320, 630, 560, 'Quem precisa do que você faz já está por perto: te segue, passa na sua porta, ouviu seu nome de alguém.')
-N3 = nota(64, 1000, 400, 566, 640, 'Enquanto você faz bem feito e fica quieto, quem fala mais alto fica com o cliente.')
+N3 = nota(64, 1000, 400, 491, 624, 'Enquanto você faz bem feito e fica quieto, quem fala mais alto fica com o cliente.')
 N4 = nota(64, 900, 300, 846, 981, 'Mostra o antes e o depois, o bastidor, o detalhe que só você vê. Não é se exibir: é deixar quem está perto te encontrar.', ponto=False)
-N5 = nota(64, 1000, 400, 770, 1110, 'Quem viu o seu trabalho uma vez lembra de você quando precisar. E quem te indica tem o que mostrar.')
+N5 = nota(64, 1000, 400, 724, 1162, 'Quem viu o seu trabalho uma vez lembra de você quando precisar. E quem te indica tem o que mostrar.')
 N6 = nota(64, 1040, 340, 520, 1000, 'Constância vale mais que volume. Pouco e sempre já mostra que você está ali.')
-N7 = nota(64, 1010, 360, 545, 880, 'Faço sites e aplicações que mostram o seu trabalho do jeito que ele é. Me chama no direct.', ponto=False)
+N7 = nota(64, 1010, 360, 545, 880, 'Faço sites e aplicações que mostram o seu trabalho do jeito que ele é. Me chama no direct.<br><br><b style="color:var(--blue)">Manda pra alguém que trabalha bem e fala pouco.</b>', ponto=False)
 
 S = []
 
 # 1 · capa: as pombas voando em volta dela; a oportunidade já está do lado
 S.append(slide(1, f'''
-  <div class="crop" style="left:200px;top:560px;width:880px;height:792px"><img src="{T}mulher-pombas.png" style="left:0;top:-70px;width:880px"></div>
+  <div class="crop" style="left:200px;top:560px;width:880px;height:880px"><img src="{T}mulher-pombas.png" style="left:0;top:-70px;width:880px"></div>
   <div class="dot" style="left:560px;top:810px;width:90px;height:90px;z-index:3"></div>
   <p class="it" style="left:64px;top:140px;font-size:84px">A oportunidade está</p>
   <h1 class="h" style="left:64px;top:240px;font-size:196px"><span class="b">mais perto</span></h1>
@@ -81,19 +79,19 @@ S.append(slide(1, f'''
 
 # 2 · a coruja olhando: quem precisa de você já está olhando
 S.append(slide(2, f'''
-  <div class="crop" style="left:380px;top:330px;width:700px;height:1022px"><img src="{T}coruja.png" style="left:0;top:-20px;width:700px"></div>
+  <div class="crop" style="left:380px;top:330px;width:700px;height:1110px"><img src="{T}coruja.png" style="left:0;top:-20px;width:760px"></div>
   <h1 class="h" style="left:64px;top:128px;font-size:140px">Ela já está<br>te <span class="b">olhando.</span></h1>
   {N2}'''))
 
 # 3 · os gansos saindo da faixa: trabalho bom calado passa batido
 S.append(slide(3, f'''
-  <img class="img" src="{T}gansos-faixa.png" style="left:386px;top:96px;height:1256px">
+  <img class="img" src="{T}gansos-faixa.png" style="left:285px;top:0;height:1440px">
   <h1 class="h" style="left:64px;top:128px;font-size:120px">Trabalho bom<br>calado passa<br><span class="b">batido.</span></h1>
   {N3}'''))
 
 # 4 · a explosão de tinta saindo do ponto: fala do seu trabalho (falar não é gritar)
 S.append(slide(4, f'''
-  <div class="crop" style="left:380px;top:520px;width:700px;height:832px"><img src="{T}explosao.png" style="left:0;top:0;width:700px"></div>
+  <div class="crop" style="left:380px;top:520px;width:700px;height:920px"><img src="{T}explosao.png" style="left:0;top:0;width:700px"></div>
   <div class="dot" style="left:846px;top:901px;width:160px;height:160px;z-index:3"></div>
   <h1 class="h" style="left:64px;top:128px;font-size:140px">Fala do seu<br><span class="b">trabalho.</span></h1>
   <p class="it" style="left:64px;top:452px;font-size:64px">Falar não é gritar.</p>
@@ -101,7 +99,7 @@ S.append(slide(4, f'''
 
 # 5 · as andorinhas (que sempre voltam): quem vê lembra, quem lembra chama
 S.append(slide(5, f'''
-  <img class="img" src="{T}andorinhas-faixa.png" style="left:387px;top:96px;height:1256px">
+  <img class="img" src="{T}andorinhas-faixa.png" style="left:285px;top:0;height:1440px">
   <h1 class="h" style="left:64px;top:128px;font-size:150px">Quem vê,<br><span class="b">lembra.</span></h1>
   <p class="it" style="left:64px;top:470px;font-size:64px">Quem lembra, chama.</p>
   {N5}'''))
@@ -109,7 +107,7 @@ S.append(slide(5, f'''
 # 6 · a íris: ser justo, não precisa postar todo dia
 S.append(slide(6, f'''
   <div class="dot" style="left:600px;top:640px;width:230px;height:230px"></div>
-  <div class="crop" style="left:260px;top:470px;width:820px;height:882px"><img src="{T}iris.png" style="left:0;top:0;width:820px"></div>
+  <div class="crop" style="left:260px;top:470px;width:820px;height:970px"><img src="{T}iris.png" style="left:0;top:0;width:820px"></div>
   <p class="it" style="left:64px;top:140px;font-size:84px">Não precisa</p>
   <h1 class="h" style="left:64px;top:240px;font-size:128px">postar <span class="b">todo dia.</span></h1>
   {N6}'''))

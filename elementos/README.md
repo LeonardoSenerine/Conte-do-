@@ -59,7 +59,7 @@ Para converter um original novo, adicione uma linha em `modelos/tinta.py` (nome,
 
 ### Originais ainda sem versão em tinta (chegaram em 2026-10-29)
 Estão em `originais/` com estes nomes; converter quando forem usados.
-- **Bichos:** `cobra-fumaca`, `cobra-galho`, `cobra-escura`, `tigre-faixa`, `leopardos` (brigando),  (gravura), `libelula` (com tipografia).
+- **Bichos:** `cobra-fumaca`, `cobra-galho`, `cobra-escura`, `tigre-faixa`, `leopardos` (brigando), `libelula` (com tipografia).
 - **Flores e plantas:** `videira` (gravura de uva), `peonias-faixa`, `lirios-faixa`, `ramo-pontilhado`, `flor-nanquim`, `flores-bitmap`, `flores-silhueta`, `flores-fluidas`, `toile-vermelho` (estampa; o vermelho não entra, só como forma), `tecido-floral`.
 - **Texturas e gestos:** `caligrafia` (pinceladas pretas e dourado), `pincelada`, `reticula-escura`, `reticula-clara`, `nuvens-reticula` (meio-tom, combina com o ponto).
 
