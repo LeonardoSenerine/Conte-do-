@@ -9,4 +9,4 @@ Status: `ideia` · `em produção` · `pronto` · `postado`
 | ideia | Reels Cantina Pôr do Sol | case real | roteiro pronto em outra sessão |
 | ideia | Reels Vincenzo Saggio | proposta conceitual (último no ar) | roteiro pronto em outra sessão |
 | ideia | Reels Flanar Café | proposta conceitual | |
-| em produção | Ter um site hoje em dia | "Seu cliente perguntou pro ChatGPT onde encontrar o que você vende. Ele te indicou?" | roteiro em discussão; prova D'Conde (agenda); recompensa: o teste do Google e da IA |
+| em produção | Ter um site hoje em dia | "Ninguém mais entra em site, né? Então faz um teste comigo." | roteiro em discussão: o teste (Google e IA) vem logo depois do gancho; prova D'Conde (agenda); fecha voltando no gancho |
