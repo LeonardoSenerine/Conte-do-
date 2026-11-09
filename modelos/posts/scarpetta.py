@@ -1,5 +1,5 @@
 """Carrossel do case Scarpetta Cucina: o link da bio saiu do Linktree e virou site. Linguagem editorial na "sala"
-do cliente (verde garrafa, creme, Fraunces e a assinatura em Pinyon Script), capturas reais do site, rabiscos à mão.
+do cliente (verde garrafa, creme, Fraunces e a assinatura em Pinyon Script), capturas reais do site, grade limpa (versão "bonitinha": um celular reto por slide, sem rabiscos).
 Textos tirados da página de proposta do repositório Scarpetta. A cidade foi apagada da captura do Linktree.
 9 slides 1080x1440. Gerar: python3 scarpetta.py && node ../render.mjs scarpetta.html saida 1080 1440 9"""
 
@@ -24,12 +24,19 @@ body { width:1080px; background:#000; }
 .rot { left:72px; top:80px; font-family:"JetBrains Mono",monospace; font-size:22px; letter-spacing:.08em; text-transform:uppercase; opacity:.7; z-index:3; }
 .ui { z-index:3; }
 .phone { border-radius:54px; padding:12px; background:#0b0b0b; z-index:2; outline:2px solid rgba(239,229,200,.14); }
-.phone .sc2 { border-radius:42px; overflow:hidden; height:100%; background:#fff; }
+.phone .sc2 { border-radius:42px; overflow:hidden; height:100%; background:#0b0b0b; }
 .phone .sc2 img { display:block; width:100%; }
 .shot { border-radius:6px; overflow:hidden; z-index:2; }
 .shot img { display:block; width:100%; }
 .pill { height:84px; border-radius:999px; background:#fff; color:#1e1d1e; display:inline-grid; place-items:center; padding:0 48px; font-family:-apple-system,"Inter Tight",sans-serif; font-size:32px; font-weight:500; }
 .img { z-index:1; }
+.sub { left:72px; width:900px; font-size:30px; font-weight:500; line-height:1.35; letter-spacing:-.015em; opacity:.85; z-index:3; }
+.de { left:50%; transform:translateX(-50%); font-family:"JetBrains Mono",monospace; font-size:22px; letter-spacing:.06em; text-transform:uppercase; z-index:3; white-space:nowrap; }
+.de b { font-weight:400; text-decoration:line-through; text-decoration-thickness:2px; opacity:.6; margin-left:10px; }
+.lista { left:72px; width:900px; font-size:30px; font-weight:500; line-height:1.3; letter-spacing:-.015em; z-index:3; }
+.lista li { list-style:none; padding:14px 0; border-top:1.5px solid currentColor; display:flex; gap:22px; }
+.lista li:last-child { border-bottom:1.5px solid currentColor; }
+.lista li span { font-family:"Fraunces",serif; font-style:italic; opacity:.7; width:34px; flex:none; }
 .grain { inset:0; z-index:9; pointer-events:none; mix-blend-mode:screen; filter:invert(1); opacity:.07;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 1.25'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>"); }
 .papel .grain { mix-blend-mode:multiply; filter:none; opacity:.14; }
@@ -48,99 +55,50 @@ def slide(n, cor, inner, sm="", arrow=True, rot="senerine.dev · case scarpetta"
 def phone(src, x, y, w, h, rot=0, extra=""):
     return f'<div class="phone" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;rotate:{rot}deg;{extra}"><div class="sc2"><img src="{C}{src}"></div></div>'
 
-import math
-U = "../../elementos/senerine/"
+
+def centro(src, top=560, w=420, h=820, extra=""):
+    return phone(src, (1080 - w) // 2, top, w, h, 0, extra)
 
 
-def risco(d, cor="#0a63b2", w=7):
-    """Traço à mão em SVG, nas coordenadas do slide."""
-    return f'<svg class="ui" style="left:0;top:0;z-index:5;pointer-events:none" width="1080" height="1440"><path d="{d}" fill="none" stroke="{cor}" stroke-width="{w}" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+def lista(itens, top):
+    return f'<ul class="lista" style="top:{top}px">' + "".join(f"<li><span>{i+1}</span>{t}</li>" for i, t in enumerate(itens)) + "</ul>"
 
 
-def oval(cx, cy, rx, ry, rot=-4, cor="#1e1d1e", w=6):
-    """Círculo feito à mão: uma volta e um pouco, que não fecha certinho."""
-    pts = []
-    for k in range(66):
-        t = -0.4 + k / 64 * (2 * math.pi + 0.7)
-        r = 1 + 0.035 * math.sin(3 * t) + 0.03 * k / 64
-        x, y = rx * r * math.cos(t), ry * r * math.sin(t)
-        a = math.radians(rot)
-        pts.append((cx + x * math.cos(a) - y * math.sin(a), cy + x * math.sin(a) + y * math.cos(a)))
-    return risco("M " + " L ".join(f"{x:.1f} {y:.1f}" for x, y in pts), cor, w)
-
-
-def seta(x1, y1, x2, y2, cor="#0a63b2", w=6, curva=-80):
-    mx, my = (x1 + x2) / 2 + curva, (y1 + y2) / 2 - abs(curva) / 2
-    ang = math.atan2(y2 - my, x2 - mx)
-    h1 = (x2 - 34 * math.cos(ang - .5), y2 - 34 * math.sin(ang - .5))
-    h2 = (x2 - 34 * math.cos(ang + .5), y2 - 34 * math.sin(ang + .5))
-    return risco(f"M {x1} {y1} Q {mx:.0f} {my:.0f} {x2} {y2} M {h1[0]:.0f} {h1[1]:.0f} L {x2} {y2} L {h2[0]:.0f} {h2[1]:.0f}", cor, w)
-
-
-def xis(x, y, s, cor="#0a63b2", w=10):
-    return risco(f"M {x} {y} Q {x+s*.55:.0f} {y+s*.45:.0f} {x+s} {y+s*1.02:.0f} M {x+s*1.04:.0f} {y-4} Q {x+s*.4:.0f} {y+s*.5:.0f} {x-6} {y+s*.98:.0f}", cor, w)
-
-
-def nota_mao(x, y, txt, cor="var(--sky)", rot=-4, size=40):
-    return f'<p class="ui" style="left:{x}px;top:{y}px;font-family:\'Instrument Serif\',serif;font-style:italic;font-size:{size}px;line-height:1;color:{cor};rotate:{rot}deg;z-index:6">{txt}</p>'
-
-
-
-MANJ, CREME, VERDE = "#a9c99a", "#efe5c8", "#0f3d2c"
-
-
-def troca(n, cor, botoes, titulo, img, texto, alto=True):
-    risc = MANJ if cor != "papel" else VERDE
-    pills = "".join(f'<span class="ui pill" style="left:72px;top:{560 + i*110}px;rotate:{-3 + i*2}deg">{b}</span>' for i, b in enumerate(botoes))
-    strikes = "".join(risco(f"M 60 {602 + i*110} Q 220 {590 + i*110} {130 + len(b)*19} {600 + i*110}", risc, 7) for i, b in enumerate(botoes))
-    nota = nota_mao(80, 560 + len(botoes) * 110 + 30, "no linktree", "var(--manj)" if cor != "papel" else VERDE, -5, 44)
-    arte = phone(img, 640, 540, 380, 740, 3) if alto else f'<div class="shot" style="left:470px;top:800px;width:540px;rotate:3deg"><img src="{C}{img}"></div>'
-    return slide(n, cor, f'<h1 class="h" style="top:150px;font-size:150px">{titulo}</h1>{pills}{strikes}{nota}'
-                 + seta(330, 560 + len(botoes) * 110 + 90, 540, 900, risc, 6, curva=-60) + arte, texto)
+def troca(n, cor, de, titulo, img, texto, curto=False):
+    arte = (f'<div class="shot" style="left:190px;top:640px;width:700px"><img src="{C}{img}"></div>' if curto else centro(img, 520, 400, 650))
+    return slide(n, cor, f'<h1 class="h" style="top:150px;font-size:130px">{titulo}</h1>'
+                 f'<p class="de" style="top:440px">no linktree era<b>{de}</b></p>' + arte, texto)
 
 
 S = [
-    # 1 · capa: o linktree cinza atrás, o site na frente
-    slide(1, "noite", f'<img class="img" src="{T}videira-claro.png" style="left:560px;top:-160px;width:700px;opacity:.16">'
-          + '<h1 class="h" style="top:170px;font-size:150px">o link da bio<br>da <span class="sc">Scarpetta</span><br><i>virou casa.</i></h1>'
-          + phone("linktree-sem-cidade.png", 90, 700, 330, 620, -8, "filter:grayscale(1) brightness(.85)")
-          + phone("site.webp", 560, 640, 400, 750, 4)
-          + seta(330, 690, 600, 760, MANJ, 6, curva=-40)
-          + nota_mao(250, 600, "antes → depois", "var(--manj)", -6, 44), "", True),
-    # 2 · antes: o linktree, com as anotações
-    slide(2, "papel", '<h1 class="h" style="top:170px;font-size:170px">antes:<br><i>um linktree.</i></h1>'
-          + phone("linktree-sem-cidade.png", 560, 520, 420, 800, 3)
-          + nota_mao(72, 620, "fundo cinza, igual<br>a qualquer perfil", VERDE, -4, 44)
-          + nota_mao(72, 820, "nenhum prato,<br>nenhuma foto", VERDE, -3, 44)
-          + nota_mao(72, 1020, "cada botão leva<br>pra outro lugar", VERDE, -5, 44)
-          + seta(390, 650, 600, 700, VERDE, 5, curva=-30) + seta(360, 1050, 620, 980, VERDE, 5, curva=40),
-          "o mesmo link da bio. quem ainda estava<br>decidindo onde comer não tinha motivo pra escolher."),
-    # 3 · depois: o site com a cara da casa
-    slide(3, "verde", '<h1 class="h" style="top:170px;font-size:170px">depois:<br><i>a cara<br>da casa.</i></h1>'
-          + phone("site.webp", 560, 520, 420, 800, -3)
-          + nota_mao(72, 820, "verde garrafa<br>e creme", "var(--manj)", -4, 46)
-          + nota_mao(72, 990, "o tomate do logo", "var(--manj)", -3, 46)
-          + nota_mao(72, 1110, "e a assinatura<br>manuscrita", "var(--manj)", -5, 46)
-          + seta(380, 1150, 640, 700, MANJ, 5, curva=-60),
-          "e nenhum botão do linktree se perdeu."),
-    troca(4, "papel", ["Reservas"], "a reserva<br><i>chega pronta.</i>", "reserva.webp",
-          "o cliente escolhe dia, horário e pessoas, e o<br>whatsapp da casa recebe a mensagem completa."),
-    troca(5, "verde", ["Menu"], "o cardápio<br><i>com foto e preço.</i>", "cardapio.webp",
+    # 1 · capa: o nome da casa e os dois celulares lado a lado
+    slide(1, "noite", '<h1 class="h" style="top:150px;font-size:130px;text-align:center">do linktree<br>ao site da<br><span class="sc" style="font-size:1.5em">Scarpetta</span></h1>'
+          + phone("linktree-sem-cidade.png", 150, 700, 320, 586, 0, "filter:grayscale(1);opacity:.75")
+          + phone("site.webp", 590, 670, 340, 617, 0)
+          + '<p class="de" style="top:1320px;left:310px">antes</p><p class="de" style="top:1320px;left:760px">depois</p>', "", False),
+    # 2 · antes
+    slide(2, "papel", '<h1 class="h" style="top:150px;font-size:150px">antes:<br><i>um linktree.</i></h1>'
+          + lista(["fundo cinza, igual ao de qualquer perfil", "nenhum prato, nenhuma foto do salão", "cada botão leva pra outro lugar"], 470)
+          + centro("linktree-sem-cidade.png", 740, 340, 625), ""),
+    # 3 · depois
+    slide(3, "verde", '<h1 class="h" style="top:150px;font-size:150px">depois:<br><i>a cara da casa.</i></h1>'
+          + lista(["verde garrafa e creme", "o tomate do logo", "a assinatura manuscrita"], 470)
+          + centro("site.webp", 740, 340, 617), ""),
+    troca(4, "papel", "Reservas", "a reserva<br><i>chega pronta.</i>", "reserva.webp",
+          "dia, horário e pessoas: o whatsapp da casa<br>recebe a mensagem completa."),
+    troca(5, "verde", "Menu", "o cardápio<br><i>com foto e preço.</i>", "cardapio.webp",
           "pratos com foto, descrição e preço,<br>separados por categoria."),
-    troca(6, "papel", ["Peça pelo Ifood", "Peça pelo nosso delivery"], "pedidos<br><i>num lugar só.</i>", "delivery.webp",
-          "o ifood e o delivery próprio,<br>lado a lado, com as mesmas massas e pizzas.", alto=False),
-    troca(7, "verde", ["Eventos e confraternizações"], "eventos<br><i>com orçamento.</i>", "eventos.webp",
+    troca(6, "papel", "Peça pelo Ifood · Peça pelo nosso delivery", "pedidos<br><i>num lugar só.</i>", "delivery.webp",
+          "o ifood e o delivery próprio, lado a lado.", curto=True),
+    troca(7, "verde", "Eventos e confraternizações", "eventos<br><i>com orçamento.</i>", "eventos.webp",
           "as ocasiões, como o menu é servido<br>e o pedido de orçamento direto."),
     # 8 · o que o linktree nunca mostrou
-    slide(8, "noite", '<h1 class="h" style="top:170px;font-size:150px">e o que o<br>linktree<br><i>nunca mostrou.</i></h1>'
-          + phone("executivo.webp", 110, 700, 340, 560, -4) + phone("salao.webp", 620, 680, 340, 560, 4)
-          + nota_mao(110, 630, "o menu da semana", "var(--manj)", -5, 40)
-          + nota_mao(600, 616, "o salão no meio da mata", "var(--manj)", 4, 40),
-          "antes do primeiro contato, quem chega já vê<br>o prato, o preço e o lugar."),
-    # 9 · chamada, de volta às cores da senerine
-    slide(9, "preto", '<div style="left:72px;top:170px;width:120px;height:120px;border-radius:50%;background:var(--blue)"></div>'
-          + f'<img class="img" src="{T}andorinhas-claro.png" style="left:660px;top:120px;height:560px">'
-          + '<h1 class="h" style="top:600px;font-size:140px">o seu link<br>da bio também<br>pode <i>virar casa.</i></h1>',
+    slide(8, "noite", '<h1 class="h" style="top:150px;font-size:130px">e o que o linktree<br><i>nunca mostrou.</i></h1>'
+          + phone("executivo.webp", 130, 560, 380, 608, 0) + phone("salao.webp", 570, 560, 380, 608, 0)
+          + '<p class="de" style="top:1200px;left:320px">menu da semana</p><p class="de" style="top:1200px;left:760px">o salão</p>', ""),
+    # 9 · chamada nas cores da senerine
+    slide(9, "preto", '<div style="left:72px;top:170px;width:110px;height:110px;border-radius:50%;background:var(--blue)"></div>'
+          + '<h1 class="h" style="top:560px;font-size:150px">o seu link<br>da bio também<br>pode <i>virar casa.</i></h1>',
           "me chama no direct.<br>quem responde sou eu.", False, rot="senerine.dev"),
 ]
 
