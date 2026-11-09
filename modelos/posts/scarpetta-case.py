@@ -32,7 +32,12 @@ body { width:1080px; background:#000; font-family:"Inter Tight",sans-serif; }
 .scr img { position:absolute; left:0; display:block; }
 .ui { font-family:"Inter Tight",sans-serif; }
 .scr img { width:100%; top:0; }
-.laptop { z-index:2; }
+.laptop { z-index:2; filter:drop-shadow(0 40px 50px rgba(0,0,0,.45)); }
+.foto { position:absolute; inset:0; z-index:0; }
+.foto img { width:100%; height:100%; object-fit:cover; display:block; }
+.foto::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,43,31,.30) 0%, rgba(10,43,31,.55) 60%, rgba(10,43,31,.85) 100%); }
+.prato { border-radius:50%; overflow:hidden; }
+.prato img { width:100%; height:100%; object-fit:cover; display:block; }
 .laptop .tela { position:relative; background:#0b0b0b; border-radius:20px 20px 6px 6px; padding:14px 14px 18px; outline:2px solid rgba(255,255,255,.08); }
 .laptop .tela img { display:block; width:100%; border-radius:6px; }
 .laptop .base { position:relative; height:26px; margin:0 -48px; border-radius:2px 2px 18px 18px; background:linear-gradient(#cfd2d6,#8e9298); }
@@ -80,6 +85,16 @@ def laptop(img, w=840, top=40):
     return f'<div class="laptop" style="left:{(936 - w) // 2}px;top:{top}px;width:{w}px"><div class="tela"><img src="{C}desktop-{img}.jpg"></div><div class="base"></div></div>'
 
 
+def fundo(foto):
+    return f'<div class="foto"><img src="{C}fotos/{foto}.webp"></div>'
+
+
+def combo(desk, mob, foto, w=720):
+    """Foto do prato de fundo, o site no computador e a mesma parte no celular, por cima."""
+    m = celular(mob, 680, 170, 200, "filter:drop-shadow(0 30px 40px rgba(0,0,0,.5))") if mob else ""
+    return fundo(foto) + laptop(desk, w, 60).replace(f"left:{(936 - w) // 2}px", f"left:{(936 - w) // 2 - (60 if mob else 0)}px") + m
+
+
 def celular(src, left, top, w, extra=""):
     return f'<div class="phone" style="left:{left}px;top:{top}px;width:{w}px;{extra}"><img src="{C}{src}"></div>'
 
@@ -88,15 +103,15 @@ out = [HEAD.replace('href="../../fontes/fontes.css"', 'href="../../fontes/fontes
 
 # 1 · capa: o antes e o depois lado a lado no cartão verde
 out.append(shell(1, "Case · Scarpetta Cucina", "senerine.dev", f"""<div class="card" style="background:{VERDE}">
-    {laptop("topo", 820, 40)}{celular("linktree-sem-cidade.png", 30, 300, 210, "filter:grayscale(1);rotate:-6deg")}
+    {combo("topo", "site.webp", "pizza-mesa")}
     <div class="band"><span class="mono">Cliente real</span><span>Cozinha italiana afetiva.</span></div></div>
   <h2 class="t">Do Linktree ao site<br><em>com a cara da casa</em><span class="dot"></span></h2>
   <p class="p">Como o link da bio da Scarpetta virou um site com cardápio, reserva e o salão.</p>"""))
 
 # 2 · índice: onde cada botão foi morar
-items = [("Reservas", "Reserve sua mesa"), ("Menu", "O cardápio"), ("iFood e delivery", "Scarpetta em casa"), ("Eventos", "Eventos com orçamento")]
-rows = "".join(f"""<div style="display:grid;grid-template-columns:96px 1fr auto;align-items:baseline;padding:34px 0;border-top:1px solid var(--line)">
-  <span class="mono" style="color:#5aa3e8">{i + 1:02d}</span><span style="font-size:44px;font-weight:600;letter-spacing:-.04em">{a}</span><span style="font-size:26px;color:var(--muted)">→ {b}</span></div>""" for i, (a, b) in enumerate(items))
+items = [("Reservas", "Reserve sua mesa", "medaglioni-quadrado"), ("Menu", "O cardápio", "fettuccine-garfo"), ("iFood e delivery", "Scarpetta em casa", "pizza-peperoni-detalhe"), ("Eventos", "Eventos com orçamento", "arancini-bruschetta")]
+rows = "".join(f"""<div style="display:grid;grid-template-columns:80px 120px 1fr auto;align-items:center;padding:26px 0;border-top:1px solid var(--line)">
+  <span class="mono" style="color:#5aa3e8">{i + 1:02d}</span><span class="prato" style="position:relative;width:96px;height:96px"><img src="{C}fotos/{f}.webp"></span><span style="font-size:44px;font-weight:600;letter-spacing:-.04em">{a}</span><span style="font-size:26px;color:var(--muted)">→ {b}</span></div>""" for i, (a, b, f) in enumerate(items))
 out.append(shell(2, "Índice", "4 trocas", f"""<h2 class="t" style="top:170px">Cada botão do Linktree<br>ganhou <em>um lugar</em><span class="dot"></span></h2>
   <div style="left:72px;right:72px;top:480px;border-bottom:1px solid var(--line)">{rows}</div>
   <p class="p" style="top:1080px">Nada do que o cliente já usava se perdeu. Só mudou de casa.</p>"""))
@@ -113,12 +128,14 @@ trocas = [
     ("Peça pelo iFood · delivery", "delivery", "Os pedidos<br><em>num lugar só</em>", "O iFood e o delivery próprio lado a lado, com as mesmas massas e pizzas."),
     ("Eventos", "eventos", "Eventos<br><em>com orçamento</em>", "As ocasiões, como o menu é servido e o pedido de orçamento por WhatsApp ou e-mail."),
 ]
+MOB = {"reserva": "reserva.webp", "cardapio": "cardapio.webp", "delivery": None, "eventos": "eventos.webp", "salao": "salao.webp"}
+FOTO = {"reserva": "medaglioni-quadrado", "cardapio": "fettuccine-garfo", "delivery": "pizza-peperoni-detalhe", "eventos": "arancini-bruschetta", "salao": "forno"}
 for i, (de, img, t, p) in enumerate(trocas):
-    arte = laptop(img)
+    arte = combo(img, MOB[img], FOTO[img])
     out.append(detail(4 + i, "Depois", f"{i + 1:02d} / 04", arte, "No Linktree", f"o botão “{de}”", t, p))
 
 # 8 · o que o linktree não mostrava
-out.append(detail(8, "Depois", "bônus", laptop("salao"), "Antes",
+out.append(detail(8, "Depois", "bônus", combo("salao", "salao.webp", "forno"), "Antes",
     "Nenhuma foto do salão nem dos pratos.", "O salão<br><em>no meio da mata</em>",
     "As fotos do lugar, o menu executivo da semana e os pratos, antes do primeiro contato.", NOITE))
 
@@ -130,13 +147,15 @@ rows = "".join(f"""<div style="display:grid;grid-template-columns:96px 1fr;align
 out.append(shell(9, "Ficha técnica", "Scarpetta", f"""<div style="left:72px;right:72px;top:156px;height:1130px;border-radius:28px;background:{VERDE};color:#efe5c8;padding:60px 56px">
     <p class="mono" style="color:#a9c99a;letter-spacing:.06em;text-transform:uppercase">React · TypeScript · Vite · Motion</p>
     <h2 style="margin-top:26px;font-size:80px;font-weight:700;line-height:.98;letter-spacing:-.055em">Decisões<br>do projeto<span class="dot"></span></h2>
-    <div style="margin-top:50px;border-bottom:1px solid rgba(239,229,200,.22)">{rows}</div></div>"""))
+    <div style="margin-top:50px;border-bottom:1px solid rgba(239,229,200,.22)">{rows}</div>
+    <div style="position:absolute;left:56px;right:56px;bottom:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px">{"".join(f'<div style="aspect-ratio:1;border-radius:14px;overflow:hidden"><img src="{C}fotos/{f}.webp" style="width:100%;height:100%;object-fit:cover;display:block"></div>' for f in ["pizza-mesa", "risotto-gamberi", "lasagna-detalhe", "budino"])}</div></div>"""))
 
 # 10 · contato, como o bloco do site
-out.append(shell(10, "Contato", "senerine.dev", """<img src="../../elementos/senerine/leonardo-ponto.webp" style="left:72px;top:250px;width:168px;height:168px;border-radius:50%">
+out.append(shell(10, "Contato", "senerine.dev", f"""<img src="../../elementos/senerine/leonardo-ponto.webp" style="left:72px;top:250px;width:168px;height:168px;border-radius:50%">
   <p style="left:268px;top:300px;font-size:30px;font-weight:600;letter-spacing:-.03em">Leonardo Senerine</p><p class="mono" style="left:268px;top:344px;color:var(--muted)">quem faz o senerine.dev</p>
   <h2 class="t" style="top:500px;font-size:96px">O seu link da bio<br>também pode<br><em>virar site</em><span class="dot"></span></h2>
-  <p class="p" style="top:860px">Me conta da marca e do que ela precisa.<br>Quem responde sou eu.</p>""", swipe="salva esse"))
+  <p class="p" style="top:860px">Me conta da marca e do que ela precisa.<br>Quem responde sou eu.</p>
+  <div style="left:72px;right:72px;top:1010px;height:280px;border-radius:28px;overflow:hidden"><img src="{C}fotos/pizza-peperoni-detalhe.webp" style="width:100%;height:100%;object-fit:cover;display:block"></div>""", swipe="salva esse"))
 
 out.append("</body></html>")
 open("scarpetta-case.html", "w").write("".join(out))
