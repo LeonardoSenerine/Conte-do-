@@ -20,18 +20,25 @@ body { width:1080px; background:#000; font-family:"Inter Tight",sans-serif; }
 .logo span { color:#5aa3e8; }
 .logo i { display:inline-block; width:8px; height:8px; border-radius:50%; background:#5aa3e8; margin:0 1px 0 2px; }
 .swipe { right:72px; top:1364px; color:var(--muted); }
-.card { left:72px; right:72px; top:156px; height:720px; border-radius:28px; overflow:hidden; background:#f2efea; color:#1e1d1e; }
+.card { left:72px; right:72px; top:156px; height:760px; border-radius:28px; overflow:hidden; background:#f2efea; color:#1e1d1e; }
 .card > * { position:absolute; }
 .band { left:20px; right:20px; bottom:20px; height:88px; border-radius:16px; background:var(--blue); color:#fff; display:flex; align-items:center; gap:22px; padding:0 30px; font-size:27px; font-weight:500; letter-spacing:-.02em; z-index:10; }
 .band .mono { font-size:18px; letter-spacing:.06em; text-transform:uppercase; opacity:.7; flex:none; }
-.t { left:72px; right:72px; top:926px; font-size:88px; font-weight:700; line-height:.98; letter-spacing:-.055em; }
+.t { left:72px; right:72px; top:966px; font-size:84px; font-weight:700; line-height:.98; letter-spacing:-.055em; }
 .t em { font-style:normal; color:var(--warm); }
 .dot { display:inline-block; width:.15em; height:.15em; border-radius:50%; background:#3d8fe0; margin-left:.04em; }
-.p { left:72px; width:820px; top:1140px; font-size:31px; line-height:1.4; color:var(--muted); letter-spacing:-.015em; }
+.p { left:72px; width:820px; top:1164px; font-size:30px; line-height:1.4; color:var(--muted); letter-spacing:-.015em; }
 .scr { border-radius:30px; overflow:hidden; box-shadow:0 30px 60px -30px rgba(30,29,30,.55); }
 .scr img { position:absolute; left:0; display:block; }
 .ui { font-family:"Inter Tight",sans-serif; }
 .scr img { width:100%; top:0; }
+.laptop { z-index:2; }
+.laptop .tela { position:relative; background:#0b0b0b; border-radius:20px 20px 6px 6px; padding:14px 14px 18px; outline:2px solid rgba(255,255,255,.08); }
+.laptop .tela img { display:block; width:100%; border-radius:6px; }
+.laptop .base { position:relative; height:26px; margin:0 -48px; border-radius:2px 2px 18px 18px; background:linear-gradient(#cfd2d6,#8e9298); }
+.laptop .base::before { content:""; position:absolute; left:50%; top:0; width:150px; height:9px; margin-left:-75px; border-radius:0 0 10px 10px; background:#7c8086; }
+.phone { position:absolute; z-index:3; border-radius:40px; padding:9px; background:#0b0b0b; outline:2px solid rgba(255,255,255,.1); }
+.phone img { display:block; width:100%; border-radius:32px; }
 .cap { font-family:"JetBrains Mono",monospace; font-size:18px; letter-spacing:.06em; text-transform:uppercase; color:#efe5c8; opacity:.75; }
 </style></head><body>
 '''
@@ -68,11 +75,20 @@ def centro(src, w=420, h=600):
     return tela(src, (936 - w) // 2, 40, w, h)
 
 
+def laptop(img, w=840, top=40):
+    """O site no computador: captura real a 1440x900 dentro de uma tela com base."""
+    return f'<div class="laptop" style="left:{(936 - w) // 2}px;top:{top}px;width:{w}px"><div class="tela"><img src="{C}desktop-{img}.jpg"></div><div class="base"></div></div>'
+
+
+def celular(src, left, top, w, extra=""):
+    return f'<div class="phone" style="left:{left}px;top:{top}px;width:{w}px;{extra}"><img src="{C}{src}"></div>'
+
+
 out = [HEAD.replace('href="../../fontes/fontes.css"', 'href="../../fontes/fontes.css"')]
 
 # 1 · capa: o antes e o depois lado a lado no cartão verde
 out.append(shell(1, "Case · Scarpetta Cucina", "senerine.dev", f"""<div class="card" style="background:{VERDE}">
-    {tela("linktree-sem-cidade.png", 70, 40, 360, 600, "filter:grayscale(1);opacity:.8")}{tela("site.webp", 506, 40, 360, 600)}
+    {laptop("topo", 820, 40)}{celular("linktree-sem-cidade.png", 30, 300, 210, "filter:grayscale(1);rotate:-6deg")}
     <div class="band"><span class="mono">Cliente real</span><span>Cozinha italiana afetiva.</span></div></div>
   <h2 class="t">Do Linktree ao site<br><em>com a cara da casa</em><span class="dot"></span></h2>
   <p class="p">Como o link da bio da Scarpetta virou um site com cardápio, reserva e o salão.</p>"""))
@@ -86,25 +102,25 @@ out.append(shell(2, "Índice", "4 trocas", f"""<h2 class="t" style="top:170px">C
   <p class="p" style="top:1080px">Nada do que o cliente já usava se perdeu. Só mudou de casa.</p>"""))
 
 # 3 · antes
-out.append(detail(3, "Antes", "o link da bio", f'<div style="position:absolute;inset:0;background:#e9ebef"></div>' + centro("linktree-sem-cidade.png"), "Antes",
+out.append(detail(3, "Antes", "o link da bio", f'<div style="position:absolute;inset:0;background:#e9ebef"></div>' + celular("linktree-sem-cidade.png", 298, 40, 340), "Antes",
     "Botões cinza, sem prato e sem foto.", "O link da bio<br>era <em>um Linktree</em>",
     "Uma lista igual à de qualquer perfil. Cada toque mandava o cliente pra outro lugar.", PAPEL))
 
 # 4 a 7 · as trocas
 trocas = [
-    ("Reservas", "reserva.webp", "A reserva<br><em>chega pronta</em>", "O cliente escolhe dia, horário e pessoas, e o WhatsApp da casa recebe a mensagem completa."),
-    ("Menu", "cardapio.webp", "O cardápio<br><em>com foto e preço</em>", "Pratos com foto, descrição e preço, separados por categoria, com os destaques da casa no topo."),
-    ("Peça pelo iFood · delivery", "delivery.webp", "Os pedidos<br><em>num lugar só</em>", "O iFood e o delivery próprio lado a lado, com as mesmas massas e pizzas."),
-    ("Eventos", "eventos.webp", "Eventos<br><em>com orçamento</em>", "As ocasiões, como o menu é servido e o pedido de orçamento por WhatsApp ou e-mail."),
+    ("Reservas", "reserva", "A reserva<br><em>chega pronta</em>", "O cliente escolhe dia, horário e pessoas, e o WhatsApp da casa recebe a mensagem completa."),
+    ("Menu", "cardapio", "O cardápio<br><em>com foto e preço</em>", "Pratos com foto, descrição e preço, separados por categoria, com os destaques da casa no topo."),
+    ("Peça pelo iFood · delivery", "delivery", "Os pedidos<br><em>num lugar só</em>", "O iFood e o delivery próprio lado a lado, com as mesmas massas e pizzas."),
+    ("Eventos", "eventos", "Eventos<br><em>com orçamento</em>", "As ocasiões, como o menu é servido e o pedido de orçamento por WhatsApp ou e-mail."),
 ]
 for i, (de, img, t, p) in enumerate(trocas):
-    arte = (tela(img, 118, 120, 700, 538) if img == "delivery.webp" else centro(img))
+    arte = laptop(img)
     out.append(detail(4 + i, "Depois", f"{i + 1:02d} / 04", arte, "No Linktree", f"o botão “{de}”", t, p))
 
 # 8 · o que o linktree não mostrava
-out.append(detail(8, "Depois", "bônus", tela("executivo.webp", 70, 40, 380, 600) + tela("salao.webp", 486, 40, 380, 600), "Antes",
-    "Nenhum prato, nenhuma foto do salão.", "O prato, o preço<br><em>e o salão</em>",
-    "O menu executivo da semana e o salão no meio da mata, antes do primeiro contato.", NOITE))
+out.append(detail(8, "Depois", "bônus", laptop("salao"), "Antes",
+    "Nenhuma foto do salão nem dos pratos.", "O salão<br><em>no meio da mata</em>",
+    "As fotos do lugar, o menu executivo da semana e os pratos, antes do primeiro contato.", NOITE))
 
 # 9 · ficha técnica e decisões, como nos cases do portfólio
 dec = ["A reserva monta a mensagem pronta pro WhatsApp da casa.", "Aviso de aberto ou fechado agora, turno por turno.",
