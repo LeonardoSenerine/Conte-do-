@@ -36,3 +36,9 @@ Os arquivos estão em `elementos/originais/` (nomes no `elementos/README.md`).
 - **Chamada final** que convida a salvar e compartilhar, ou a comentar pra receber alguma coisa.
 - Acima de tudo: **trabalho de escrita nos títulos** pra chamarem atenção.
 - Visual dele: fundo branco quadriculado, serifa condensada preta grande, texto centralizado, nada mais.
+
+## 2026-11 · carrossel do site do Teacher Leal (feito por nós, em outra sessão)
+- Título enorme em caixa alta condensada, legenda em inglês em vermelho, papel pautado com linha de margem vermelha.
+- Elementos grandes: foto do cliente de fundo, celular cortado pela borda atravessando pro slide 2, polaroids com checkbox, grade de fotos de viagem com nome, cartões de depoimento em vídeo, cartão de preço.
+- Topo: @ do cliente e "01 / 07 · arrasta →"; rodapé: o endereço do site.
+- Virou a base do case Scarpetta (`modelos/posts/scarpetta-grande.py`).
