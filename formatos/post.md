@@ -23,6 +23,7 @@
 |---|---|---|---|
 | Zine com imagens | manchete Anton + imagem em tinta sobre ponto azul + papelzinho com o texto | Link na bio (zine), Ninguém lê (zine nº 02), Modelo pronto (zine nº 03, com faixa vertical) | `modelos/posts/zine.py`, `ninguem-le.py`, `modelo-pronto.py` |
 | Linha contínua | uma frase curta por slide, uma linha azul atravessa os slides e encosta no texto, que alterna esquerda/direita; termina no ponto | Caro e barato | `modelos/posts/linha-continua.py` (panorama) |
+| Panorama de case | fundo contínuo na cor do cliente, réguas que correm o carrossel todo, computador e janelas do site em ângulos (rotateY), celular e prato atravessando a emenda dos slides | Case Scarpetta ("está ficando maravilhoso") | `modelos/posts/scarpetta-panorama.py` (panorama) |
 | Fio + mockups | um fio azul que vira a linha do rodapé e anda como progresso | Link na bio (Senerine) | `modelos/posts/fio-mockups.py` (panorama) |
 | Editorial (em teste) | uma frase forte por slide em Inter Tight 800 minúscula, uma palavra em Instrument Serif itálica, fundos creme / preto / azul alternando, imagem do banco grande, texto pequeno em caixa alta embaixo e seta → | Você precisa de um site. | `modelos/posts/busca-editorial.py` |
 | Capturas reais em grade | cartão com captura do site, faixa "passa batido", título com ponto | 5 detalhes | `modelos/posts/senerine-capturas.py` |

@@ -36,7 +36,7 @@ body { width:1080px; background:#000; font-family:"Inter Tight",sans-serif; }
 
 
 C = "../../elementos/clientes/scarpetta/"
-S = f"""<section class="s" id="s1">
+S = f"""<section class="s" id="s1" style="background:radial-gradient(1200px 900px at 300px 300px,#14513a,transparent 70%),#0f3d2c;color:#efe5c8">
   <p class="kick" style="top:250px"><i></i>Site novo no ar</p><p class="folio mono" style="top:254px">senerine.dev</p>
   <div class="rule" style="top:310px"></div>
   <div class="card" style="top:350px;height:820px;background:#0f3d2c">
