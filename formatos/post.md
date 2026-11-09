@@ -46,7 +46,7 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - Grade rígida: tudo alinhado na mesma margem e nas mesmas alturas.
 
 ## Não funciona
-- **Case de cliente bagunçado** (Scarpetta, primeira versão): celulares girados, rabiscos, botões riscados e notas à mão espalhadas: "muito bagunçado, deixe mais bonitinho". Em case, grade limpa: título em cima, um celular reto e centralizado, legendas pequenas em mono, lista numerada com linhas finas.
+- **Case de cliente bagunçado** (Scarpetta, primeira versão): celulares girados, rabiscos, botões riscados e notas à mão espalhadas: "muito bagunçado, deixe mais bonitinho". Mesmo a versão limpa não bastou: **case de cliente usa o padrão dos primeiros posts / do portfólio** (`scarpetta-case.py`, base `senerine-capturas.py`): fundo escuro da senerine, cabeçalho com rótulo e fólio, cartão com a captura real na cor da casa, faixa azul com rótulo, título com o ponto, texto, rodapé com logo; índice numerado, ficha técnica com decisões e o bloco de contato com a foto no ponto.
 - Copiar a base de outro designer sem adaptar (as versões "Pixel" e "Nexora" foram "bem ruim" e "ruizinho").
 - **Cara de IA**: elementos desalinhados, cartões com ícone, enfeite sem função.
 - Slide que não acrescenta (o slide da "aba" foi cortado).
