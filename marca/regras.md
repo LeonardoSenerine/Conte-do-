@@ -7,7 +7,7 @@
 - **Convite de casamento é confidencial**: nunca link, nome ou imagem nítida.
 - **SURAMU está em negociação**: não citar.
 - **Projeto em sigilo** (o "próximo projeto"): não revelar nome, logo nem cidade até ele liberar.
-- Clientes reais: Doce&Sabor, Cantina Pôr do Sol, Gordinho Lanches, D'Conde Barbearia. Propostas conceituais: Vincenzo Saggio, Flanar Café, Samoa, Ponto Alto, Meraki. Nunca apresentar conceito como cliente.
+- Clientes reais: Scarpetta Cucina (site no lugar do Linktree), Doce&Sabor, Cantina Pôr do Sol, Gordinho Lanches, D'Conde Barbearia. Propostas conceituais: Vincenzo Saggio, Flanar Café, Samoa, Ponto Alto, Meraki. Nunca apresentar conceito como cliente.
 - Imagens de terceiros: crédito na legenda quando o autor for conhecido; assinatura e marca d'água ficam na imagem.
 - Ao falar de outras marcas (Linktree, Grêmio etc.): sem logo nem cores delas, sem afirmar falha ou problema que não seja público e verificável. Ser justo (ex.: "Linktree não é vilão").
 - Ideia central do texto: **"não passar batido"** nos dois sentidos.

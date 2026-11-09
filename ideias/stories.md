@@ -11,3 +11,4 @@ Status: `ideia` · `em produção` · `pronto` · `postado`
 | ideia | Destaques Projetos e Quem sou | só clientes reais |
 | ideia | Teaser do próximo projeto | "Consegue adivinhar?" (em sigilo, não revelar) |
 | pronto | Sumi (aviso de pausa) | 3 stories: "Sumi. eu sei.", "Mas não parei.", "Em breve." (`modelos/stories/sumido.py`) |
+| pronto | Site da Scarpetta no ar | story com espaço pra figurinha de link (`modelos/stories/scarpetta-link.py`) |

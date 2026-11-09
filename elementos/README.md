@@ -69,3 +69,6 @@ Capturas reais do senerine.dev (celular @3x, 390 px de largura) e a foto do Leon
 
 ## terceiros/ (fora do repositório)
 Memes e músicas usados nos reels ficam em `elementos/terceiros/`, que o `.gitignore` não envia (direitos de terceiros). Peça os arquivos de novo ao Leonardo se precisar.
+
+## clientes/
+Capturas reais dos sites de clientes, por pasta. `scarpetta/`: telas do site no celular (da página de proposta do repositório Scarpetta) e o Linktree antigo com a cidade apagada (`linktree-sem-cidade.png`). Não usar `visite` nem a captura original do Linktree: mostram a cidade.
