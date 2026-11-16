@@ -60,14 +60,14 @@ def nota(x, y, w, ax, ay, texto, ponto=True):
             f'<svg class="ln" width="1080" height="1440">{ln} stroke="#e8e6e0" stroke-width="8" stroke-linecap="round"/>'
             f'{ln} stroke="#121112" stroke-width="2"/>{dot}</svg>')
 
-N1 = nota(64, 1110, 400, 760, 900, 'Spoiler: depende do site. Arrasta que eu te mostro.', ponto=False)
-N2 = nota(64, 1280, 620, 560, 1060, 'Era pra dizer que tinha. Sem foco em quem ia entrar.')
-N3 = nota(64, 1060, 460, 640, 880, 'Lento no celular, sem preço, botão que não leva a lugar nenhum. Existe, mas não trabalha. E o cliente cai fora.')
-N4 = nota(64, 1150, 860, 545, 960, 'Vitrine mostra e espera. Um site pensado pro seu cliente tira a dúvida, mostra o preço e leva até o WhatsApp.', ponto=False)
-N5 = nota(64, 1250, 700, 130, 760, 'E o seu negócio precisa de um endereço nela. Não só de um perfil.')
-N6 = nota(64, 760, 380, 800, 960, 'Pro ChatGPT, pro Claude: “onde tem uma barbearia boa aqui perto?”. E a IA responde com o que consegue ler na internet sobre você.')
-N7 = nota(64, 660, 320, 808, 697, 'No Google, na resposta da IA e no celular de quem chega. E quando ele chega, o site precisa convencer.')
-N8 = nota(64, 1180, 900, 873, 1000, 'Senerine.dev é um estúdio digital autoral. Faço sites e aplicações pro seu cliente achar, entender e chamar. Me chama no direct.<br><br><b style="color:var(--blue)">Manda pra quem acha que site já era.</b>', ponto=False)
+N1 = nota(64, 1110, 400, 760, 900, 'Resposta curta: vale. Mas não do jeito que todo mundo fazia. Arrasta.', ponto=False)
+N2 = nota(64, 1090, 952, 620, 960, 'Site era item de lista: ter pra dizer que tinha. Uma página com logo, “quem somos” e um telefone. Ninguém pensava em quem ia entrar, nem no que essa pessoa queria fazer ali.')
+N3 = nota(64, 1070, 952, 640, 880, 'Abre devagar no celular. Não mostra o preço. Esconde o WhatsApp lá embaixo. Não diz o que faz logo de cara. A pessoa não acha o que veio buscar e volta pro Google.<br><b style="color:var(--blue)">O site existe, mas não trabalha.</b>')
+N4 = nota(64, 1080, 952, 544, 920, 'Vitrine mostra e espera alguém entrar. Um site feito pro seu cliente tira a dúvida antes da pergunta, mostra o que você faz e leva ao próximo passo: marcar, pedir, chamar. Na D’Conde, a agenda saiu do WhatsApp: o cliente marca sozinho, em 4 passos.', ponto=False)
+N5 = nota(64, 1190, 952, 192, 796, 'Todo mundo passa por ela: pesquisando, comparando, perguntando. O perfil é uma banca na calçada, com as regras de outro. O site é o seu endereço: seu domínio, do seu jeito, aberto de madrugada.')
+N6 = nota(64, 700, 400, 800, 960, 'Ele pergunta pro ChatGPT, pro Claude: “onde tem uma barbearia boa aqui perto?”. A IA responde com o que encontra escrito na internet. Se o que você faz, onde fica e quanto custa só existe no stories e no direct, fica difícil ela te achar.')
+N7 = nota(64, 640, 420, 842, 866, 'Aparecer, hoje, é:<br><br>01 ser achado quando alguém pesquisa;<br>02 estar escrito de um jeito que o Google e a IA conseguem ler;<br>03 convencer em segundos quem chega.')
+N8 = nota(64, 1180, 900, 873, 1000, 'Senerine.dev é um estúdio digital autoral. Faço sites e aplicações pensados pra serem encontrados, entendidos e usados pelo seu cliente. Me chama no direct.<br><br><b style="color:var(--blue)">Manda pra quem acha que site já era.</b>', ponto=False)
 
 S = []
 
@@ -83,8 +83,8 @@ S.append(slide(1, f'''
 S.append(slide(2, f'''
   <p class="it" style="left:64px;top:120px;font-size:72px">Antigamente,</p>
   <h1 class="h" style="left:64px;top:220px;font-size:150px">todo mundo<br>fazia site<br><span class="b">por fazer.</span></h1>
-  <div class="dot" style="left:480px;top:960px;width:170px;height:170px"></div>
-  <img class="img" src="{T}foco.png" style="left:200px;top:760px;width:860px">
+  <div class="dot" style="left:560px;top:870px;width:130px;height:130px"></div>
+  <img class="img" src="{T}foco.png" style="left:420px;top:700px;width:620px">
   {N2}'''))
 
 # 3 · hoje sobra site ruim: o homem caindo, o cliente cai fora
@@ -98,16 +98,16 @@ S.append(slide(3, f'''
 S.append(slide(4, f'''
   <p class="it" style="left:64px;top:120px;font-size:72px">Vitrine só mostra.</p>
   <h1 class="h" style="left:64px;top:230px;font-size:180px">Site único<br><span class="b">capta.</span></h1>
-  <img class="img" src="{T}cisnes.png" style="left:40px;top:380px;width:1000px">
-  <div class="dot" style="left:485px;top:840px;width:120px;height:120px;z-index:3"></div>
+  <img class="img" src="{T}cisnes.png" style="left:110px;top:420px;width:860px">
+  <div class="dot" style="left:494px;top:817px;width:100px;height:100px;z-index:3"></div>
   {N4}'''))
 
 # 5 · a rua mais movimentada: o cavalo galopando
 S.append(slide(5, f'''
   <p class="it" style="left:64px;top:120px;font-size:72px">A internet é a</p>
   <h1 class="h" style="left:64px;top:220px;font-size:150px">rua mais<br><span class="b">movimentada.</span></h1>
-  <div class="dot" style="left:450px;top:700px;width:300px;height:300px"></div>
-  <img class="img" src="{T}cavalo.png" style="left:60px;top:400px;width:1000px">
+  <div class="dot" style="left:430px;top:780px;width:260px;height:260px"></div>
+  <img class="img" src="{T}cavalo.png" style="left:150px;top:520px;width:780px">
   {N5}'''))
 
 # 6 · o cliente pergunta pra IA: as andorinhas, uma descendo até a outra
@@ -122,8 +122,8 @@ S.append(slide(6, f'''
 S.append(slide(7, f'''
   <p class="it" style="left:64px;top:120px;font-size:72px">Não basta existir.<br>Você precisa</p>
   <h1 class="h" style="left:64px;top:300px;font-size:230px"><span class="b">aparecer.</span></h1>
-  <div class="dot" style="left:450px;top:1005px;width:260px;height:260px"></div>
-  <img class="img" src="{T}camera.png" style="left:380px;top:640px;width:700px">
+  <div class="dot" style="left:560px;top:1115px;width:200px;height:200px"></div>
+  <img class="img" src="{T}camera.png" style="left:500px;top:820px;width:560px">
   {N7}'''))
 
 # 8 · esse é o meu trabalho: no meio dos leões, a figura parada; o ponto atrás dela
