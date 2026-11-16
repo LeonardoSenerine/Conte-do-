@@ -22,7 +22,7 @@ body { width:1080px; background:#000; }
 .tx { font-family:"JetBrains Mono",monospace; font-size:27px; line-height:1.45; letter-spacing:-.01em; z-index:3; }
 .grain { inset:0; z-index:9; pointer-events:none; mix-blend-mode:multiply; opacity:.2;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 1.25'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>"); }
-.note { border-top:2px solid var(--ink); padding-top:14px; z-index:5; }
+.note { border-top:2px solid currentColor; padding-top:14px; z-index:5; }
 .ln { left:0; top:0; z-index:5; pointer-events:none; }
 .stamp { border:4px solid var(--blue); color:var(--blue); padding:10px 18px; font-family:"JetBrains Mono",monospace; font-weight:700; font-size:24px; letter-spacing:.1em; text-transform:uppercase; mix-blend-mode:multiply; z-index:6; }
 s { text-decoration:none; position:relative; }
@@ -38,13 +38,25 @@ s::after { content:""; position:absolute; left:-4%; right:-4%; top:52%; height:.
 .s.fundo .top span, .s.fundo .bot span { background:var(--paper); padding:2px 8px; margin:0 -8px; }
 .s.fundo .note { text-shadow:0 0 4px var(--paper), 0 0 8px var(--paper), 0 0 14px var(--paper), 0 0 20px var(--paper); }
 .list.c .t { font-size:44px; }
+.s { --bg:var(--paper); --pt:var(--blue); }
+.s.azul { --bg:var(--blue); --pt:var(--off); background:var(--blue); color:var(--off); }
+.s.azul .h .b, .s.azul .it .b { color:var(--ink); mix-blend-mode:normal; }
+.s.azul .dot { background:var(--off); mix-blend-mode:normal; }
+.s.preto { --bg:var(--ink); --pt:#4aa3ea; background:var(--ink); color:var(--off); }
+.s.preto .h .b, .s.preto .it .b { color:#4aa3ea; mix-blend-mode:normal; }
+.s.preto .dot { mix-blend-mode:normal; }
+.s.preto .img { filter:invert(1); mix-blend-mode:screen; }
+.s.azul .grain, .s.preto .grain { mix-blend-mode:screen; opacity:.14;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -1.6 1.25'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>"); }
+.cel { z-index:4; border:10px solid var(--ink); border-radius:46px; overflow:hidden; background:var(--ink); }
+.cel img { display:block; width:100%; }
 '''
 
 T = "../../elementos/tinta/"
 
 
-def slide(n, inner):
-    return f'''<section class="s" id="s{n}">
+def slide(n, inner, cls=""):
+    return f'''<section class="s {cls}" id="s{n}">
   {inner}
   <div class="grain"></div>
 </section>'''
@@ -55,19 +67,19 @@ def nota(x, y, w, ax, ay, texto, ponto=True):
     (ax, ay), onde fica um ponto azul. ponto=False quando a linha já encosta num ponto do slide."""
     jx = x + w if ax > x + w / 2 else x
     ln = f'<line x1="{ax}" y1="{ay}" x2="{jx}" y2="{y}"'
-    dot = f'<circle cx="{ax}" cy="{ay}" r="11" fill="#0a63b2" stroke="#e8e6e0" stroke-width="4"/>' if ponto else ""
+    dot = f'<circle cx="{ax}" cy="{ay}" r="11" style="fill:var(--pt);stroke:var(--bg)" stroke-width="4"/>' if ponto else ""
     return (f'<p class="tx note" style="left:{x}px;top:{y}px;width:{w}px">{texto}</p>'
-            f'<svg class="ln" width="1080" height="1440">{ln} stroke="#e8e6e0" stroke-width="8" stroke-linecap="round"/>'
-            f'{ln} stroke="#121112" stroke-width="2"/>{dot}</svg>')
+            f'<svg class="ln" width="1080" height="1440">{ln} style="stroke:var(--bg)" stroke-width="8" stroke-linecap="round"/>'
+            f'{ln} stroke="currentColor" stroke-width="2"/>{dot}</svg>')
 
 N1 = nota(64, 1110, 400, 760, 900, 'Resposta curta: vale. Mas não do jeito que todo mundo fazia. Arrasta.', ponto=False)
 N2 = nota(64, 1090, 952, 620, 960, 'Site era item de lista: ter pra dizer que tinha. Uma página com logo, “quem somos” e um telefone. Ninguém pensava em quem ia entrar, nem no que essa pessoa queria fazer ali.')
-N3 = nota(64, 1070, 952, 640, 880, 'Abre devagar no celular. Não mostra o preço. Esconde o WhatsApp lá embaixo. Não diz o que faz logo de cara. A pessoa não acha o que veio buscar e volta pro Google.<br><b style="color:var(--blue)">O site existe, mas não trabalha.</b>')
-N4 = nota(64, 1080, 952, 544, 920, 'Vitrine mostra e espera alguém entrar. Um site feito pro seu cliente tira a dúvida antes da pergunta, mostra o que você faz e leva ao próximo passo: marcar, pedir, chamar. Na D’Conde, a agenda saiu do WhatsApp: o cliente marca sozinho, em 4 passos.', ponto=False)
+N3 = nota(64, 1070, 952, 640, 880, 'Abre devagar no celular. Não mostra o preço. Esconde o WhatsApp lá embaixo. Não diz o que faz logo de cara. A pessoa não acha o que veio buscar e volta pro Google.<br><b style="color:var(--pt)">O site existe, mas não trabalha.</b>')
+N4 = nota(64, 1130, 952, 905, 958, 'Vitrine mostra e espera alguém entrar. Um site feito pro seu cliente tira a dúvida antes da pergunta e leva ao próximo passo. É o que eu fiz no senerine.dev: logo na primeira tela, você sabe o que eu faço, vê quem faz e chama no WhatsApp com um toque.')
 N5 = nota(64, 1190, 952, 192, 796, 'Todo mundo passa por ela: pesquisando, comparando, perguntando. O perfil é uma banca na calçada, com as regras de outro. O site é o seu endereço: seu domínio, do seu jeito, aberto de madrugada.')
 N6 = nota(64, 700, 400, 800, 960, 'Ele pergunta pro ChatGPT, pro Claude: “onde tem uma barbearia boa aqui perto?”. A IA responde com o que encontra escrito na internet. Se o que você faz, onde fica e quanto custa só existe no stories e no direct, fica difícil ela te achar.')
 N7 = nota(64, 640, 420, 842, 866, 'Aparecer, hoje, é:<br><br>01 ser achado quando alguém pesquisa;<br>02 estar escrito de um jeito que o Google e a IA conseguem ler;<br>03 convencer em segundos quem chega.')
-N8 = nota(64, 1180, 900, 873, 1000, 'Senerine.dev é um estúdio digital autoral. Faço sites e aplicações pensados pra serem encontrados, entendidos e usados pelo seu cliente. Me chama no direct.<br><br><b style="color:var(--blue)">Manda pra quem acha que site já era.</b>', ponto=False)
+N8 = nota(64, 1180, 900, 873, 1000, 'Senerine.dev é um estúdio digital autoral. Faço sites e aplicações pensados pra serem encontrados, entendidos e usados pelo seu cliente. Me chama no direct.<br><br><b style="color:var(--pt)">Manda pra quem acha que site já era.</b>', ponto=False)
 
 S = []
 
@@ -77,7 +89,7 @@ S.append(slide(1, f'''
   <img class="img" src="{T}lirios-faixa.png" style="left:520px;top:100px;height:1300px">
   <p class="it" style="left:64px;top:120px;font-size:72px">Ainda vale a pena<br>ter um</p>
   <h1 class="h" style="left:64px;top:300px;font-size:200px">site em<br><span class="b">2026?</span></h1>
-  {N1}'''))
+  {N1}''', cls="azul"))
 
 # 2 · antigamente, por fazer: "focus" borrado, sem foco em quem ia entrar
 S.append(slide(2, f'''
@@ -92,14 +104,15 @@ S.append(slide(3, f'''
   <h1 class="h" style="left:64px;top:128px;font-size:160px">Hoje, sobra<br>site <span class="b">ruim.</span></h1>
   <div class="dot" style="left:520px;top:600px;width:380px;height:380px"></div>
   <img class="img" src="{T}queda.png" style="left:260px;top:360px;width:960px">
-  {N3}'''))
+  {N3}''', cls="preto"))
 
 # 4 · vitrine só mostra, site único capta: os cisnes se encontrando, o ponto no coração
 S.append(slide(4, f'''
   <p class="it" style="left:64px;top:120px;font-size:72px">Vitrine só mostra.</p>
-  <h1 class="h" style="left:64px;top:230px;font-size:180px">Site único<br><span class="b">capta.</span></h1>
-  <img class="img" src="{T}cisnes.png" style="left:110px;top:420px;width:860px">
-  <div class="dot" style="left:494px;top:817px;width:100px;height:100px;z-index:3"></div>
+  <h1 class="h" style="left:64px;top:230px;font-size:150px">Site único<br><span class="b">capta.</span></h1>
+  <img class="img" src="{T}cisnes.png" style="left:-40px;top:520px;width:640px">
+  <div class="dot" style="left:247px;top:812px;width:76px;height:76px;z-index:3"></div>
+  <div class="cel" style="left:650px;top:330px;width:350px;height:720px;rotate:4deg"><img src="../../elementos/senerine/m-hero.png"></div>
   {N4}'''))
 
 # 5 · a rua mais movimentada: o cavalo galopando
@@ -108,7 +121,7 @@ S.append(slide(5, f'''
   <h1 class="h" style="left:64px;top:220px;font-size:150px">rua mais<br><span class="b">movimentada.</span></h1>
   <div class="dot" style="left:430px;top:780px;width:260px;height:260px"></div>
   <img class="img" src="{T}cavalo.png" style="left:150px;top:520px;width:780px">
-  {N5}'''))
+  {N5}''', cls="azul"))
 
 # 6 · o cliente pergunta pra IA: as andorinhas, uma descendo até a outra
 S.append(slide(6, f'''
@@ -116,7 +129,7 @@ S.append(slide(6, f'''
   <h1 class="h" style="left:64px;top:320px;font-size:150px">Ele pergunta<br>pra <span class="b">IA.</span></h1>
   <div class="dot" style="left:640px;top:1000px;width:240px;height:240px"></div>
   <img class="img" src="{T}andorinhas.png" style="left:470px;top:620px;width:600px">
-  {N6}'''))
+  {N6}''', cls="preto"))
 
 # 7 · aparecer: a câmera (sem a marca), o ponto atrás da lente
 S.append(slide(7, f'''
@@ -131,7 +144,7 @@ S.append(slide(8, f'''
   <h1 class="h" style="left:64px;top:128px;font-size:150px">Esse é o<br>meu <span class="b">trabalho.</span></h1>
   <div class="dot" style="left:763px;top:784px;width:220px;height:220px"></div>
   <img class="img" src="{T}leoes.png" style="left:0;top:-60px;width:1080px">
-  {N8}'''))
+  {N8}''', cls="azul"))
 
 html = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
 <link rel="stylesheet" href="../../fontes/fontes.css"><style>{CSS}</style></head>

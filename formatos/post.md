@@ -60,6 +60,8 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - Anti design só com a frase: ele pediu "mais elementos". Elementos desenhados em SVG/CSS (sem foto) resolvem e nunca repetem imagem. Sem os textinhos de canto ("tire o cabeçalho e o rodapé").
 - **Anti design com elementos desenhados** ("site em 2026", `site-2026.py`): "ficou bem ruim". Voltar ao zine clássico: "simples e bonito, que chame atenção". Uma imagem forte em tinta por slide, o ponto atrás, manchete Anton com uma palavra azul, Bodoni itálico em cima, nota com linha. Sem cabeçalho e rodapé.
 - **Nota curta que só repete a manchete** ("site em 2026", 1ª versão zine): "mas que fale sobre o assunto". A nota tem que explicar o ponto de verdade: o que acontece, por que, um exemplo ou caso real. Imagem menor se precisar, o texto manda.
+- **Fundo de cor no zine** ("coloque fundo"): alternar papel, azul e preto. No azul, a palavra de destaque vira preta e o ponto vira off-white; no preto, a imagem em tinta é invertida (fica clara) e o azul vira o claro `#4aa3ea`.
+- **O próprio senerine.dev como prova** ("use o meu site como referência"), com captura real no celular, no lugar de case de cliente quando o assunto é o serviço dele.
 - **Repetir imagem de outro post**: "não reuse as imagens". Cada post usa imagens que nunca entraram em outro; conferir a coluna "Já usado em" do `elementos/README.md`.
 - **Imagem que não conversa com a frase** (megafone em "enfeite no lugar do que importa"): "não tem sentido estar ali". Cada imagem tem que ser metáfora direta do slide.
 - Slide final azul "segue pra ver os próximos" no modelo pronto: tirado. Fechar na chamada do direct.
