@@ -58,3 +58,10 @@ Arquivo: `2026-11-16-halftone-olivar.jpg`.
 - Manchete condensada enorme ocupando a largura toda ("STAY CREATIVE", "MONOCHROME"), texto miúdo justificado ao lado.
 - **Pra nós:** casa direto com o ponto: a retícula é feita de pontos. Dá pra passar as imagens em tinta por um filtro de retícula e deixar o azul do ponto como a única cor chapada (no lugar do vermelho e do verde).
 - **Contexto:** chegou junto com o pedido de deixar o "site em 2026" mais orgânico, sem texto.
+
+## 2026-11-16 · texturas e o pôster "CREATE" (Pinterest)
+Arquivos: `2026-11-16-textura-1.jpg` a `-7.jpg`.
+- 1 pincel preto e branco com respingos · 2 parede grunge com tinta escorrida · 3 rabisco cinza em relevo · 5 ruído granulado · 6 grunge com faixas (o vermelho não entra, só a forma em cinza).
+- 4 é a foto de um artista conhecido cobrindo o rosto: **só referência** de tratamento (grão, preto profundo), não usar a imagem.
+- 7 pôster "CREATE": palavra gigante em serifa na vertical pela borda, uma forma de cor grande saindo do canto (roxa), a foto com textura em creme por cima, texto miúdo em blocos com um traço embaixo, uma estrelinha de quatro pontas.
+- **Virou:** "site em 2026" (`modelos/posts/site-2026-create.py`): as texturas viraram fundos em `elementos/texturas/` (ruido, parede, pincel, pincel-escuro, rabisco-cinza, grunge) e a forma roxa virou o ponto azul.
