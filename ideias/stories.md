@@ -12,3 +12,4 @@ Status: `ideia` · `em produção` · `pronto` · `postado`
 | ideia | Teaser do próximo projeto | "Consegue adivinhar?" (em sigilo, não revelar) |
 | pronto | Sumi (aviso de pausa) | 3 stories: "Sumi. eu sei.", "Mas não parei.", "Em breve." (`modelos/stories/sumido.py`) |
 | pronto | Site da Scarpetta no ar | story com espaço pra figurinha de link (`modelos/stories/scarpetta-link.py`) |
+| pronto | Divulgar o post "site em 2026" | 4 stories na linguagem do post (texturas, Bodoni vertical, ponto): post novo com espaço da figurinha, o teste da IA, por que não indicou, chamada (`modelos/stories/site-2026.py`) |
