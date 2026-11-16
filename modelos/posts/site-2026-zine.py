@@ -50,14 +50,90 @@ s::after { content:""; position:absolute; left:-4%; right:-4%; top:52%; height:.
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 -1.6 1.25'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>"); }
 .cel { z-index:4; border:10px solid var(--ink); border-radius:46px; overflow:hidden; background:var(--ink); }
 .cel img { display:block; width:100%; }
+.tape { height:46px; background:rgba(236,232,220,.78); box-shadow:0 1px 2px rgba(0,0,0,.12); z-index:8; }
 '''
 
 T = "../../elementos/tinta/"
 
 
+
+import math
+
+TINTA, OFF, AZUL, CLARO = "#121112", "#f2efea", "#0a63b2", "#4aa3ea"
+
+
+def _r(d, cor, w):
+    return f'<path d="{d}" fill="none" stroke="{cor}" stroke-width="{w}" stroke-linecap="round" stroke-linejoin="round"/>'
+
+
+def oval(cx, cy, rx, ry, cor, rot=-4, w=7):
+    """Círculo à mão: uma volta e um pouco, que não fecha certinho."""
+    pts = []
+    for k in range(70):
+        t = -0.4 + k / 68 * (2 * math.pi + 0.7)
+        r = 1 + 0.035 * math.sin(3 * t) + 0.04 * k / 68
+        x, y = rx * r * math.cos(t), ry * r * math.sin(t)
+        a = math.radians(rot)
+        pts.append((cx + x * math.cos(a) - y * math.sin(a), cy + x * math.sin(a) + y * math.cos(a)))
+    return _r("M " + " L ".join(f"{x:.1f} {y:.1f}" for x, y in pts), cor, w)
+
+
+def sublinha(x1, x2, y, cor, w=9):
+    """Sublinhado à mão: passa um pouco do fim e volta."""
+    return _r(f"M {x1} {y+4} Q {(x1+x2)/2:.0f} {y-10} {x2} {y+2} Q {x2-60} {y+12} {x2-160} {y+16}", cor, w)
+
+
+def seta(x1, y1, x2, y2, cor, w=6, curva=-70):
+    mx, my = (x1 + x2) / 2 + curva, (y1 + y2) / 2 - abs(curva) / 2
+    ang = math.atan2(y2 - my, x2 - mx)
+    h1 = (x2 - 30 * math.cos(ang - .5), y2 - 30 * math.sin(ang - .5))
+    h2 = (x2 - 30 * math.cos(ang + .5), y2 - 30 * math.sin(ang + .5))
+    return _r(f"M {x1} {y1} Q {mx:.0f} {my:.0f} {x2} {y2} M {h1[0]:.0f} {h1[1]:.0f} L {x2} {y2} L {h2[0]:.0f} {h2[1]:.0f}", cor, w)
+
+
+def rabisco(*partes):
+    return f'<svg class="ln" width="1080" height="1440" style="z-index:6">{"".join(partes)}</svg>'
+
+
+def mao(x, y, txt, cor, rot=-4, size=46):
+    """Anotação à mão em serifa itálica."""
+    return (f'<p style="left:{x}px;top:{y}px;font-family:\'Instrument Serif\',serif;font-style:italic;'
+            f'font-size:{size}px;line-height:1.05;color:{cor};rotate:{rot}deg;z-index:7">{txt}</p>')
+
+
+def fita(x, y, rot, w=170):
+    return f'<div class="tape" style="left:{x}px;top:{y}px;width:{w}px;rotate:{rot}deg"></div>'
+
+
+def carimbo(x, y, txt, cor, rot=-10):
+    return (f'<p style="left:{x}px;top:{y}px;border:5px solid {cor};color:{cor};padding:10px 20px 8px;'
+            f'font-family:\'JetBrains Mono\',monospace;font-weight:800;font-size:28px;letter-spacing:.14em;'
+            f'text-transform:uppercase;rotate:{rot}deg;z-index:8">{txt}</p>')
+
+
+EXTRA = {
+    1: rabisco(oval(307, 627, 280, 112, OFF, -5)) + mao(64, 790, "spoiler<br>no fim →", OFF, -6, 50) + fita(780, 92, -7, 150),
+    2: rabisco(sublinha(64, 680, 712, AZUL)) + mao(620, 740, "logo, “quem somos”<br>e um telefone. só.", AZUL, 5, 40)
+       + rabisco(seta(700, 850, 650, 950, AZUL, 5, 40)),
+    3: rabisco(sublinha(330, 690, 470, CLARO)) + mao(720, 330, "e o cliente<br>cai fora", CLARO, 6, 48)
+       + rabisco(seta(820, 450, 760, 600, CLARO, 5, 50)),
+    4: rabisco(oval(290, 520, 260, 98, AZUL, -3)) + fita(745, 300, -8, 150) + fita(930, 1020, 14, 120)
+       + carimbo(860, 236, "no ar", AZUL, 10) + mao(64, 1010, "um toque e ele<br>tá no seu WhatsApp", AZUL, -4, 40),
+    5: rabisco(sublinha(64, 900, 540, TINTA)) + mao(720, 610, "aberta de madrugada,<br>no feriado, no domingo", OFF, -4, 40),
+    6: rabisco(oval(380, 610, 110, 88, CLARO, 6)) + mao(540, 575, "e ela te indica?", CLARO, -5, 54)
+       + rabisco(seta(560, 660, 480, 720, CLARO, 5, -40)),
+    7: rabisco(sublinha(64, 960, 545, TINTA, 10))
+       + '<img class="img" src="' + T + 'estrelas.png" style="left:672px;top:430px;height:420px;rotate:90deg;transform-origin:50% 50%;z-index:2">'
+       + mao(700, 700, "e o que dizem<br>de você também", AZUL, 4, 38),
+    8: rabisco(sublinha(340, 930, 455, TINTA)) + mao(64, 520, "um estúdio de<br>uma pessoa só.", OFF, -4, 50)
+       + '<img class="img" src="' + T + 'flores-tinta.png" style="left:820px;top:-60px;height:520px;rotate:12deg">',
+}
+
+
 def slide(n, inner, cls=""):
     return f'''<section class="s {cls}" id="s{n}">
   {inner}
+  {EXTRA.get(n, "")}
   <div class="grain"></div>
 </section>'''
 
@@ -73,7 +149,7 @@ def nota(x, y, w, ax, ay, texto, ponto=True):
             f'{ln} stroke="currentColor" stroke-width="2"/>{dot}</svg>')
 
 N1 = nota(64, 1110, 400, 760, 900, 'Resposta curta: vale. Mas não do jeito que todo mundo fazia. Arrasta.', ponto=False)
-N2 = nota(64, 1090, 952, 620, 960, 'Site era item de lista: ter pra dizer que tinha. Uma página com logo, “quem somos” e um telefone. Ninguém pensava em quem ia entrar, nem no que essa pessoa queria fazer ali.')
+N2 = nota(64, 1110, 952, 620, 1020, 'Site era item de lista: ter pra dizer que tinha. Uma página com logo, “quem somos” e um telefone. Ninguém pensava em quem ia entrar, nem no que essa pessoa queria fazer ali.')
 N3 = nota(64, 1070, 952, 640, 880, 'Abre devagar no celular. Não mostra o preço. Esconde o WhatsApp lá embaixo. Não diz o que faz logo de cara. A pessoa não acha o que veio buscar e volta pro Google.<br><b style="color:var(--pt)">O site existe, mas não trabalha.</b>')
 N4 = nota(64, 1130, 952, 905, 958, 'Vitrine mostra e espera alguém entrar. Um site feito pro seu cliente tira a dúvida antes da pergunta e leva ao próximo passo. É o que eu fiz no senerine.dev: logo na primeira tela, você sabe o que eu faço, vê quem faz e chama no WhatsApp com um toque.')
 N5 = nota(64, 1190, 952, 192, 796, 'Todo mundo passa por ela: pesquisando, comparando, perguntando. O perfil é uma banca na calçada, com as regras de outro. O site é o seu endereço: seu domínio, do seu jeito, aberto de madrugada.')
@@ -95,8 +171,8 @@ S.append(slide(1, f'''
 S.append(slide(2, f'''
   <p class="it" style="left:64px;top:120px;font-size:72px">Antigamente,</p>
   <h1 class="h" style="left:64px;top:220px;font-size:150px">todo mundo<br>fazia site<br><span class="b">por fazer.</span></h1>
-  <div class="dot" style="left:560px;top:870px;width:130px;height:130px"></div>
-  <img class="img" src="{T}foco.png" style="left:420px;top:700px;width:620px">
+  <div class="dot" style="left:560px;top:930px;width:130px;height:130px"></div>
+  <img class="img" src="{T}foco.png" style="left:420px;top:760px;width:620px">
   {N2}'''))
 
 # 3 · hoje sobra site ruim: o homem caindo, o cliente cai fora

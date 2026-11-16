@@ -50,3 +50,11 @@ Arquivos: `2026-11-16-anti-design-ellie.jpg`, `2026-11-16-acid-graphics.jpg`.
 - **O que vale pra nós:** uma palavra gigante distorcida por slide, cortada pela borda, e texto miúdo nos cantos. É simples de fazer e chama atenção no feed.
 - **O que não entra:** o verde-limão, o rosa e o vermelho neon. Fica o azul do ponto como única cor (regra da marca: um azul, evitar vermelho, nada de cor forte demais).
 - **Contexto:** chegou com o pedido de um "carrossel simples" e ideias de conteúdo.
+
+## 2026-11-16 · "Halftone Poster Design" (Natã Olivar, @olivar.dsgn, Pinterest)
+Arquivo: `2026-11-16-halftone-olivar.jpg`.
+- Foto inteira em **retícula de pontos** (meio-tom) grossa, preto sobre creme, cara de impressão barata.
+- Uma cor só de destaque chapada sobre a retícula (os óculos vermelhos do cachorro, o verde do pôster "grey over").
+- Manchete condensada enorme ocupando a largura toda ("STAY CREATIVE", "MONOCHROME"), texto miúdo justificado ao lado.
+- **Pra nós:** casa direto com o ponto: a retícula é feita de pontos. Dá pra passar as imagens em tinta por um filtro de retícula e deixar o azul do ponto como a única cor chapada (no lugar do vermelho e do verde).
+- **Contexto:** chegou junto com o pedido de deixar o "site em 2026" mais orgânico, sem texto.
