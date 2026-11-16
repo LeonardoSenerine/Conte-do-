@@ -19,8 +19,8 @@ body { width:1080px; background:#000; }
 .img { z-index:3; }
 .s:not(.claro) .img { filter:invert(1) contrast(1.1); mix-blend-mode:screen; }
 .s.claro .img { mix-blend-mode:multiply; }
-.tit { left:360px; width:656px; top:96px; font-family:"Inter Tight",sans-serif; font-weight:800; font-size:68px; line-height:1.04; letter-spacing:-.03em; z-index:5; }
-.txt { left:360px; width:656px; bottom:84px; font-family:"Inter Tight",sans-serif; font-weight:500; font-size:34px; line-height:1.36; letter-spacing:-.01em; z-index:5; padding-top:22px; border-top:3px solid currentColor; }
+.tit { left:360px; width:656px; top:110px; text-align:center; text-wrap:balance; font-family:"Inter Tight",sans-serif; font-weight:800; font-size:68px; line-height:1.04; letter-spacing:-.03em; z-index:5; }
+.txt { left:400px; width:576px; bottom:100px; text-align:center; text-wrap:balance; font-family:"Inter Tight",sans-serif; font-weight:500; font-size:34px; line-height:1.36; letter-spacing:-.01em; z-index:5; padding-top:22px; border-top:3px solid currentColor; }
 .txt b { font-weight:800; color:var(--blue); margin-right:8px; }
 .s:not(.claro) .txt b { color:var(--claro); }
 .estrela { z-index:5; width:46px; height:46px; }
@@ -76,12 +76,12 @@ S = [
     slide(5, "grunge", False, "rua", (980, 700, 300), ("cavalo-ret.png", 330, 420, 720),
           "A internet é a rua mais movimentada.",
           "Todo mundo passa por ela: pesquisa, compara, pergunta. O perfil é uma banca na calçada. O site é o seu endereço, aberto de madrugada."),
-    slide(6, "pincel-escuro", False, "ia", (1060, 560, 300), ("andorinhas-ret.png", 560, 330, 440),
+    slide(6, "pincel-escuro", False, "ia", (1060, 740, 300), ("andorinhas-ret.png", 560, 440, 440),
           "Seu cliente não pesquisa só no Google. Pergunta pra IA.",
           "“Onde tem uma barbearia boa aqui perto?” A IA responde com o que encontra escrito na internet. Se você só existe no stories, fica difícil te achar."),
-    slide(7, "pincel", True, "apareça", (1040, 560, 280), ("camera-ret.png", 420, 380, 560),
+    slide(7, "pincel", True, "apareça", (1040, 700, 280), ("camera-ret.png", 420, 440, 560),
           "Não basta existir. Você precisa aparecer.",
-          "<b>01</b> Ser achado quando alguém pesquisa.<br><b>02</b> Ser lido pelo Google e pela IA.<br><b>03</b> Convencer quem chega."),
+          "<b>01</b> Ser encontrado na busca.<br><b>02</b> Ser lido pelo Google e pela IA.<br><b>03</b> Convencer quem chega."),
     slide(8, "ruido", False, "trabalho", (1000, 560, 330), ("leoes-ret.png", 330, -40, 720),
           "Esse é o meu trabalho.",
           "Senerine.dev é um estúdio digital autoral: sites e aplicações pra serem encontrados, entendidos e usados. Me chama no direct. E manda pra quem acha que site já era.",
