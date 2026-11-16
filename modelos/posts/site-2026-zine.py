@@ -1,4 +1,5 @@
-"""Carrossel "ainda vale a pena ter um site em 2026?", no zine clássico (a versão anti design ficou
+"""Carrossel "ainda vale a pena ter um site em 2026?", no zine clássico com textura (retícula nas
+imagens via `modelos/reticula.py`, papel impresso via `modelos/textura.py`) (a versão anti design ficou
 "bem ruim"): papel, Anton + Bodoni, imagens em tinta que ele mandou, o ponto azul e notas com linha.
 Sem cabeçalho nem rodapé. 8 slides 1080x1440. Gerar: python3 site-2026-zine.py && node ../render.mjs site-2026-zine.html saida 1080 1440 8"""
 
@@ -51,90 +52,21 @@ s::after { content:""; position:absolute; left:-4%; right:-4%; top:52%; height:.
 .cel { z-index:4; border:10px solid var(--ink); border-radius:46px; overflow:hidden; background:var(--ink); }
 .cel img { display:block; width:100%; }
 .tape { height:46px; background:rgba(236,232,220,.78); box-shadow:0 1px 2px rgba(0,0,0,.12); z-index:8; }
+.papel { inset:0; z-index:10; pointer-events:none; background:url(../../elementos/texturas/papel.png); mix-blend-mode:multiply; }
+.s.azul .papel, .s.preto .papel { opacity:.6; }
 '''
 
 T = "../../elementos/tinta/"
 
 
 
-import math
-
-TINTA, OFF, AZUL, CLARO = "#121112", "#f2efea", "#0a63b2", "#4aa3ea"
-
-
-def _r(d, cor, w):
-    return f'<path d="{d}" fill="none" stroke="{cor}" stroke-width="{w}" stroke-linecap="round" stroke-linejoin="round"/>'
-
-
-def oval(cx, cy, rx, ry, cor, rot=-4, w=7):
-    """Círculo à mão: uma volta e um pouco, que não fecha certinho."""
-    pts = []
-    for k in range(70):
-        t = -0.4 + k / 68 * (2 * math.pi + 0.7)
-        r = 1 + 0.035 * math.sin(3 * t) + 0.04 * k / 68
-        x, y = rx * r * math.cos(t), ry * r * math.sin(t)
-        a = math.radians(rot)
-        pts.append((cx + x * math.cos(a) - y * math.sin(a), cy + x * math.sin(a) + y * math.cos(a)))
-    return _r("M " + " L ".join(f"{x:.1f} {y:.1f}" for x, y in pts), cor, w)
-
-
-def sublinha(x1, x2, y, cor, w=9):
-    """Sublinhado à mão: passa um pouco do fim e volta."""
-    return _r(f"M {x1} {y+4} Q {(x1+x2)/2:.0f} {y-10} {x2} {y+2} Q {x2-60} {y+12} {x2-160} {y+16}", cor, w)
-
-
-def seta(x1, y1, x2, y2, cor, w=6, curva=-70):
-    mx, my = (x1 + x2) / 2 + curva, (y1 + y2) / 2 - abs(curva) / 2
-    ang = math.atan2(y2 - my, x2 - mx)
-    h1 = (x2 - 30 * math.cos(ang - .5), y2 - 30 * math.sin(ang - .5))
-    h2 = (x2 - 30 * math.cos(ang + .5), y2 - 30 * math.sin(ang + .5))
-    return _r(f"M {x1} {y1} Q {mx:.0f} {my:.0f} {x2} {y2} M {h1[0]:.0f} {h1[1]:.0f} L {x2} {y2} L {h2[0]:.0f} {h2[1]:.0f}", cor, w)
-
-
-def rabisco(*partes):
-    return f'<svg class="ln" width="1080" height="1440" style="z-index:6">{"".join(partes)}</svg>'
-
-
-def mao(x, y, txt, cor, rot=-4, size=46):
-    """Anotação à mão em serifa itálica."""
-    return (f'<p style="left:{x}px;top:{y}px;font-family:\'Instrument Serif\',serif;font-style:italic;'
-            f'font-size:{size}px;line-height:1.05;color:{cor};rotate:{rot}deg;z-index:7">{txt}</p>')
-
-
-def fita(x, y, rot, w=170):
-    return f'<div class="tape" style="left:{x}px;top:{y}px;width:{w}px;rotate:{rot}deg"></div>'
-
-
-def carimbo(x, y, txt, cor, rot=-10):
-    return (f'<p style="left:{x}px;top:{y}px;border:5px solid {cor};color:{cor};padding:10px 20px 8px;'
-            f'font-family:\'JetBrains Mono\',monospace;font-weight:800;font-size:28px;letter-spacing:.14em;'
-            f'text-transform:uppercase;rotate:{rot}deg;z-index:8">{txt}</p>')
-
-
-EXTRA = {
-    1: rabisco(oval(307, 627, 280, 112, OFF, -5)) + mao(64, 790, "spoiler<br>no fim →", OFF, -6, 50) + fita(780, 92, -7, 150),
-    2: rabisco(sublinha(64, 680, 712, AZUL)) + mao(620, 740, "logo, “quem somos”<br>e um telefone. só.", AZUL, 5, 40)
-       + rabisco(seta(700, 850, 650, 950, AZUL, 5, 40)),
-    3: rabisco(sublinha(330, 690, 470, CLARO)) + mao(720, 330, "e o cliente<br>cai fora", CLARO, 6, 48)
-       + rabisco(seta(820, 450, 760, 600, CLARO, 5, 50)),
-    4: rabisco(oval(290, 520, 260, 98, AZUL, -3)) + fita(745, 300, -8, 150) + fita(930, 1020, 14, 120)
-       + carimbo(860, 236, "no ar", AZUL, 10) + mao(64, 1010, "um toque e ele<br>tá no seu WhatsApp", AZUL, -4, 40),
-    5: rabisco(sublinha(64, 900, 540, TINTA)) + mao(720, 610, "aberta de madrugada,<br>no feriado, no domingo", OFF, -4, 40),
-    6: rabisco(oval(380, 610, 110, 88, CLARO, 6)) + mao(540, 575, "e ela te indica?", CLARO, -5, 54)
-       + rabisco(seta(560, 660, 480, 720, CLARO, 5, -40)),
-    7: rabisco(sublinha(64, 960, 545, TINTA, 10))
-       + '<img class="img" src="' + T + 'estrelas.png" style="left:672px;top:430px;height:420px;rotate:90deg;transform-origin:50% 50%;z-index:2">'
-       + mao(700, 700, "e o que dizem<br>de você também", AZUL, 4, 38),
-    8: rabisco(sublinha(340, 930, 455, TINTA)) + mao(64, 520, "um estúdio de<br>uma pessoa só.", OFF, -4, 50)
-       + '<img class="img" src="' + T + 'flores-tinta.png" style="left:820px;top:-60px;height:520px;rotate:12deg">',
-}
 
 
 def slide(n, inner, cls=""):
     return f'''<section class="s {cls}" id="s{n}">
   {inner}
-  {EXTRA.get(n, "")}
   <div class="grain"></div>
+  <div class="papel"></div>
 </section>'''
 
 
@@ -148,21 +80,21 @@ def nota(x, y, w, ax, ay, texto, ponto=True):
             f'<svg class="ln" width="1080" height="1440">{ln} style="stroke:var(--bg)" stroke-width="8" stroke-linecap="round"/>'
             f'{ln} stroke="currentColor" stroke-width="2"/>{dot}</svg>')
 
-N1 = nota(64, 1110, 400, 760, 900, 'Resposta curta: vale. Mas não do jeito que todo mundo fazia. Arrasta.', ponto=False)
+N1 = nota(64, 1110, 400, 790, 926, 'Resposta curta: vale. Mas não do jeito que todo mundo fazia. Arrasta.', ponto=False)
 N2 = nota(64, 1110, 952, 620, 1020, 'Site era item de lista: ter pra dizer que tinha. Uma página com logo, “quem somos” e um telefone. Ninguém pensava em quem ia entrar, nem no que essa pessoa queria fazer ali.')
 N3 = nota(64, 1070, 952, 640, 880, 'Abre devagar no celular. Não mostra o preço. Esconde o WhatsApp lá embaixo. Não diz o que faz logo de cara. A pessoa não acha o que veio buscar e volta pro Google.<br><b style="color:var(--pt)">O site existe, mas não trabalha.</b>')
 N4 = nota(64, 1130, 952, 905, 958, 'Vitrine mostra e espera alguém entrar. Um site feito pro seu cliente tira a dúvida antes da pergunta e leva ao próximo passo. É o que eu fiz no senerine.dev: logo na primeira tela, você sabe o que eu faço, vê quem faz e chama no WhatsApp com um toque.')
-N5 = nota(64, 1190, 952, 192, 796, 'Todo mundo passa por ela: pesquisando, comparando, perguntando. O perfil é uma banca na calçada, com as regras de outro. O site é o seu endereço: seu domínio, do seu jeito, aberto de madrugada.')
+N5 = nota(64, 1200, 952, 112, 740, 'Todo mundo passa por ela: pesquisando, comparando, perguntando. O perfil é uma banca na calçada, com as regras de outro. O site é o seu endereço: seu domínio, do seu jeito, aberto de madrugada.')
 N6 = nota(64, 700, 400, 800, 960, 'Ele pergunta pro ChatGPT, pro Claude: “onde tem uma barbearia boa aqui perto?”. A IA responde com o que encontra escrito na internet. Se o que você faz, onde fica e quanto custa só existe no stories e no direct, fica difícil ela te achar.')
-N7 = nota(64, 640, 420, 842, 866, 'Aparecer, hoje, é:<br><br>01 ser achado quando alguém pesquisa;<br>02 estar escrito de um jeito que o Google e a IA conseguem ler;<br>03 convencer em segundos quem chega.')
+N7 = nota(64, 640, 370, 884, 762, 'Aparecer, hoje, é:<br><br>01 ser achado quando alguém pesquisa;<br>02 estar escrito de um jeito que o Google e a IA conseguem ler;<br>03 convencer em segundos quem chega.')
 N8 = nota(64, 1180, 900, 873, 1000, 'Senerine.dev é um estúdio digital autoral. Faço sites e aplicações pensados pra serem encontrados, entendidos e usados pelo seu cliente. Me chama no direct.<br><br><b style="color:var(--pt)">Manda pra quem acha que site já era.</b>', ponto=False)
 
 S = []
 
 # 1 · capa: os lírios na faixa preta, bonitos e de pé; o ponto atrás
 S.append(slide(1, f'''
-  <div class="dot" style="left:650px;top:520px;width:300px;height:300px"></div>
-  <img class="img" src="{T}lirios-faixa.png" style="left:520px;top:100px;height:1300px">
+  <div class="dot" style="left:668px;top:505px;width:332px;height:332px"></div>
+  <img class="img" src="{T}lirios-faixa-ret.png" style="left:480px;top:40px;height:1440px">
   <p class="it" style="left:64px;top:120px;font-size:72px">Ainda vale a pena<br>ter um</p>
   <h1 class="h" style="left:64px;top:300px;font-size:200px">site em<br><span class="b">2026?</span></h1>
   {N1}''', cls="azul"))
@@ -172,21 +104,21 @@ S.append(slide(2, f'''
   <p class="it" style="left:64px;top:120px;font-size:72px">Antigamente,</p>
   <h1 class="h" style="left:64px;top:220px;font-size:150px">todo mundo<br>fazia site<br><span class="b">por fazer.</span></h1>
   <div class="dot" style="left:560px;top:930px;width:130px;height:130px"></div>
-  <img class="img" src="{T}foco.png" style="left:420px;top:760px;width:620px">
+  <img class="img" src="{T}foco-ret.png" style="left:420px;top:760px;width:620px">
   {N2}'''))
 
 # 3 · hoje sobra site ruim: o homem caindo, o cliente cai fora
 S.append(slide(3, f'''
   <h1 class="h" style="left:64px;top:128px;font-size:160px">Hoje, sobra<br>site <span class="b">ruim.</span></h1>
   <div class="dot" style="left:520px;top:600px;width:380px;height:380px"></div>
-  <img class="img" src="{T}queda.png" style="left:260px;top:360px;width:960px">
+  <img class="img" src="{T}queda-ret.png" style="left:260px;top:360px;width:960px">
   {N3}''', cls="preto"))
 
 # 4 · vitrine só mostra, site único capta: os cisnes se encontrando, o ponto no coração
 S.append(slide(4, f'''
   <p class="it" style="left:64px;top:120px;font-size:72px">Vitrine só mostra.</p>
   <h1 class="h" style="left:64px;top:230px;font-size:150px">Site único<br><span class="b">capta.</span></h1>
-  <img class="img" src="{T}cisnes.png" style="left:-40px;top:520px;width:640px">
+  <img class="img" src="{T}cisnes-ret.png" style="left:-40px;top:520px;width:640px">
   <div class="dot" style="left:247px;top:812px;width:76px;height:76px;z-index:3"></div>
   <div class="cel" style="left:650px;top:330px;width:350px;height:720px;rotate:4deg"><img src="../../elementos/senerine/m-hero.png"></div>
   {N4}'''))
@@ -195,8 +127,8 @@ S.append(slide(4, f'''
 S.append(slide(5, f'''
   <p class="it" style="left:64px;top:120px;font-size:72px">A internet é a</p>
   <h1 class="h" style="left:64px;top:220px;font-size:150px">rua mais<br><span class="b">movimentada.</span></h1>
-  <div class="dot" style="left:430px;top:780px;width:260px;height:260px"></div>
-  <img class="img" src="{T}cavalo.png" style="left:150px;top:520px;width:780px">
+  <div class="dot" style="left:405px;top:720px;width:320px;height:320px"></div>
+  <img class="img" src="{T}cavalo-ret.png" style="left:60px;top:400px;width:960px">
   {N5}''', cls="azul"))
 
 # 6 · o cliente pergunta pra IA: as andorinhas, uma descendo até a outra
@@ -204,22 +136,22 @@ S.append(slide(6, f'''
   <p class="it" style="left:64px;top:120px;font-size:64px">Seu cliente não pesquisa<br>só no Google.</p>
   <h1 class="h" style="left:64px;top:320px;font-size:150px">Ele pergunta<br>pra <span class="b">IA.</span></h1>
   <div class="dot" style="left:640px;top:1000px;width:240px;height:240px"></div>
-  <img class="img" src="{T}andorinhas.png" style="left:470px;top:620px;width:600px">
+  <img class="img" src="{T}andorinhas-ret.png" style="left:470px;top:620px;width:600px">
   {N6}''', cls="preto"))
 
 # 7 · aparecer: a câmera (sem a marca), o ponto atrás da lente
 S.append(slide(7, f'''
   <p class="it" style="left:64px;top:120px;font-size:72px">Não basta existir.<br>Você precisa</p>
   <h1 class="h" style="left:64px;top:300px;font-size:230px"><span class="b">aparecer.</span></h1>
-  <div class="dot" style="left:560px;top:1115px;width:200px;height:200px"></div>
-  <img class="img" src="{T}camera.png" style="left:500px;top:820px;width:560px">
+  <div class="dot" style="left:501px;top:1100px;width:271px;height:271px"></div>
+  <img class="img" src="{T}camera-ret.png" style="left:420px;top:700px;width:760px">
   {N7}'''))
 
 # 8 · esse é o meu trabalho: no meio dos leões, a figura parada; o ponto atrás dela
 S.append(slide(8, f'''
   <h1 class="h" style="left:64px;top:128px;font-size:150px">Esse é o<br>meu <span class="b">trabalho.</span></h1>
   <div class="dot" style="left:763px;top:784px;width:220px;height:220px"></div>
-  <img class="img" src="{T}leoes.png" style="left:0;top:-60px;width:1080px">
+  <img class="img" src="{T}leoes-ret.png" style="left:0;top:-60px;width:1080px">
   {N8}''', cls="azul"))
 
 html = f'''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
