@@ -55,6 +55,8 @@ Para converter um original novo, adicione uma linha em `modelos/tinta.py` (nome,
 | andorinhas-faixa | andorinhas num salgueiro em faixa | testada no "oportunidade" e trocada | voltar, lembrar |
 | iris | íris em gravura | testada no "oportunidade" e trocada (metáfora fraca) | calma, constância |
 | pegaso | pégaso com amazona em gravura | testado na chamada do "oportunidade" e trocado (metáfora fraca) | conquista, ser visto |
+| camera | câmera fotográfica em 1-bit (a marca foi coberta de preto no original; não colocar de volta) | "site em 2026", "você precisa aparecer" | aparecer, ser visto, foto, vitrine |
+| flores-tinta | flores em pincelada preta, em 1-bit | ainda não | delicadeza, beleza simples |
 | leo / leonardo-ponto | o Leonardo (tinta e no ponto azul) | chamadas finais, foto de perfil | CTA, apresentação |
 
 ### Originais ainda sem versão em tinta (chegaram em 2026-10-29)

@@ -36,7 +36,7 @@ Nomes do estilo: **editorial minimalista** com **tipografia suíça** (grade rí
 - Três fundos alternando pela grade: creme `#f2efea`, preto `#1e1d1e`, azul `#0a63b2`. Metade dos slides com imagem grande do banco (versão `-claro` no fundo escuro), metade só tipografia.
 - Rodapé de conteúdo: texto pequeno em caixa alta (o complemento da frase) e a seta →. Nada de rótulo, fólio nem régua.
 
-## Linguagem 4 · Anti design / acid (em teste, referências de 2026-11-16)
+## Linguagem 4 · Anti design / acid (testada em 2026-11-16; com elementos desenhados ficou "bem ruim", ele voltou pro zine)
 - Uma frase gigante por slide em **Anton**, esticada (`scaleY`) e entortada com filtro SVG (`feTurbulence` + `feDisplacementMap`): **leve**, a letra entorta sem rasgar (a primeira versão ficou ilegível).
 - Cortada pela borda, risco azul à mão atravessando a 1ª linha (longe dos acentos), etiqueta preta torta, texto miúdo em mono nos cantos, grão de xerox.
 - Só o azul do ponto: o neon das referências (verde, rosa, vermelho) não entra.
