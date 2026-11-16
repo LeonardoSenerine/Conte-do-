@@ -13,15 +13,15 @@ body { width:1080px; background:#000; }
 .s > * { position:absolute; }
 .vert { left:0; top:0; width:1440px; height:330px; transform-origin:0 0; transform:translate(0,1440px) rotate(-90deg);
   display:flex; align-items:center; justify-content:center; z-index:2; }
-.vert p { font-family:"Bodoni Moda",serif; font-weight:700; text-transform:uppercase; line-height:.8; letter-spacing:.01em; color:var(--blue); white-space:nowrap; }
+.vert p { font-family:"Bodoni Moda",serif; font-weight:900; text-transform:uppercase; line-height:.8; letter-spacing:.01em; color:var(--blue); white-space:nowrap; }
 .s:not(.claro) .vert p { color:var(--claro); }
 .forma { border-radius:50%; background:var(--blue); z-index:1; }
 .img { z-index:3; }
 .s:not(.claro) .img { filter:invert(1) contrast(1.1); mix-blend-mode:screen; }
 .s.claro .img { mix-blend-mode:multiply; }
-.tit { left:360px; width:656px; top:110px; text-align:center; text-wrap:balance; font-family:"Instrument Serif",serif; font-weight:400; font-size:96px; line-height:.98; letter-spacing:-.015em; -webkit-text-stroke:1.2px currentColor; z-index:5; }
-.tit i { font-style:italic; color:var(--blue); -webkit-text-stroke:1.2px var(--blue); }
-.s:not(.claro) .tit i { color:var(--claro); -webkit-text-stroke:1.2px var(--claro); }
+.tit { left:360px; width:656px; top:110px; text-align:center; text-wrap:balance; font-family:"Instrument Serif",serif; font-weight:400; font-size:96px; line-height:1; letter-spacing:0; -webkit-text-stroke:4px currentColor; paint-order:stroke fill; z-index:5; }
+.tit i { font-style:italic; color:var(--blue); -webkit-text-stroke:4px var(--blue); }
+.s:not(.claro) .tit i { color:var(--claro); -webkit-text-stroke:4px var(--claro); }
 .txt { left:372px; width:632px; bottom:88px; text-align:center; text-wrap:balance; font-family:"Inter Tight",sans-serif; font-weight:500; font-size:42px; line-height:1.3; letter-spacing:-.01em; z-index:5; padding-top:22px; border-top:3px solid currentColor; }
 .txt b { font-weight:800; color:var(--blue); }
 .s:not(.claro) .txt b { color:var(--claro); }
@@ -61,7 +61,7 @@ def slide(n, fundo, claro, vert, forma, img, tit, texto, extra=""):
 
 
 S = [
-    slide(1, "ruido", False, "2026?", (1010, 600, 330), ("lirios-faixa-ret.png", 420, 330, 520),
+    slide(1, "ruido", False, "2026?", (1010, 720, 320), ("lirios-faixa-ret.png", 440, 430, 470),
           "Ainda vale a pena ter um site <i>em 2026?</i>",
           "Resposta curta: <b>vale.</b> Mas não do jeito que todo mundo fazia. Arrasta →",
           ESTRELA.format(p="left:980px;top:1040px;color:var(--cream)")),
