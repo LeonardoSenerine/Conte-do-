@@ -42,3 +42,11 @@ Os arquivos estão em `elementos/originais/` (nomes no `elementos/README.md`).
 - Elementos grandes: foto do cliente de fundo, celular cortado pela borda atravessando pro slide 2, polaroids com checkbox, grade de fotos de viagem com nome, cartões de depoimento em vídeo, cartão de preço.
 - Topo: @ do cliente e "01 / 07 · arrasta →"; rodapé: o endereço do site.
 - Virou a base do case Scarpetta (`modelos/posts/scarpetta-grande.py`).
+
+## 2026-11-16 · "Anti design" (@ellie.designr) e "Acid Graphics" (Pinterest)
+Arquivos: `2026-11-16-anti-design-ellie.jpg`, `2026-11-16-acid-graphics.jpg`.
+- **Anti design:** colagem de rosto recortado, letras gigantes cortadas pela borda, rabisco por cima, etiqueta preta torta ("ANTI DESIGN"), textura de papel e xerox.
+- **Acid graphics:** tipografia distorcida (derretida, esticada, em onda) ocupando o pôster inteiro, grão, pouco texto pequeno nos cantos.
+- **O que vale pra nós:** uma palavra gigante distorcida por slide, cortada pela borda, e texto miúdo nos cantos. É simples de fazer e chama atenção no feed.
+- **O que não entra:** o verde-limão, o rosa e o vermelho neon. Fica o azul do ponto como única cor (regra da marca: um azul, evitar vermelho, nada de cor forte demais).
+- **Contexto:** chegou com o pedido de um "carrossel simples" e ideias de conteúdo.
