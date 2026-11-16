@@ -22,8 +22,8 @@ body { width:1080px; background:#000; }
 .tit { left:360px; width:656px; top:110px; text-align:center; text-wrap:balance; font-family:"Instrument Serif",serif; font-weight:400; font-size:96px; line-height:.98; letter-spacing:-.015em; -webkit-text-stroke:1.2px currentColor; z-index:5; }
 .tit i { font-style:italic; color:var(--blue); -webkit-text-stroke:1.2px var(--blue); }
 .s:not(.claro) .tit i { color:var(--claro); -webkit-text-stroke:1.2px var(--claro); }
-.txt { left:400px; width:576px; bottom:100px; text-align:center; text-wrap:balance; font-family:"Inter Tight",sans-serif; font-weight:500; font-size:34px; line-height:1.36; letter-spacing:-.01em; z-index:5; padding-top:22px; border-top:3px solid currentColor; }
-.txt b { font-weight:800; color:var(--blue); margin-right:8px; }
+.txt { left:372px; width:632px; bottom:88px; text-align:center; text-wrap:balance; font-family:"Inter Tight",sans-serif; font-weight:500; font-size:42px; line-height:1.3; letter-spacing:-.01em; z-index:5; padding-top:22px; border-top:3px solid currentColor; }
+.txt b { font-weight:800; color:var(--blue); }
 .s:not(.claro) .txt b { color:var(--claro); }
 .estrela { z-index:5; width:46px; height:46px; }
 .cel { z-index:4; border:8px solid var(--ink); border-radius:40px; overflow:hidden; background:var(--ink); }
@@ -63,30 +63,30 @@ def slide(n, fundo, claro, vert, forma, img, tit, texto, extra=""):
 S = [
     slide(1, "ruido", False, "2026?", (1010, 600, 330), ("lirios-faixa-ret.png", 420, 330, 520),
           "Ainda vale a pena ter um site <i>em 2026?</i>",
-          "Resposta curta: vale. Mas não do jeito que todo mundo fazia. Arrasta →",
+          "Resposta curta: <b>vale.</b> Mas não do jeito que todo mundo fazia. Arrasta →",
           ESTRELA.format(p="left:980px;top:1040px;color:var(--cream)")),
     slide(2, "pincel", True, "antes", (1080, 640, 300), ("foco-ret.png", 380, 480, 640),
           "Antigamente, site era feito <i>por fazer.</i>",
-          "Era item de lista: ter pra dizer que tinha. Uma página com logo, “quem somos” e um telefone. Ninguém pensava em quem ia entrar."),
+          "Era item de lista: logo, “quem somos” e um telefone. <b>Ninguém pensava em quem ia entrar.</b>"),
     slide(3, "parede", False, "ruim", (1000, 700, 300), ("queda-ret.png", 380, 300, 720),
           "Hoje, sobra site <i>ruim.</i>",
-          "Abre devagar no celular, não mostra o preço, esconde o WhatsApp. O cliente não acha o que veio buscar e volta pro Google."),
+          "Lento no celular, sem preço, WhatsApp escondido. <b>O cliente não acha o que veio buscar</b> e volta pro Google."),
     slide(4, "rabisco-cinza", True, "capta", (1110, 600, 250), ("cisnes-ret.png", 340, 640, 440),
           "Vitrine só mostra. Site único <i>capta.</i>",
-          "Um site feito pro seu cliente tira a dúvida e leva ao próximo passo. No senerine.dev, a primeira tela já mostra o que eu faço, quem faz e o botão do WhatsApp.",
+          "Tira a dúvida e leva ao próximo passo. <b>No senerine.dev,</b> a primeira tela já mostra o que eu faço e o botão do WhatsApp.",
           '<div class="cel" style="left:760px;top:330px;width:260px;rotate:5deg"><img src="../../elementos/senerine/m-hero.png"></div>'),
     slide(5, "grunge", False, "rua", (980, 700, 300), ("cavalo-ret.png", 330, 420, 720),
           "A internet é a rua mais <i>movimentada.</i>",
-          "Todo mundo passa por ela: pesquisa, compara, pergunta. O perfil é uma banca na calçada. O site é o seu endereço, aberto de madrugada."),
+          "O perfil é uma banca na calçada. <b>O site é o seu endereço,</b> aberto até de madrugada."),
     slide(6, "pincel-escuro", False, "ia", (1060, 820, 280), ("andorinhas-ret.png", 600, 520, 360),
           "Seu cliente não pesquisa só no Google. Pergunta <i>pra IA.</i>",
-          "“Onde tem uma barbearia boa aqui perto?” A IA responde com o que encontra escrito na internet. Se você só existe no stories, fica difícil te achar."),
+          "A IA responde com o que está escrito na internet. <b>Se você só existe no stories,</b> fica difícil te achar."),
     slide(7, "pincel", True, "apareça", (1040, 700, 280), ("camera-ret.png", 420, 440, 560),
           "Não basta existir. Você precisa <i>aparecer.</i>",
-          "<b>01</b> Ser encontrado na busca.<br><b>02</b> Ser lido pelo Google e pela IA.<br><b>03</b> Convencer quem chega."),
+          "<b>01</b>&nbsp; Ser encontrado na busca.<br><b>02</b>&nbsp; Ser lido pelo Google e pela IA.<br><b>03</b>&nbsp; Convencer quem chega."),
     slide(8, "ruido", False, "trabalho", (1000, 690, 320), ("leoes-ret.png", 330, 80, 720),
           "Esse é o meu <i>trabalho.</i>",
-          "Senerine.dev é um estúdio digital autoral: sites e aplicações pra serem encontrados, entendidos e usados. Me chama no direct. E manda pra quem acha que site já era.",
+          "Sites e aplicações pra serem encontrados, entendidos e usados. <b>Me chama no direct.</b>",
           ESTRELA.format(p="left:980px;top:1040px;color:var(--cream)")),
 ]
 
