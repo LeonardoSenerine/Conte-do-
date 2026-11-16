@@ -19,3 +19,4 @@ Frases soltas para capa, primeira cena ou primeira linha da legenda. Marque com 
 - "Tem cliente olhando o seu perfil agora."
 - "Trabalho bom calado passa batido."
 - "Quem vê, lembra. Quem lembra, chama."
+- ✓ "Seu site fala muito e não diz nada."

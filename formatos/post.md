@@ -27,6 +27,7 @@
 | Panorama de case | fundo contínuo na cor do cliente, réguas que correm o carrossel todo, computador e janelas do site em ângulos (rotateY), celular e prato atravessando a emenda dos slides | Case Scarpetta ("está ficando maravilhoso") | `modelos/posts/scarpetta-panorama.py` (panorama) |
 | Fio + mockups | um fio azul que vira a linha do rodapé e anda como progresso | Link na bio (Senerine) | `modelos/posts/fio-mockups.py` (panorama) |
 | Editorial (em teste) | uma frase forte por slide em Inter Tight 800 minúscula, uma palavra em Instrument Serif itálica, fundos creme / preto / azul alternando, imagem do banco grande, texto pequeno em caixa alta embaixo e seta → | Você precisa de um site. | `modelos/posts/busca-editorial.py` |
+| Anti design / acid (em teste) | uma frase gigante em Anton distorcida (filtro SVG de onda ou derretido, leve o bastante pra ler), cortada pela borda, risco azul à mão na 1ª linha, etiqueta preta torta, texto miúdo nos cantos; fundos papel / preto / azul | Palavras que não dizem nada | `modelos/posts/nada.py` |
 | Capturas reais em grade | cartão com captura do site, faixa "passa batido", título com ponto | 5 detalhes | `modelos/posts/senerine-capturas.py` |
 
 Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `panorama` quando a linha atravessa slides).
