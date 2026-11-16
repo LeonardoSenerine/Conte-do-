@@ -27,7 +27,7 @@
 | Panorama de case | fundo contínuo na cor do cliente, réguas que correm o carrossel todo, computador e janelas do site em ângulos (rotateY), celular e prato atravessando a emenda dos slides | Case Scarpetta ("está ficando maravilhoso") | `modelos/posts/scarpetta-panorama.py` (panorama) |
 | Fio + mockups | um fio azul que vira a linha do rodapé e anda como progresso | Link na bio (Senerine) | `modelos/posts/fio-mockups.py` (panorama) |
 | Editorial (em teste) | uma frase forte por slide em Inter Tight 800 minúscula, uma palavra em Instrument Serif itálica, fundos creme / preto / azul alternando, imagem do banco grande, texto pequeno em caixa alta embaixo e seta → | Você precisa de um site. | `modelos/posts/busca-editorial.py` |
-| Anti design / acid (em teste) | uma frase gigante em Anton distorcida (filtro SVG de onda ou derretido, leve o bastante pra ler), cortada pela borda, risco azul à mão na 1ª linha, etiqueta preta torta, texto miúdo nos cantos; fundos papel / preto / azul | Palavras que não dizem nada | `modelos/posts/nada.py` |
+| Anti design / acid (em teste) | uma frase gigante em Anton distorcida (filtro SVG de onda ou derretido, leve o bastante pra ler), cortada pela borda, risco azul à mão na 1ª linha, etiqueta preta torta, texto miúdo nos cantos; fundos papel / preto / azul | Palavras que não dizem nada; Site em 2026 (com elementos desenhados: janela antiga, 404, ímã, placa de rua, balões, alfinete, adesivo em estrela, fita, retícula, código de barras) | `modelos/posts/nada.py`, `site-2026.py` |
 | Capturas reais em grade | cartão com captura do site, faixa "passa batido", título com ponto | 5 detalhes | `modelos/posts/senerine-capturas.py` |
 
 Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `panorama` quando a linha atravessa slides).
@@ -57,6 +57,7 @@ Renderizar: `node modelos/render.mjs <html> <saida> 1080 1440 <n>` (acrescente `
 - Texto pequeno cortado no limite do cartão; imagem cobrindo rosto ou logo importante.
 - Preço ou número inventado para imitar uma referência.
 - **Post de conselho que não chega no site** ("fala do seu trabalho" por seis slides e o site só no fim): genérico e vende Instagram, não o serviço. Sempre ter um slide-ponte ("e quando ele vem te ver, acha o quê?") com um caso real.
+- Anti design só com a frase: ele pediu "mais elementos". Elementos desenhados em SVG/CSS (sem foto) resolvem e nunca repetem imagem. Sem os textinhos de canto ("tire o cabeçalho e o rodapé").
 - **Repetir imagem de outro post**: "não reuse as imagens". Cada post usa imagens que nunca entraram em outro; conferir a coluna "Já usado em" do `elementos/README.md`.
 - **Imagem que não conversa com a frase** (megafone em "enfeite no lugar do que importa"): "não tem sentido estar ali". Cada imagem tem que ser metáfora direta do slide.
 - Slide final azul "segue pra ver os próximos" no modelo pronto: tirado. Fechar na chamada do direct.
