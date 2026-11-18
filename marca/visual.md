@@ -21,6 +21,7 @@ Nomes do estilo: **estética zine / fanzine**, **xerox art** (photocopy aestheti
 - Imagens em **tinta preta sem fundo** (`elementos/tinta/`, `mix-blend-mode:multiply`).
 - Um único azul, como segunda cor de risografia, também em multiply (ponto atrás da imagem, palavra da manchete).
 - Manchete em **Anton** maiúscula; contraste com **Bodoni Moda** itálica 700 a 800 ou **Instrument Serif** (itálico na palavra-chave); texto corrido e rótulos em **JetBrains Mono**.
+- **Textura** (desde "site em 2026"): imagens em retícula de pontos (`modelos/reticula.py`) e papel impresso por cima (`elementos/texturas/papel.png`, de `modelos/textura.py`). A retícula é feita de pontos, então conversa com o ponto azul.
 - Recursos: **nota com linha** (texto no papel sobre um fio, linha fina até o detalhe da imagem, ponto azul na ponta; preferida desde o zine nº 02), papelzinho colado com fita (evitar em série: "sem graça"), carimbo azul inclinado, etiqueta preta com texto claro (estilo recorte), palavra riscada em azul.
 - Atenção: Anton com `line-height` baixo esconde acentos e cedilha (É, Ó, Ç). Use `line-height:1` nas linhas com acento.
 
@@ -35,6 +36,12 @@ Nomes do estilo: **editorial minimalista** com **tipografia suíça** (grade rí
 - A palavra-chave em **Instrument Serif itálica**, um pouco maior: azul no creme, azul claro no preto, preto no azul.
 - Três fundos alternando pela grade: creme `#f2efea`, preto `#1e1d1e`, azul `#0a63b2`. Metade dos slides com imagem grande do banco (versão `-claro` no fundo escuro), metade só tipografia.
 - Rodapé de conteúdo: texto pequeno em caixa alta (o complemento da frase) e a seta →. Nada de rótulo, fólio nem régua.
+
+## Linguagem 4 · Anti design / acid (testada em 2026-11-16; com elementos desenhados ficou "bem ruim", ele voltou pro zine)
+- Uma frase gigante por slide em **Anton**, esticada (`scaleY`) e entortada com filtro SVG (`feTurbulence` + `feDisplacementMap`): **leve**, a letra entorta sem rasgar (a primeira versão ficou ilegível).
+- Cortada pela borda, risco azul à mão atravessando a 1ª linha (longe dos acentos), etiqueta preta torta, texto miúdo em mono nos cantos, grão de xerox.
+- Só o azul do ponto: o neon das referências (verde, rosa, vermelho) não entra.
+- Acentos: entrelinha 1.04 no mínimo; com til ou cedilha no começo da 2ª linha, 1.2.
 
 ## Fontes
 Todas em `fontes/fontes.css` (OFL). No HTML do modelo: `<link rel="stylesheet" href="../../fontes/fontes.css">`.

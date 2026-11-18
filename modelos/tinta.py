@@ -45,6 +45,9 @@ jobs = {  # nome: (arquivo, preto, branco)
     "explosao":          (U + "explosao.jpg", 60, 200),
     "andorinhas-faixa":  (U + "andorinhas-faixa.jpg", 40, 240),
     "iris":              (U + "iris.jpg", 40, 230),
+    # site em 2026 (zine): a marca da câmera foi coberta de preto no original
+    "camera":            (U + "camera.jpg", 60, 200),
+    "flores-tinta":      (U + "flores-tinta.jpg", 60, 200),
     "pegaso":            (U + "pegaso.jpg", 40, 235),
     "vilao-grito":       (U + "vilao-grito.jpg", 60, 200),    # rosto gritando, trocou o "vilao" no slide 7
     # leva de 2026-11-05
@@ -69,7 +72,7 @@ DOBRO = {"cabeca-azul", "multidao", "cabeca-aberta", "lampada", "megafone", "bot
          "tecido-floral", "lirios-faixa", "mulher-pombas", "videira", "tigre-faixa", "peonias-faixa",
          "cobra-fumaca", "cobra-escura", "caligrafia", "flores-fluidas", "vilao", "vilao-grito",
          "foco", "queda", "andorinhas", "cisnes", "estrelas", "cavalo", "lirios-ramo",
-         "coruja", "gansos-faixa", "explosao", "andorinhas-faixa", "iris", "pegaso"}
+         "coruja", "gansos-faixa", "explosao", "andorinhas-faixa", "iris", "pegaso", "camera", "flores-tinta"}
 for name, (f, lo, hi) in jobs.items():
     if len(sys.argv) > 1 and name not in sys.argv[1:]:
         continue  # python3 tinta.py nome1 nome2 converte só esses

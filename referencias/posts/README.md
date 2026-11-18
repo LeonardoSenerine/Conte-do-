@@ -42,3 +42,26 @@ Os arquivos estão em `elementos/originais/` (nomes no `elementos/README.md`).
 - Elementos grandes: foto do cliente de fundo, celular cortado pela borda atravessando pro slide 2, polaroids com checkbox, grade de fotos de viagem com nome, cartões de depoimento em vídeo, cartão de preço.
 - Topo: @ do cliente e "01 / 07 · arrasta →"; rodapé: o endereço do site.
 - Virou a base do case Scarpetta (`modelos/posts/scarpetta-grande.py`).
+
+## 2026-11-16 · "Anti design" (@ellie.designr) e "Acid Graphics" (Pinterest)
+Arquivos: `2026-11-16-anti-design-ellie.jpg`, `2026-11-16-acid-graphics.jpg`.
+- **Anti design:** colagem de rosto recortado, letras gigantes cortadas pela borda, rabisco por cima, etiqueta preta torta ("ANTI DESIGN"), textura de papel e xerox.
+- **Acid graphics:** tipografia distorcida (derretida, esticada, em onda) ocupando o pôster inteiro, grão, pouco texto pequeno nos cantos.
+- **O que vale pra nós:** uma palavra gigante distorcida por slide, cortada pela borda, e texto miúdo nos cantos. É simples de fazer e chama atenção no feed.
+- **O que não entra:** o verde-limão, o rosa e o vermelho neon. Fica o azul do ponto como única cor (regra da marca: um azul, evitar vermelho, nada de cor forte demais).
+- **Contexto:** chegou com o pedido de um "carrossel simples" e ideias de conteúdo.
+
+## 2026-11-16 · "Halftone Poster Design" (Natã Olivar, @olivar.dsgn, Pinterest)
+Arquivo: `2026-11-16-halftone-olivar.jpg`.
+- Foto inteira em **retícula de pontos** (meio-tom) grossa, preto sobre creme, cara de impressão barata.
+- Uma cor só de destaque chapada sobre a retícula (os óculos vermelhos do cachorro, o verde do pôster "grey over").
+- Manchete condensada enorme ocupando a largura toda ("STAY CREATIVE", "MONOCHROME"), texto miúdo justificado ao lado.
+- **Pra nós:** casa direto com o ponto: a retícula é feita de pontos. Dá pra passar as imagens em tinta por um filtro de retícula e deixar o azul do ponto como a única cor chapada (no lugar do vermelho e do verde).
+- **Contexto:** chegou junto com o pedido de deixar o "site em 2026" mais orgânico, sem texto.
+
+## 2026-11-16 · texturas e o pôster "CREATE" (Pinterest)
+Arquivos: `2026-11-16-textura-1.jpg` a `-7.jpg`.
+- 1 pincel preto e branco com respingos · 2 parede grunge com tinta escorrida · 3 rabisco cinza em relevo · 5 ruído granulado · 6 grunge com faixas (o vermelho não entra, só a forma em cinza).
+- 4 é a foto de um artista conhecido cobrindo o rosto: **só referência** de tratamento (grão, preto profundo), não usar a imagem.
+- 7 pôster "CREATE": palavra gigante em serifa na vertical pela borda, uma forma de cor grande saindo do canto (roxa), a foto com textura em creme por cima, texto miúdo em blocos com um traço embaixo, uma estrelinha de quatro pontas.
+- **Virou:** "site em 2026" (`modelos/posts/site-2026-create.py`): as texturas viraram fundos em `elementos/texturas/` (ruido, parede, pincel, pincel-escuro, rabisco-cinza, grunge) e a forma roxa virou o ponto azul.
