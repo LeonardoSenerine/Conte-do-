@@ -14,7 +14,7 @@
 - `modelos/stories/zine-explicativos.py`: eclipse ("todo mundo olha pra sua bio"), mundo ("o nome que aparece importa"), dobermans ("olha de perto", checklist de 3 perguntas).
 - `modelos/stories/zine-figurinhas.py`: post novo, enquete, quiz, caixinha (com cantoneiras).
 - `modelos/stories/destaque-processo.py`: série de stories numerada com caminho de progresso.
-- `modelos/stories/foco-projetos.py`: tipografia expressiva (papel rasgado, letras gigantes atrás da foto do Leonardo em P&B, olho recortado, código de barras, xadrez), só no azul. A foto sem fundo sai de `modelos/recorte-leo.py`.
+- `modelos/stories/foco-projetos.py`: tipografia expressiva (papel rasgado, letras gigantes atrás da foto do Leonardo em P&B, olho recortado, código de barras, xadrez), só no azul. A foto sem fundo sai de `modelos/recorte-leo.py`. Variação `foco-olho.py`: o olho de estátua (`elementos/colagem/olho-estatua.jpg`, da versão que ele fez no Canva) num papel rasgado, com o ponto azul aceso de pupila.
 - Renderizar: `node modelos/render.mjs <html> <saida> 1080 1920 <n>` (story único gerado como corpo inteiro: acrescente `panorama`).
 
 ## Funciona
