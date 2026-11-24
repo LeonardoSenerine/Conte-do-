@@ -65,3 +65,10 @@ Arquivos: `2026-11-16-textura-1.jpg` a `-7.jpg`.
 - 4 é a foto de um artista conhecido cobrindo o rosto: **só referência** de tratamento (grão, preto profundo), não usar a imagem.
 - 7 pôster "CREATE": palavra gigante em serifa na vertical pela borda, uma forma de cor grande saindo do canto (roxa), a foto com textura em creme por cima, texto miúdo em blocos com um traço embaixo, uma estrelinha de quatro pontas.
 - **Virou:** "site em 2026" (`modelos/posts/site-2026-create.py`): as texturas viraram fundos em `elementos/texturas/` (ruido, parede, pincel, pincel-escuro, rabisco-cinza, grunge) e a forma roxa virou o ponto azul.
+
+## 2026-11-24 · acid streetwear (roxo e verde-limão) + feed azul de esculturas (Pinterest)
+Arquivos: `2026-11-24-acid-streetwear.jpg`, `2026-11-24-azul-esculturas.jpg`.
+- Acid: fotos P&B em duotom, **tiras de papel rasgado com código de barras** coladas tortas, **elipses e anéis em traço fino** cruzando a foto, palavra **empilhada e repetida na vertical** (WORKSHOP WORKSHOP), manchete condensada em caixa alta, linhas finas atravessando o slide.
+- Azul: monocromático em azul royal, **esculturas, máscaras, coroa, peça de xadrez, moai, armadura** em duotom azul, **palavra gigante em letra gótica** atrás da figura, arame farpado, vidro quebrado, objetos 3D azuis (dado, borboleta), título em sans bold à esquerda com uma palavra em azul, etiqueta em pílula.
+- **Pra nós:** juntar os dois só no azul do ponto (o roxo e o verde-limão não entram), o ponto azul como assinatura em todo slide.
+- **Virou:** prompt de carrossel para o Canva, "Quem mais vende nem sempre é o melhor" (2026-11-24).
