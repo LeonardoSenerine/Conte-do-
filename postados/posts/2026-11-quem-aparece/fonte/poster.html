@@ -1,0 +1,31 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../../../fontes/fontes.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1440px;overflow:hidden;position:relative;
+  background:radial-gradient(ellipse 95% 62% at 50% 82%, #0a3ed6 0%, #0730a8 26%, #04206f 52%, #021545 74%, #010d30 100%);}
+.a{position:absolute}
+.grao{inset:0;z-index:9;opacity:.22;mix-blend-mode:overlay}
+h1{font-family:"Anton",sans-serif;font-weight:400;font-size:136px;line-height:.96;letter-spacing:-.005em;color:#fff;left:78px;top:92px;z-index:5;text-transform:uppercase}
+p{font-family:"Inter Tight",sans-serif;font-weight:500;font-size:38px;letter-spacing:-.02em;color:#fff;left:82px;top:722px;z-index:5}
+.sombra{width:588px;z-index:2;opacity:.9}
+.fig{left:233px;top:712px;width:614px;z-index:4;filter:drop-shadow(0 0 40px rgba(40,100,255,.45))}
+.olho{z-index:6}
+</style></head><body>
+<h1 class="a"><span style="display:block">Quem</span><span style="display:block;margin-top:.2em">mais vende</span><span style="display:block;margin-top:.2em">não é o</span><span style="display:block;margin-top:.2em">melhor.</span></h1>
+<p class="a">É quem aparece.</p>
+<img class="a sombra" src="out/sombra.png" style="left:6px;top:815px">
+<img class="a sombra" src="out/sombra.png" style="left:486px;top:815px">
+<img class="a fig" src="out/figura.png">
+<svg class="a olho" style="left:419px;top:1123px" width="240" height="120" viewBox="0 0 240 120">
+  <defs><radialGradient id="g"><stop offset="0" stop-color="#8fd0ff"/><stop offset=".55" stop-color="#3a9bf0"/><stop offset="1" stop-color="#0a63b2"/></radialGradient>
+  <filter id="brilho" x="-150%" y="-150%" width="400%" height="400%"><feGaussianBlur stdDeviation="10"/></filter></defs>
+  <path d="M46 22 Q18 60 46 98" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M194 22 Q222 60 194 98" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/>
+  <circle cx="120" cy="60" r="44" fill="none" stroke="#fff" stroke-width="5.5"/>
+  <circle cx="120" cy="60" r="24" fill="#2f8ff0" filter="url(#brilho)" opacity=".95"/>
+  <circle cx="120" cy="60" r="21" fill="url(#g)"/>
+</svg>
+<svg class="a grao" width="1080" height="1440"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+<script>document.fonts.ready.then(()=>document.body.dataset.ok=1)</script>
+</body></html>
